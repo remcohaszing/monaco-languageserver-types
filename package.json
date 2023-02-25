@@ -4,10 +4,12 @@
   "description": "Convert between language server types and Monaco editor types",
   "type": "module",
   "exports": "./index.js",
-  "scripts": {
-    "start": "vitest",
-    "test": "vitest --run --coverage"
-  },
+  "repository": "remcohaszing/monaco-languageserver-types",
+  "bugs": "https://github.com/remcohaszing/monaco-languageserver-types/issues",
+  "homepage": "https://github.com/remcohaszing/monaco-languageserver-types",
+  "author": "Remco Haszing <remcohaszing@gmail.com>",
+  "funding": "https://github.com/sponsors/remcohaszing",
+  "license": "MIT",
   "keywords": [
     "monaco",
     "monaco-editor",
@@ -15,8 +17,10 @@
     "language-server-protocol",
     "vscode-languageserver-types"
   ],
-  "author": "Remco Haszing <remcohaszing@gmail.com>",
-  "license": "MIT",
+  "scripts": {
+    "start": "vitest",
+    "test": "vitest --run --coverage"
+  },
   "dependencies": {
     "vscode-languageserver-types": "^3.0.0"
   },
