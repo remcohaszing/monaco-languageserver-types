@@ -6,8 +6,7 @@ import { fromRange, toRange } from './range.js'
 /**
  * Convert a Monaco editor single edit operation to an LSP text edit.
  *
- * @param editOperation The Monaco single edit operation to convert.
- * @param singleEditOperation
+ * @param singleEditOperation The Monaco single edit operation to convert.
  * @returns The single edit operation as an LSP text edit.
  */
 export function fromSingleEditOperation(
