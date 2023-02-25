@@ -1,5 +1,5 @@
 {
-  "name": "monaco-lsp",
+  "name": "monaco-languageserver-types",
   "version": "1.0.0",
   "description": "Convert between language server types and Monaco editor types",
   "type": "module",
