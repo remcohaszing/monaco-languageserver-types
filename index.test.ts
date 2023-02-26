@@ -541,3 +541,155 @@ runTests({
     }
   ]
 })
+
+runTests({
+  from: fns.fromWorkspaceFileEditOptions,
+  to: fns.toWorkspaceFileEditOptions,
+  tests: [
+    {
+      lsp: {
+        ignoreIfExists: true,
+        ignoreIfNotExists: true,
+        overwrite: true,
+        recursive: true
+      },
+      monaco: {
+        ignoreIfExists: true,
+        ignoreIfNotExists: true,
+        overwrite: true,
+        recursive: true
+      }
+    },
+    {
+      lsp: {
+        ignoreIfExists: false,
+        ignoreIfNotExists: false,
+        overwrite: false,
+        recursive: false
+      },
+      monaco: {
+        ignoreIfExists: false,
+        ignoreIfNotExists: false,
+        overwrite: false,
+        recursive: false
+      }
+    },
+    {
+      lsp: {
+        ignoreIfExists: undefined,
+        ignoreIfNotExists: undefined,
+        overwrite: undefined,
+        recursive: undefined
+      },
+      monaco: {
+        ignoreIfExists: undefined,
+        ignoreIfNotExists: undefined,
+        overwrite: undefined,
+        recursive: undefined
+      }
+    }
+  ]
+})
+
+runTests({
+  from: fns.fromWorkspaceFileEdit,
+  to: fns.toWorkspaceFileEdit,
+  tests: [
+    {
+      lsp: {
+        kind: 'rename',
+        oldUri: 'file:///old.txt',
+        newUri: 'file:///new.txt',
+        options: undefined
+      },
+      monaco: {
+        oldResource: monaco.Uri.parse('file:///old.txt'),
+        newResource: monaco.Uri.parse('file:///new.txt'),
+        options: undefined
+      }
+    },
+    {
+      lsp: {
+        kind: 'create',
+        uri: 'file:///new.txt',
+        options: undefined
+      },
+      monaco: {
+        newResource: monaco.Uri.parse('file:///new.txt'),
+        options: undefined
+      }
+    },
+    {
+      lsp: {
+        kind: 'delete',
+        uri: 'file:///new.txt',
+        options: undefined
+      },
+      monaco: {
+        oldResource: monaco.Uri.parse('file:///new.txt'),
+        options: undefined
+      }
+    }
+  ]
+})
+
+runTests({
+  from: fns.fromWorkspaceEdit,
+  to: fns.toWorkspaceEdit,
+  tests: [
+    {
+      lsp: {
+        changes: {
+          'file:///changes.txt': [
+            {
+              newText: 'new text',
+              range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } }
+            }
+          ]
+        },
+        documentChanges: [
+          {
+            textDocument: { uri: 'file:///versioned.txt', version: 42 },
+            edits: [
+              {
+                newText: 'new text',
+                range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } }
+              }
+            ]
+          },
+          {
+            kind: 'rename',
+            oldUri: 'file:///old.txt',
+            newUri: 'file:///new.txt',
+            options: undefined
+          }
+        ]
+      },
+      monaco: {
+        edits: [
+          {
+            resource: monaco.Uri.parse('file:///changes.txt'),
+            versionId: undefined,
+            textEdit: {
+              text: 'new text',
+              range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 }
+            }
+          },
+          {
+            resource: monaco.Uri.parse('file:///versioned.txt'),
+            versionId: 42,
+            textEdit: {
+              text: 'new text',
+              range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 }
+            }
+          },
+          {
+            oldResource: monaco.Uri.parse('file:///old.txt'),
+            newResource: monaco.Uri.parse('file:///new.txt'),
+            options: undefined
+          }
+        ]
+      }
+    }
+  ]
+})

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "declaration": true,
+    "lib": ["es2018", "es2022.error"],
     "module": "node16",
     "noEmit": true,
     "skipLibCheck": true,
