@@ -27,8 +27,8 @@ For each Monaco editor / language server type, there are two functions:
 
 For example:
 
-```ts
-import * as monaco from 'monaco-editor'
+```typescript
+import type * as monaco from 'monaco-editor'
 import { fromRange, toRange } from 'monaco-languageserver-types'
 
 const monacoRange: monaco.IRange = {
