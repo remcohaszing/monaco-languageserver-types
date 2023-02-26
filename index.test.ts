@@ -190,6 +190,41 @@ runTests({
 })
 
 runTests({
+  from: fns.fromHover,
+  to: fns.toHover,
+  tests: [
+    {
+      lsp: {
+        range: {
+          start: { line: 0, character: 10 },
+          end: { line: 2, character: 20 }
+        },
+        contents: { kind: 'markdown', value: 'This is markdown' }
+      },
+      monaco: {
+        range: {
+          startLineNumber: 1,
+          startColumn: 11,
+          endLineNumber: 3,
+          endColumn: 21
+        },
+        contents: [{ value: 'This is markdown' }]
+      }
+    },
+    {
+      lsp: {
+        range: undefined,
+        contents: { kind: 'markdown', value: 'This is markdown' }
+      },
+      monaco: {
+        range: undefined,
+        contents: [{ value: 'This is markdown' }]
+      }
+    }
+  ]
+})
+
+runTests({
   from: fns.fromLink,
   to: fns.toLink,
   tests: [
@@ -218,7 +253,9 @@ runTests({
         range: {
           start: { line: 0, character: 10 },
           end: { line: 2, character: 20 }
-        }
+        },
+        tooltip: undefined,
+        target: undefined
       },
       monaco: {
         range: {
@@ -226,7 +263,9 @@ runTests({
           startColumn: 11,
           endLineNumber: 3,
           endColumn: 21
-        }
+        },
+        tooltip: undefined,
+        url: undefined
       }
     }
   ]
@@ -327,6 +366,22 @@ runTests({
           endColumn: 21
         },
         uri: monaco.Uri.parse('file:///example')
+      }
+    }
+  ]
+})
+
+runTests({
+  from: fns.fromMarkdownString,
+  to: fns.toMarkdownString,
+  tests: [
+    {
+      lsp: {
+        kind: 'markdown',
+        value: 'Markdown content'
+      },
+      monaco: {
+        value: 'Markdown content'
       }
     }
   ]
