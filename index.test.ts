@@ -190,6 +190,49 @@ runTests({
 })
 
 runTests({
+  from: fns.fromLink,
+  to: fns.toLink,
+  tests: [
+    {
+      lsp: {
+        range: {
+          start: { line: 0, character: 10 },
+          end: { line: 2, character: 20 }
+        },
+        tooltip: 'Hello',
+        target: 'file:///example'
+      },
+      monaco: {
+        range: {
+          startLineNumber: 1,
+          startColumn: 11,
+          endLineNumber: 3,
+          endColumn: 21
+        },
+        tooltip: 'Hello',
+        url: monaco.Uri.parse('file:///example')
+      }
+    },
+    {
+      lsp: {
+        range: {
+          start: { line: 0, character: 10 },
+          end: { line: 2, character: 20 }
+        }
+      },
+      monaco: {
+        range: {
+          startLineNumber: 1,
+          startColumn: 11,
+          endLineNumber: 3,
+          endColumn: 21
+        }
+      }
+    }
+  ]
+})
+
+runTests({
   from: fns.fromLocationLink,
   to: fns.toLocationLink,
   tests: [

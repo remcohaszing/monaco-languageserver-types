@@ -1,6 +1,7 @@
 export * from './lib/completionItemKind.js'
 export * from './lib/documentSymbol.js'
 export * from './lib/formattingOptions.js'
+export * from './lib/link.js'
 export * from './lib/locationLink.js'
 export * from './lib/markerData.js'
 export * from './lib/markerSeverity.js'
