@@ -17,7 +17,14 @@
     "language-server-protocol",
     "vscode-languageserver-types"
   ],
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "lib/*.js",
+    "lib/*.d.ts"
+  ],
   "scripts": {
+    "prepack": "tsc --noEmit false",
     "start": "vitest",
     "test": "vitest --run --coverage"
   },
