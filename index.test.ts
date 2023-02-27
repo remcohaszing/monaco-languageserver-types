@@ -4,7 +4,7 @@ import * as ls from 'vscode-languageserver-types'
 
 import * as fns from './index.js'
 
-interface TestCase<T extends (obj: any, Uri: typeof monaco.Uri) => any> {
+interface TestCase<T extends (obj: any) => any> {
   /**
    * Convert from Monaco editor to LSP.
    */
@@ -36,16 +36,16 @@ interface TestCase<T extends (obj: any, Uri: typeof monaco.Uri) => any> {
   }[]
 }
 
+fns.setMonaco(monaco)
+
 /**
  * @param testCase The test case to run
  */
-function runTests<T extends (obj: any, Uri: typeof monaco.Uri) => any>(
-  testCase: TestCase<T>
-): void {
+function runTests<T extends (obj: any) => any>(testCase: TestCase<T>): void {
   for (const values of testCase.tests) {
     if (values.only !== 'from') {
       test(`${testCase.to.name}(${JSON.stringify(values.lsp)})`, () => {
-        const result = testCase.to(values.lsp, monaco.Uri) as unknown
+        const result = testCase.to(values.lsp) as unknown
         expect(result).toStrictEqual(values.monaco)
       })
     }

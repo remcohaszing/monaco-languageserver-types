@@ -1,6 +1,7 @@
 import type * as monaco from 'monaco-editor'
 import type * as ls from 'vscode-languageserver-types'
 
+import { getMonaco } from './monaco.js'
 import { fromRange, toRange } from './range.js'
 
 /**
@@ -25,13 +26,13 @@ export function fromRelatedInformation(
  * Convert an LSP diagnostic related information to a Monaco editor related information.
  *
  * @param relatedInformation The LSP diagnostic related information to convert.
- * @param Uri The Monaco Uri constructor.
  * @returns The diagnostic related information as Monaco editor related information.
  */
 export function toRelatedInformation(
-  relatedInformation: ls.DiagnosticRelatedInformation,
-  Uri: typeof monaco.Uri
+  relatedInformation: ls.DiagnosticRelatedInformation
 ): monaco.editor.IRelatedInformation {
+  const { Uri } = getMonaco()
+
   return {
     ...toRange(relatedInformation.location.range),
     message: relatedInformation.message,

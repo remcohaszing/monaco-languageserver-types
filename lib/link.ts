@@ -1,6 +1,7 @@
 import type * as monaco from 'monaco-editor'
 import type * as ls from 'vscode-languageserver-types'
 
+import { getMonaco } from './monaco.js'
 import { fromRange, toRange } from './range.js'
 
 /**
@@ -21,13 +22,11 @@ export function fromLink(link: monaco.languages.ILink): ls.DocumentLink {
  * Convert an LSP document link to a Monaco editor link.
  *
  * @param documentLink The LSP document link to convert.
- * @param Uri The Monaco Uri constructor.
  * @returns The document link as Monaco editor link.
  */
-export function toLink(
-  documentLink: ls.DocumentLink,
-  Uri: typeof monaco.Uri
-): monaco.languages.ILink {
+export function toLink(documentLink: ls.DocumentLink): monaco.languages.ILink {
+  const { Uri } = getMonaco()
+
   return {
     range: toRange(documentLink.range),
     url: documentLink.target ? Uri.parse(documentLink.target) : undefined,

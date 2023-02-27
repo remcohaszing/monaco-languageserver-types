@@ -1,6 +1,7 @@
 import type * as monaco from 'monaco-editor'
 import type * as ls from 'vscode-languageserver-types'
 
+import { getMonaco } from './monaco.js'
 import { fromTextEdit, toTextEdit } from './textEdit.js'
 import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from './workspaceFileEdit.js'
 
@@ -56,15 +57,15 @@ export function fromWorkspaceEdit(workspaceEdit: monaco.languages.WorkspaceEdit)
  * @param textEdit The LSP text edit to convert.
  * @param uri The uri of the workspace text edit.
  * @param versionId The version ID of the workspace text edit.
- * @param Uri The Monaco Uri constructor.
  * @returns The text edit and uri as Monaco editor workspace text edit.
  */
 function toWorkspaceTextEdit(
   textEdit: ls.TextEdit,
   uri: string,
-  versionId: number | undefined,
-  Uri: typeof monaco.Uri
+  versionId?: number
 ): monaco.languages.IWorkspaceTextEdit {
+  const { Uri } = getMonaco()
+
   return {
     resource: Uri.parse(uri),
     versionId,
@@ -76,19 +77,15 @@ function toWorkspaceTextEdit(
  * Convert an LSP workspace edit to a Monaco editor workspace edit.
  *
  * @param workspaceEdit The LSP workspace edit to convert.
- * @param Uri The Monaco Uri constructor.
  * @returns The workspace edit as Monaco editor workspace edit.
  */
-export function toWorkspaceEdit(
-  workspaceEdit: ls.WorkspaceEdit,
-  Uri: typeof monaco.Uri
-): monaco.languages.WorkspaceEdit {
+export function toWorkspaceEdit(workspaceEdit: ls.WorkspaceEdit): monaco.languages.WorkspaceEdit {
   const edits: monaco.languages.WorkspaceEdit['edits'] = []
 
   if (workspaceEdit.changes) {
     for (const [uri, textEdits] of Object.entries(workspaceEdit.changes)) {
       for (const textEdit of textEdits) {
-        edits.push(toWorkspaceTextEdit(textEdit, uri, undefined, Uri))
+        edits.push(toWorkspaceTextEdit(textEdit, uri))
       }
     }
   }
@@ -101,13 +98,12 @@ export function toWorkspaceEdit(
             toWorkspaceTextEdit(
               textEdit,
               documentChange.textDocument.uri,
-              documentChange.textDocument.version ?? undefined,
-              Uri
+              documentChange.textDocument.version ?? undefined
             )
           )
         }
       } else {
-        edits.push(toWorkspaceFileEdit(documentChange, Uri))
+        edits.push(toWorkspaceFileEdit(documentChange))
       }
     }
   }

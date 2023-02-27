@@ -29,18 +29,14 @@ export function fromCodeAction(codeAction: monaco.languages.CodeAction): ls.Code
  * Convert an LSP code action to a Monaco editor code action.
  *
  * @param codeAction The LSP code action to convert.
- * @param Uri The Monaco Uri constructor.
  * @returns The code action as Monaco editor code action.
  */
-export function toCodeAction(
-  codeAction: ls.CodeAction,
-  Uri: typeof monaco.Uri
-): monaco.languages.CodeAction {
+export function toCodeAction(codeAction: ls.CodeAction): monaco.languages.CodeAction {
   return {
     title: codeAction.title,
-    diagnostics: codeAction.diagnostics?.map((diagnostic) => toMarkerData(diagnostic, Uri)),
+    diagnostics: codeAction.diagnostics?.map(toMarkerData),
     disabled: codeAction.disabled?.reason,
-    edit: codeAction.edit ? toWorkspaceEdit(codeAction.edit, Uri) : undefined,
+    edit: codeAction.edit ? toWorkspaceEdit(codeAction.edit) : undefined,
     kind: codeAction.kind,
     isPreferred: codeAction.isPreferred
   }

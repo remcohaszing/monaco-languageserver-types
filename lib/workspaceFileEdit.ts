@@ -1,6 +1,7 @@
 import type * as monaco from 'monaco-editor'
 import type * as ls from 'vscode-languageserver-types'
 
+import { getMonaco } from './monaco.js'
 import {
   fromWorkspaceFileEditOptions,
   toWorkspaceFileEditOptions
@@ -52,13 +53,13 @@ export function fromWorkspaceFileEdit(
  * Convert an LSP workspace file edit to a Monaco editor workspace file edit.
  *
  * @param workspaceFileEdit The LSP workspace file edit to convert.
- * @param Uri The Monaco Uri constructor.
  * @returns The workspace file edit options Monaco editor workspace file edit options.
  */
 export function toWorkspaceFileEdit(
-  workspaceFileEdit: WorkspaceFileEdit,
-  Uri: typeof monaco.Uri
+  workspaceFileEdit: WorkspaceFileEdit
 ): monaco.languages.IWorkspaceFileEdit {
+  const { Uri } = getMonaco()
+
   if (workspaceFileEdit.kind === 'create') {
     return {
       newResource: Uri.parse(workspaceFileEdit.uri),

@@ -3,6 +3,7 @@ import type * as ls from 'vscode-languageserver-types'
 
 import { fromMarkerSeverity, toMarkerSeverity } from './markerSeverity.js'
 import { fromMarkerTag, toMarkerTag } from './markerTag.js'
+import { getMonaco } from './monaco.js'
 import { fromRange, toRange } from './range.js'
 import { fromRelatedInformation, toRelatedInformation } from './relatedInformation.js'
 
@@ -43,13 +44,11 @@ export function fromMarkerData(markerData: monaco.editor.IMarkerData): ls.Diagno
  * **Note**: A default severity of {@link monaco.MarkerSeverity.Error} is used.
  *
  * @param diagnostic The LSP diagnostic to convert.
- * @param Uri The Monaco Uri constructor.
  * @returns The diagnostic as Monaco editor marker data.
  */
-export function toMarkerData(
-  diagnostic: ls.Diagnostic,
-  Uri: typeof monaco.Uri
-): monaco.editor.IMarkerData {
+export function toMarkerData(diagnostic: ls.Diagnostic): monaco.editor.IMarkerData {
+  const { Uri } = getMonaco()
+
   return {
     ...toRange(diagnostic.range),
     code:
@@ -59,9 +58,7 @@ export function toMarkerData(
         ? { value: String(diagnostic.code), target: Uri.parse(diagnostic.codeDescription.href) }
         : String(diagnostic.code),
     message: diagnostic.message,
-    relatedInformation: diagnostic.relatedInformation?.map((relatedInformation) =>
-      toRelatedInformation(relatedInformation, Uri)
-    ),
+    relatedInformation: diagnostic.relatedInformation?.map(toRelatedInformation),
     severity: diagnostic.severity ? toMarkerSeverity(diagnostic.severity) : 8,
     source: diagnostic.source,
     tags: diagnostic.tags?.map(toMarkerTag)

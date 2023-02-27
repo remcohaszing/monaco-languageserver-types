@@ -25,11 +25,16 @@ For each Monaco editor / language server type, there are two functions:
 - `from*` converts a value from a Monaco editor type to a language server type.
 - `to*` converts a value from a language server type to a Monaco editor type.
 
+Some types require the Monaco editor module. However, users may load Monaco from different sources.
+To support this, you should call `setMonaco(monaco)` once in your application.
+
 For example:
 
 ```typescript
-import type * as monaco from 'monaco-editor'
-import { fromRange, toRange } from 'monaco-languageserver-types'
+import * as monaco from 'monaco-editor'
+import { fromRange, setMonaco, toRange } from 'monaco-languageserver-types'
+
+setMonaco(monaco)
 
 const monacoRange: monaco.IRange = {
   startLineNumber: 1,
@@ -44,9 +49,6 @@ const lsRange = fromRange(monacoRange)
 console.log(toRange(lsRange))
 // { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 }
 ```
-
-Some Monaco editor types contain a `monaco.Uri` instance. For these cases the `to*` accept
-`monaco.Uri` as a second argument.
 
 ## License
 
