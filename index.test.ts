@@ -179,6 +179,17 @@ runTests({
 })
 
 runTests({
+  from: fns.fromCommand,
+  to: fns.toCommand,
+  tests: [
+    {
+      lsp: { title: 'Compile file', command: 'file.compile', arguments: ['/file.ts'] },
+      monaco: { title: 'Compile file', id: 'file.compile', arguments: ['/file.ts'] }
+    }
+  ]
+})
+
+runTests({
   from: fns.fromCompletionItemKind,
   to: fns.toCompletionItemKind,
   tests: [
