@@ -151,6 +151,34 @@ runTests({
 })
 
 runTests({
+  from: fns.fromColor,
+  to: fns.toColor,
+  tests: [
+    {
+      lsp: { red: 0.1, blue: 0.2, green: 0.3, alpha: 0.4 },
+      monaco: { red: 0.1, blue: 0.2, green: 0.3, alpha: 0.4 }
+    }
+  ]
+})
+
+runTests({
+  from: fns.fromColorInformation,
+  to: fns.toColorInformation,
+  tests: [
+    {
+      lsp: {
+        range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
+        color: { red: 0.1, blue: 0.2, green: 0.3, alpha: 0.4 }
+      },
+      monaco: {
+        range: { startLineNumber: 1, startColumn: 11, endLineNumber: 3, endColumn: 21 },
+        color: { red: 0.1, blue: 0.2, green: 0.3, alpha: 0.4 }
+      }
+    }
+  ]
+})
+
+runTests({
   from: fns.fromCompletionItemKind,
   to: fns.toCompletionItemKind,
   tests: [

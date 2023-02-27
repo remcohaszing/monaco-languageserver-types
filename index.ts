@@ -1,4 +1,6 @@
 export * from './lib/codeAction.js'
+export * from './lib/color.js'
+export * from './lib/colorInformation.js'
 export * from './lib/completionItemKind.js'
 export * from './lib/documentSymbol.js'
 export * from './lib/formattingOptions.js'
