@@ -1,6 +1,8 @@
 import type * as monaco from 'monaco-editor'
 import type * as ls from 'vscode-languageserver-types'
 
+import { getMonaco } from './monaco.js'
+
 /**
  * Convert a Monaco editor completion item kind to an LSP completion item kind.
  *
@@ -10,58 +12,85 @@ import type * as ls from 'vscode-languageserver-types'
 export function fromCompletionItemKind(
   kind: monaco.languages.CompletionItemKind
 ): ls.CompletionItemKind {
-  if (kind === 22 || kind === 25 || kind === 26) {
-    throw new TypeError(`Completion kind ${kind} is not supported in LSP.`)
+  const { CompletionItemKind } = getMonaco().languages
+
+  if (kind === CompletionItemKind.Text) {
+    return 1
   }
-  return kind === 0
-    ? 2
-    : kind === 1
-    ? 3
-    : kind === 2
-    ? 4
-    : kind === 3
-    ? 5
-    : kind === 4
-    ? 6
-    : kind === 5
-    ? 7
-    : kind === 6
-    ? 22
-    : kind === 7
-    ? 8
-    : kind === 8
-    ? 9
-    : kind === 9
-    ? 10
-    : kind === 10
-    ? 23
-    : kind === 11
-    ? 24
-    : kind === 12
-    ? 11
-    : kind === 13
-    ? 12
-    : kind === 14
-    ? 21
-    : kind === 15
-    ? 13
-    : kind === 16
-    ? 20
-    : kind === 17
-    ? 14
-    : kind === 18
-    ? 1
-    : kind === 19
-    ? 16
-    : kind === 20
-    ? 17
-    : kind === 21
-    ? 18
-    : kind === 23
-    ? 19
-    : kind === 24
-    ? 25
-    : 15
+  if (kind === CompletionItemKind.Method) {
+    return 2
+  }
+  if (kind === CompletionItemKind.Function) {
+    return 3
+  }
+  if (kind === CompletionItemKind.Constructor) {
+    return 4
+  }
+  if (kind === CompletionItemKind.Field) {
+    return 5
+  }
+  if (kind === CompletionItemKind.Variable) {
+    return 6
+  }
+  if (kind === CompletionItemKind.Class) {
+    return 7
+  }
+  if (kind === CompletionItemKind.Interface) {
+    return 8
+  }
+  if (kind === CompletionItemKind.Module) {
+    return 9
+  }
+  if (kind === CompletionItemKind.Property) {
+    return 10
+  }
+  if (kind === CompletionItemKind.Unit) {
+    return 11
+  }
+  if (kind === CompletionItemKind.Value) {
+    return 12
+  }
+  if (kind === CompletionItemKind.Enum) {
+    return 13
+  }
+  if (kind === CompletionItemKind.Keyword) {
+    return 14
+  }
+  if (kind === CompletionItemKind.Snippet) {
+    return 15
+  }
+  if (kind === CompletionItemKind.Color) {
+    return 16
+  }
+  if (kind === CompletionItemKind.File) {
+    return 17
+  }
+  if (kind === CompletionItemKind.Reference) {
+    return 18
+  }
+  if (kind === CompletionItemKind.Folder) {
+    return 19
+  }
+  if (kind === CompletionItemKind.EnumMember) {
+    return 20
+  }
+  if (kind === CompletionItemKind.Constant) {
+    return 21
+  }
+  if (kind === CompletionItemKind.Struct) {
+    return 22
+  }
+  if (kind === CompletionItemKind.Event) {
+    return 23
+  }
+  if (kind === CompletionItemKind.Operator) {
+    return 24
+  }
+  if (kind === CompletionItemKind.TypeParameter) {
+    return 25
+  }
+
+  throw new TypeError(`Completion kind ${kind} is not supported in LSP.`)
 }
 
 /**
@@ -73,53 +102,81 @@ export function fromCompletionItemKind(
 export function toCompletionItemKind(
   kind: ls.CompletionItemKind
 ): monaco.languages.CompletionItemKind {
-  return kind === 1
-    ? 18
-    : kind === 2
-    ? 0
-    : kind === 3
-    ? 1
-    : kind === 4
-    ? 2
-    : kind === 5
-    ? 3
-    : kind === 6
-    ? 4
-    : kind === 7
-    ? 5
-    : kind === 8
-    ? 7
-    : kind === 9
-    ? 8
-    : kind === 10
-    ? 9
-    : kind === 11
-    ? 12
-    : kind === 12
-    ? 13
-    : kind === 13
-    ? 15
-    : kind === 14
-    ? 17
-    : kind === 15
-    ? 27
-    : kind === 16
-    ? 19
-    : kind === 17
-    ? 20
-    : kind === 18
-    ? 21
-    : kind === 19
-    ? 23
-    : kind === 20
-    ? 16
-    : kind === 21
-    ? 14
-    : kind === 22
-    ? 6
-    : kind === 23
-    ? 10
-    : kind === 24
-    ? 11
-    : 24
+  const { CompletionItemKind } = getMonaco().languages
+
+  if (kind === 1) {
+    return CompletionItemKind.Text
+  }
+  if (kind === 2) {
+    return CompletionItemKind.Method
+  }
+  if (kind === 3) {
+    return CompletionItemKind.Function
+  }
+  if (kind === 4) {
+    return CompletionItemKind.Constructor
+  }
+  if (kind === 5) {
+    return CompletionItemKind.Field
+  }
+  if (kind === 6) {
+    return CompletionItemKind.Variable
+  }
+  if (kind === 7) {
+    return CompletionItemKind.Class
+  }
+  if (kind === 8) {
+    return CompletionItemKind.Interface
+  }
+  if (kind === 9) {
+    return CompletionItemKind.Module
+  }
+  if (kind === 10) {
+    return CompletionItemKind.Property
+  }
+  if (kind === 11) {
+    return CompletionItemKind.Unit
+  }
+  if (kind === 12) {
+    return CompletionItemKind.Value
+  }
+  if (kind === 13) {
+    return CompletionItemKind.Enum
+  }
+  if (kind === 14) {
+    return CompletionItemKind.Keyword
+  }
+  if (kind === 15) {
+    return CompletionItemKind.Snippet
+  }
+  if (kind === 16) {
+    return CompletionItemKind.Color
+  }
+  if (kind === 17) {
+    return CompletionItemKind.File
+  }
+  if (kind === 18) {
+    return CompletionItemKind.Reference
+  }
+  if (kind === 19) {
+    return CompletionItemKind.Folder
+  }
+  if (kind === 20) {
+    return CompletionItemKind.EnumMember
+  }
+  if (kind === 21) {
+    return CompletionItemKind.Constant
+  }
+  if (kind === 22) {
+    return CompletionItemKind.Struct
+  }
+  if (kind === 23) {
+    return CompletionItemKind.Event
+  }
+  if (kind === 24) {
+    return CompletionItemKind.Operator
+  }
+
+  // Kind === 25
+  return CompletionItemKind.TypeParameter
 }
