@@ -231,6 +231,17 @@ runTests({
 })
 
 runTests({
+  from: fns.fromCompletionItemTag,
+  to: fns.toCompletionItemTag,
+  tests: [
+    {
+      lsp: ls.CompletionItemTag.Deprecated,
+      monaco: monaco.languages.CompletionItemTag.Deprecated
+    }
+  ]
+})
+
+runTests({
   from: fns.fromDocumentSymbol,
   to: fns.toDocumentSymbol,
   tests: [
