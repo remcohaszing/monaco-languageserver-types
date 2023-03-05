@@ -1,4 +1,4 @@
-import type * as monaco from 'monaco-editor'
+import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-types'
 
 import { fromRange, toRange } from './range.js'

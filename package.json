@@ -29,6 +29,7 @@
     "test": "vitest --run --coverage"
   },
   "dependencies": {
+    "monaco-types": "^0.1.0",
     "vscode-languageserver-types": "^3.0.0"
   },
   "devDependencies": {
