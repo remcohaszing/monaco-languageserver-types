@@ -5,11 +5,11 @@ import { expect, test } from 'vitest'
 
 import { setMonaco } from '../index.js'
 
-interface TestCase<T extends (obj: any) => any> {
+interface TestCase<T extends (obj: any, options: any) => any> {
   /**
    * Convert from Monaco editor to LSP.
    */
-  from: (monacoType: ReturnType<T>) => Parameters<T>[0]
+  from: (monacoType: ReturnType<T>, options: any) => Parameters<T>[0]
 
   /**
    * Convert from LSP to Monaco editor.
@@ -34,6 +34,10 @@ interface TestCase<T extends (obj: any) => any> {
      * The Monaco editor value.
      */
     monaco: ReturnType<T>
+
+    toOptions?: unknown
+
+    fromOptions?: unknown
   }>
 }
 
@@ -50,11 +54,11 @@ const inspectOptions: InspectOptions = {
 /**
  * @param testCase The test case to run
  */
-export function runTests<T extends (obj: any) => any>(testCase: TestCase<T>): void {
+export function runTests<T extends (obj: any, options: any) => any>(testCase: TestCase<T>): void {
   for (const values of testCase.tests) {
     if (values.only !== 'from') {
       test(`${testCase.to.name}(${inspect(values.lsp, inspectOptions)})`, () => {
-        const result = testCase.to(values.lsp) as unknown
+        const result = testCase.to(values.lsp, values.toOptions) as unknown
         expect(result).toStrictEqual(values.monaco)
       })
     }
@@ -63,7 +67,7 @@ export function runTests<T extends (obj: any) => any>(testCase: TestCase<T>): vo
   for (const values of testCase.tests) {
     if (values.only !== 'to') {
       test(`${testCase.from.name}(${inspect(values.monaco, inspectOptions)})`, () => {
-        const result = testCase.from(values.monaco)
+        const result = testCase.from(values.monaco, values.fromOptions)
         expect(result).toStrictEqual(values.lsp)
       })
     }
