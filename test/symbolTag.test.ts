@@ -7,9 +7,7 @@ import { fromSymbolTag, toSymbolTag } from '../index.js'
 runTests(
   fromSymbolTag,
   toSymbolTag
-)([
-  {
-    lsp: ls.SymbolTag.Deprecated,
-    monaco: monaco.languages.SymbolTag.Deprecated
-  }
-])
+)({
+  lsp: ls.SymbolTag.Deprecated,
+  monaco: monaco.languages.SymbolTag.Deprecated
+})

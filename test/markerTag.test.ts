@@ -4,10 +4,7 @@ import * as ls from 'vscode-languageserver-types'
 import { runTests } from './utils.js'
 import { fromMarkerTag, toMarkerTag } from '../index.js'
 
-runTests(
-  fromMarkerTag,
-  toMarkerTag
-)([
+runTests(fromMarkerTag, toMarkerTag)(
   {
     lsp: ls.DiagnosticTag.Deprecated,
     monaco: monaco.MarkerTag.Deprecated
@@ -16,4 +13,4 @@ runTests(
     lsp: ls.DiagnosticTag.Unnecessary,
     monaco: monaco.MarkerTag.Unnecessary
   }
-])
+)

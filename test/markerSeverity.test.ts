@@ -4,25 +4,9 @@ import * as ls from 'vscode-languageserver-types'
 import { runTests } from './utils.js'
 import { fromMarkerSeverity, toMarkerSeverity } from '../index.js'
 
-runTests(
-  fromMarkerSeverity,
-  toMarkerSeverity,
-  )([
-    {
-      lsp: ls.DiagnosticSeverity.Hint,
-      monaco: monaco.MarkerSeverity.Hint
-    },
-    {
-      lsp: ls.DiagnosticSeverity.Information,
-      monaco: monaco.MarkerSeverity.Info
-    },
-    {
-      lsp: ls.DiagnosticSeverity.Warning,
-      monaco: monaco.MarkerSeverity.Warning
-    },
-    {
-      lsp: ls.DiagnosticSeverity.Error,
-      monaco: monaco.MarkerSeverity.Error
-    }
-  ]
+runTests(fromMarkerSeverity, toMarkerSeverity)(
+  { lsp: ls.DiagnosticSeverity.Hint, monaco: monaco.MarkerSeverity.Hint },
+  { lsp: ls.DiagnosticSeverity.Information, monaco: monaco.MarkerSeverity.Info },
+  { lsp: ls.DiagnosticSeverity.Warning, monaco: monaco.MarkerSeverity.Warning },
+  { lsp: ls.DiagnosticSeverity.Error, monaco: monaco.MarkerSeverity.Error }
 )

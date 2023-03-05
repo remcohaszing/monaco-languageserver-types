@@ -4,10 +4,7 @@ import * as ls from 'vscode-languageserver-types'
 import { runTests } from './utils.js'
 import { fromCompletionItem, toCompletionItem } from '../index.js'
 
-runTests(
-  fromCompletionItem,
-  toCompletionItem
-)([
+runTests(fromCompletionItem, toCompletionItem)(
   {
     toOptions: {
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
@@ -291,4 +288,4 @@ runTests(
       tags: [monaco.languages.CompletionItemTag.Deprecated]
     }
   }
-])
+)

@@ -4,9 +4,7 @@ import { fromCommand, toCommand } from '../index.js'
 runTests(
   fromCommand,
   toCommand
-)([
-  {
-    lsp: { title: 'Compile file', command: 'file.compile', arguments: ['/file.ts'] },
-    monaco: { title: 'Compile file', id: 'file.compile', arguments: ['/file.ts'] }
-  }
-])
+)({
+  lsp: { title: 'Compile file', command: 'file.compile', arguments: ['/file.ts'] },
+  monaco: { title: 'Compile file', id: 'file.compile', arguments: ['/file.ts'] }
+})

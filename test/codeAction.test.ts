@@ -4,10 +4,7 @@ import * as ls from 'vscode-languageserver-types'
 import { runTests } from './utils.js'
 import { fromCodeAction, toCodeAction } from '../index.js'
 
-runTests(
-  fromCodeAction,
-  toCodeAction
-)([
+runTests(fromCodeAction, toCodeAction)(
   {
     lsp: {
       title: 'Do something',
@@ -92,4 +89,4 @@ runTests(
       isPreferred: false
     }
   }
-])
+)

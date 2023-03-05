@@ -51,7 +51,7 @@ export function runTests<M, L, MO = never, LO = never>(
   from: (monacoType: M, fromOptions: MO) => L,
   to: (lsType: L, toOptions: LO) => M
 ) {
-  return (tests: Iterable<TestCase<M, L, MO, LO>>) => {
+  return (...tests: TestCase<M, L, MO, LO>[]) => {
     for (const values of tests) {
       if (values.only !== 'from') {
         test(`${to.name}(${inspect(values.lsp, inspectOptions)})`, () => {

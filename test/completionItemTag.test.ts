@@ -7,9 +7,7 @@ import { fromCompletionItemTag, toCompletionItemTag } from '../index.js'
 runTests(
   fromCompletionItemTag,
   toCompletionItemTag
-)([
-  {
-    lsp: ls.CompletionItemTag.Deprecated,
-    monaco: monaco.languages.CompletionItemTag.Deprecated
-  }
-])
+)({
+  lsp: ls.CompletionItemTag.Deprecated,
+  monaco: monaco.languages.CompletionItemTag.Deprecated
+})
