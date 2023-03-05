@@ -4,10 +4,10 @@ import * as ls from 'vscode-languageserver-types'
 import { runTests } from './utils.js'
 import { fromSymbolKind, toSymbolKind } from '../index.js'
 
-runTests({
-  from: fromSymbolKind,
-  to: toSymbolKind,
-  tests: [
+runTests(
+  fromSymbolKind,
+  toSymbolKind,
+  )([
     { lsp: ls.SymbolKind.File, monaco: monaco.languages.SymbolKind.File },
     { lsp: ls.SymbolKind.Module, monaco: monaco.languages.SymbolKind.Module },
     { lsp: ls.SymbolKind.Namespace, monaco: monaco.languages.SymbolKind.Namespace },
@@ -35,4 +35,4 @@ runTests({
     { lsp: ls.SymbolKind.Operator, monaco: monaco.languages.SymbolKind.Operator },
     { lsp: ls.SymbolKind.TypeParameter, monaco: monaco.languages.SymbolKind.TypeParameter }
   ]
-})
+)

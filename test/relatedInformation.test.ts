@@ -3,10 +3,10 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import { runTests } from './utils.js'
 import { fromRelatedInformation, toRelatedInformation } from '../index.js'
 
-runTests({
-  from: fromRelatedInformation,
-  to: toRelatedInformation,
-  tests: [
+runTests(
+  fromRelatedInformation,
+  toRelatedInformation,
+  )([
     {
       lsp: {
         location: {
@@ -25,4 +25,4 @@ runTests({
       }
     }
   ]
-})
+)

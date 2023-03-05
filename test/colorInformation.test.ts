@@ -1,10 +1,10 @@
 import { runTests } from './utils.js'
 import { fromColorInformation, toColorInformation } from '../index.js'
 
-runTests({
-  from: fromColorInformation,
-  to: toColorInformation,
-  tests: [
+runTests(
+  fromColorInformation,
+  toColorInformation,
+  )([
     {
       lsp: {
         range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
@@ -16,4 +16,4 @@ runTests({
       }
     }
   ]
-})
+)

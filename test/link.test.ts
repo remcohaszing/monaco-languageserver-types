@@ -3,10 +3,10 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import { runTests } from './utils.js'
 import { fromLink, toLink } from '../index.js'
 
-runTests({
-  from: fromLink,
-  to: toLink,
-  tests: [
+runTests(
+  fromLink,
+  toLink,
+  )([
     {
       lsp: {
         range: {
@@ -48,4 +48,4 @@ runTests({
       }
     }
   ]
-})
+)

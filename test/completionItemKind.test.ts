@@ -4,10 +4,10 @@ import * as ls from 'vscode-languageserver-types'
 import { runTests } from './utils.js'
 import { fromCompletionItemKind, toCompletionItemKind } from '../index.js'
 
-runTests({
-  from: fromCompletionItemKind,
-  to: toCompletionItemKind,
-  tests: [
+runTests(
+  fromCompletionItemKind,
+  toCompletionItemKind,
+  )([
     { lsp: ls.CompletionItemKind.Text, monaco: monaco.languages.CompletionItemKind.Text },
     { lsp: ls.CompletionItemKind.Method, monaco: monaco.languages.CompletionItemKind.Method },
     { lsp: ls.CompletionItemKind.Function, monaco: monaco.languages.CompletionItemKind.Function },
@@ -43,4 +43,4 @@ runTests({
       monaco: monaco.languages.CompletionItemKind.TypeParameter
     }
   ]
-})
+)

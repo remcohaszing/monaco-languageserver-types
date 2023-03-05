@@ -1,10 +1,10 @@
 import { runTests } from './utils.js'
 import { fromWorkspaceFileEditOptions, toWorkspaceFileEditOptions } from '../index.js'
 
-runTests({
-  from: fromWorkspaceFileEditOptions,
-  to: toWorkspaceFileEditOptions,
-  tests: [
+runTests(
+  fromWorkspaceFileEditOptions,
+  toWorkspaceFileEditOptions,
+  )([
     {
       lsp: {
         ignoreIfExists: true,
@@ -48,4 +48,4 @@ runTests({
       }
     }
   ]
-})
+)

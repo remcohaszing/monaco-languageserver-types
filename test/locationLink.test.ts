@@ -3,10 +3,10 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import { runTests } from './utils.js'
 import { fromLocationLink, toLocationLink } from '../index.js'
 
-runTests({
-  from: fromLocationLink,
-  to: toLocationLink,
-  tests: [
+runTests(
+  fromLocationLink,
+  toLocationLink,
+  )([
     {
       lsp: {
         originSelectionRange: {
@@ -101,4 +101,4 @@ runTests({
       }
     }
   ]
-})
+)

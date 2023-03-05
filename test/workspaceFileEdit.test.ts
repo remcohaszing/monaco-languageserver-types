@@ -3,10 +3,10 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import { runTests } from './utils.js'
 import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from '../index.js'
 
-runTests({
-  from: fromWorkspaceFileEdit,
-  to: toWorkspaceFileEdit,
-  tests: [
+runTests(
+  fromWorkspaceFileEdit,
+  toWorkspaceFileEdit,
+  )([
     {
       lsp: {
         kind: 'rename',
@@ -43,4 +43,4 @@ runTests({
       }
     }
   ]
-})
+)

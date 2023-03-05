@@ -1,10 +1,10 @@
 import { runTests } from './utils.js'
 import { fromHover, toHover } from '../index.js'
 
-runTests({
-  from: fromHover,
-  to: toHover,
-  tests: [
+runTests(
+  fromHover,
+  toHover,
+  )([
     {
       lsp: {
         range: {
@@ -34,4 +34,4 @@ runTests({
       }
     }
   ]
-})
+)

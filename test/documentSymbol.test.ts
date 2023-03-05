@@ -4,10 +4,10 @@ import * as ls from 'vscode-languageserver-types'
 import { runTests } from './utils.js'
 import { fromDocumentSymbol, toDocumentSymbol } from '../index.js'
 
-runTests({
-  from: fromDocumentSymbol,
-  to: toDocumentSymbol,
-  tests: [
+runTests(
+  fromDocumentSymbol,
+  toDocumentSymbol,
+  )([
     {
       lsp: {
         children: undefined,
@@ -74,4 +74,4 @@ runTests({
       }
     }
   ]
-})
+)

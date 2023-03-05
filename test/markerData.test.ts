@@ -4,10 +4,10 @@ import * as ls from 'vscode-languageserver-types'
 import { runTests } from './utils.js'
 import { fromMarkerData, toMarkerData } from '../index.js'
 
-runTests({
-  from: fromMarkerData,
-  to: toMarkerData,
-  tests: [
+runTests(
+  fromMarkerData,
+  toMarkerData,
+  )([
     {
       lsp: {
         code: 'unused',
@@ -98,4 +98,4 @@ runTests({
       }
     }
   ]
-})
+)

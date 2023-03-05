@@ -3,10 +3,10 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import { runTests } from './utils.js'
 import { fromWorkspaceEdit, toWorkspaceEdit } from '../index.js'
 
-runTests({
-  from: fromWorkspaceEdit,
-  to: toWorkspaceEdit,
-  tests: [
+runTests(
+  fromWorkspaceEdit,
+  toWorkspaceEdit,
+  )([
     {
       lsp: {
         changes: {
@@ -62,4 +62,4 @@ runTests({
       }
     }
   ]
-})
+)
