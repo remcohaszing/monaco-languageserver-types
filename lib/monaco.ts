@@ -1,13 +1,13 @@
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-let monacoEditor: typeof import('monaco-editor') | undefined
+import { type MonacoEditor } from 'monaco-types'
+
+let monacoEditor: MonacoEditor | undefined
 
 /**
  * Get the Monaco editor module
  *
  * @returns The Monaco editor module
  */
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-export function getMonaco(): typeof import('monaco-editor') {
+export function getMonaco(): MonacoEditor {
   if (!monacoEditor) {
     throw new Error('Monaco is undefined. Call setMonaco(monaco) first.')
   }
@@ -19,7 +19,6 @@ export function getMonaco(): typeof import('monaco-editor') {
  *
  * @param monaco The Monaco editor module
  */
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
-export function setMonaco(monaco: typeof import('monaco-editor')): void {
+export function setMonaco(monaco: MonacoEditor): void {
   monacoEditor = monaco
 }
