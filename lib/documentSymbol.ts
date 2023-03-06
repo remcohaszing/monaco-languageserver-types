@@ -16,7 +16,7 @@ export function fromDocumentSymbol(
 ): ls.DocumentSymbol {
   return {
     children: documentSymbol.children?.map(fromDocumentSymbol),
-    detail: documentSymbol.detail || undefined,
+    detail: documentSymbol.detail,
     kind: fromSymbolKind(documentSymbol.kind),
     name: documentSymbol.name,
     range: fromRange(documentSymbol.range),

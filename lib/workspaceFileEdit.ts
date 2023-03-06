@@ -18,35 +18,35 @@ type WorkspaceFileEdit = ls.CreateFile | ls.DeleteFile | ls.RenameFile
 export function fromWorkspaceFileEdit(
   workspaceFileEdit: monaco.languages.IWorkspaceFileEdit
 ): WorkspaceFileEdit {
+  let result: WorkspaceFileEdit
+
   if (workspaceFileEdit.oldResource) {
-    if (workspaceFileEdit.newResource) {
-      return {
-        kind: 'rename',
-        oldUri: String(workspaceFileEdit.oldResource),
-        newUri: String(workspaceFileEdit.newResource),
-        options:
-          workspaceFileEdit.options && fromWorkspaceFileEditOptions(workspaceFileEdit.options)
-      }
-    }
-
-    return {
-      kind: 'delete',
-      uri: String(workspaceFileEdit.oldResource),
-      options: workspaceFileEdit.options && fromWorkspaceFileEditOptions(workspaceFileEdit.options)
-    }
-  }
-
-  if (workspaceFileEdit.newResource) {
-    return {
+    result = workspaceFileEdit.newResource
+      ? {
+          kind: 'rename',
+          oldUri: String(workspaceFileEdit.oldResource),
+          newUri: String(workspaceFileEdit.newResource)
+        }
+      : {
+          kind: 'delete',
+          uri: String(workspaceFileEdit.oldResource)
+        }
+  } else if (workspaceFileEdit.newResource) {
+    result = {
       kind: 'create',
-      uri: String(workspaceFileEdit.newResource),
-      options: workspaceFileEdit.options && fromWorkspaceFileEditOptions(workspaceFileEdit.options)
+      uri: String(workspaceFileEdit.newResource)
     }
+  } else {
+    throw new Error('Could not convert workspace file edit to language server type', {
+      cause: workspaceFileEdit
+    })
   }
 
-  throw new Error('Could not convert workspace file edit to language server type', {
-    cause: workspaceFileEdit
-  })
+  if (workspaceFileEdit.options) {
+    result.options = fromWorkspaceFileEditOptions(workspaceFileEdit.options)
+  }
+
+  return result
 }
 
 /**
@@ -59,30 +59,19 @@ export function toWorkspaceFileEdit(
   workspaceFileEdit: WorkspaceFileEdit
 ): monaco.languages.IWorkspaceFileEdit {
   const { Uri } = getMonaco()
+  const result: monaco.languages.IWorkspaceFileEdit =
+    workspaceFileEdit.kind === 'create'
+      ? { newResource: Uri.parse(workspaceFileEdit.uri) }
+      : workspaceFileEdit.kind === 'delete'
+      ? { oldResource: Uri.parse(workspaceFileEdit.uri) }
+      : {
+          oldResource: Uri.parse(workspaceFileEdit.oldUri),
+          newResource: Uri.parse(workspaceFileEdit.newUri)
+        }
 
-  if (workspaceFileEdit.kind === 'create') {
-    return {
-      newResource: Uri.parse(workspaceFileEdit.uri),
-      options: workspaceFileEdit.options
-        ? toWorkspaceFileEditOptions(workspaceFileEdit.options)
-        : undefined
-    }
+  if (workspaceFileEdit.options) {
+    result.options = toWorkspaceFileEditOptions(workspaceFileEdit.options)
   }
 
-  if (workspaceFileEdit.kind === 'delete') {
-    return {
-      oldResource: Uri.parse(workspaceFileEdit.uri),
-      options: workspaceFileEdit.options
-        ? toWorkspaceFileEditOptions(workspaceFileEdit.options)
-        : undefined
-    }
-  }
-
-  return {
-    oldResource: Uri.parse(workspaceFileEdit.oldUri),
-    newResource: Uri.parse(workspaceFileEdit.newUri),
-    options: workspaceFileEdit.options
-      ? toWorkspaceFileEditOptions(workspaceFileEdit.options)
-      : undefined
-  }
+  return result
 }

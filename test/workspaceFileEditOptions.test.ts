@@ -31,17 +31,7 @@ runTests(fromWorkspaceFileEditOptions, toWorkspaceFileEditOptions)(
     }
   },
   {
-    lsp: {
-      ignoreIfExists: undefined,
-      ignoreIfNotExists: undefined,
-      overwrite: undefined,
-      recursive: undefined
-    },
-    monaco: {
-      ignoreIfExists: undefined,
-      ignoreIfNotExists: undefined,
-      overwrite: undefined,
-      recursive: undefined
-    }
+    lsp: {},
+    monaco: {}
   }
 )

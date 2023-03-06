@@ -30,12 +30,56 @@ runTests(fromDocumentSymbol, toDocumentSymbol)(
       children: [
         {
           children: [],
-          detail: undefined,
+          detail: '',
           kind: ls.SymbolKind.Property,
           name: 'name',
           range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
           selectionRange: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
           tags: []
+        }
+      ],
+      detail: 'Person class',
+      kind: ls.SymbolKind.Class,
+      name: 'Person',
+      range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
+      selectionRange: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
+      tags: [ls.SymbolTag.Deprecated]
+    },
+    monaco: {
+      children: [
+        {
+          children: [],
+          detail: '',
+          kind: monaco.languages.SymbolKind.Property,
+          name: 'name',
+          range: { startLineNumber: 1, startColumn: 11, endLineNumber: 3, endColumn: 21 },
+          selectionRange: {
+            startLineNumber: 1,
+            startColumn: 11,
+            endLineNumber: 3,
+            endColumn: 21
+          },
+          tags: []
+        }
+      ],
+      detail: 'Person class',
+      kind: monaco.languages.SymbolKind.Class,
+      name: 'Person',
+      range: { startLineNumber: 1, startColumn: 11, endLineNumber: 3, endColumn: 21 },
+      selectionRange: { startLineNumber: 1, startColumn: 11, endLineNumber: 3, endColumn: 21 },
+      tags: [monaco.languages.SymbolTag.Deprecated]
+    }
+  },
+  {
+    only: 'to',
+    lsp: {
+      children: [
+        {
+          children: [],
+          kind: ls.SymbolKind.Property,
+          name: 'name',
+          range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
+          selectionRange: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } }
         }
       ],
       detail: 'Person class',

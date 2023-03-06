@@ -29,8 +29,7 @@ runTests(
       {
         kind: 'rename',
         oldUri: 'file:///old.txt',
-        newUri: 'file:///new.txt',
-        options: undefined
+        newUri: 'file:///new.txt'
       }
     ]
   },
@@ -54,8 +53,7 @@ runTests(
       },
       {
         oldResource: monaco.Uri.parse('file:///old.txt'),
-        newResource: monaco.Uri.parse('file:///new.txt'),
-        options: undefined
+        newResource: monaco.Uri.parse('file:///new.txt')
       }
     ]
   }

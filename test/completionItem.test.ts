@@ -173,6 +173,27 @@ runTests(fromCompletionItem, toCompletionItem)(
         newText: 'text',
         range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } }
       },
+      documentation: { kind: 'markdown', value: 'Documentation' }
+    },
+    monaco: {
+      insertText: 'text',
+      kind: monaco.languages.CompletionItemKind.Class,
+      label: 'Insert "text"',
+      range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 },
+      documentation: { value: 'Documentation' }
+    }
+  },
+  {
+    toOptions: {
+      range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
+    },
+    lsp: {
+      kind: ls.CompletionItemKind.Class,
+      label: 'Insert "text"',
+      textEdit: {
+        newText: 'text',
+        range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } }
+      },
       filterText: 'Filter text'
     },
     monaco: {
@@ -286,6 +307,22 @@ runTests(fromCompletionItem, toCompletionItem)(
       label: 'Insert "text"',
       range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 },
       tags: [monaco.languages.CompletionItemTag.Deprecated]
+    }
+  },
+  {
+    only: 'to',
+    toOptions: {
+      range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
+    },
+    lsp: {
+      kind: ls.CompletionItemKind.Class,
+      label: 'Insert "text"'
+    },
+    monaco: {
+      insertText: '',
+      kind: monaco.languages.CompletionItemKind.Class,
+      label: 'Insert "text"',
+      range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     }
   }
 )

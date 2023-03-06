@@ -28,7 +28,7 @@ function getDeprecatedMarkupValue(value: ls.MarkedString): monaco.IMarkdownStrin
     return { value }
   }
 
-  return { value: `\`\`\`\n${value.language}\n${value.value}\`\`\`` }
+  return { value: `\`\`\`${value.language}\n${value.value}\n\`\`\`` }
 }
 
 /**
