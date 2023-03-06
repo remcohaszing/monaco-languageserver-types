@@ -48,8 +48,8 @@ const inspectOptions: InspectOptions = {
  * @returns A function for running tests.
  */
 export function runTests<M, L, MO = never, LO = never>(
-  from: (monacoType: M, fromOptions: MO) => L,
-  to: (lsType: L, toOptions: LO) => M
+  from: (monacoType: M, fromOptions: MO) => L | undefined,
+  to: (lsType: L, toOptions: LO) => M | undefined
 ) {
   return (...tests: TestCase<M, L, MO, LO>[]) => {
     for (const values of tests) {

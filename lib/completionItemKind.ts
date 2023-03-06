@@ -11,7 +11,7 @@ import { getMonaco } from './monaco.js'
  */
 export function fromCompletionItemKind(
   kind: monaco.languages.CompletionItemKind
-): ls.CompletionItemKind {
+): ls.CompletionItemKind | undefined {
   const { CompletionItemKind } = getMonaco().languages
 
   if (kind === CompletionItemKind.Text) {
@@ -89,8 +89,6 @@ export function fromCompletionItemKind(
   if (kind === CompletionItemKind.TypeParameter) {
     return 25
   }
-
-  throw new TypeError(`Completion kind ${kind} is not supported in LSP.`)
 }
 
 /**
