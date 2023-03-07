@@ -7,7 +7,6 @@ import { fromDocumentSymbol, toDocumentSymbol } from '../index.js'
 runTests(fromDocumentSymbol, toDocumentSymbol)(
   {
     lsp: {
-      children: undefined,
       detail: 'Person class',
       kind: ls.SymbolKind.Class,
       name: 'Person',
@@ -16,7 +15,6 @@ runTests(fromDocumentSymbol, toDocumentSymbol)(
       tags: []
     },
     monaco: {
-      children: undefined,
       detail: 'Person class',
       kind: monaco.languages.SymbolKind.Class,
       name: 'Person',

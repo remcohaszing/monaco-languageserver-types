@@ -11,15 +11,19 @@ import { fromRange, toRange } from './range.js'
  * @returns The location link as an LSP location link.
  */
 export function fromLocationLink(locationLink: monaco.languages.LocationLink): ls.LocationLink {
-  return {
-    originSelectionRange:
-      locationLink.originSelectionRange && fromRange(locationLink.originSelectionRange),
+  const result: ls.LocationLink = {
     targetRange: fromRange(locationLink.range),
     targetSelectionRange: locationLink.targetSelectionRange
       ? fromRange(locationLink.targetSelectionRange)
       : fromRange(locationLink.range),
     targetUri: String(locationLink.uri)
   }
+
+  if (locationLink.originSelectionRange) {
+    result.originSelectionRange = fromRange(locationLink.originSelectionRange)
+  }
+
+  return result
 }
 
 /**
@@ -31,11 +35,15 @@ export function fromLocationLink(locationLink: monaco.languages.LocationLink): l
 export function toLocationLink(locationLink: ls.LocationLink): monaco.languages.LocationLink {
   const { Uri } = getMonaco()
 
-  return {
-    originSelectionRange:
-      locationLink.originSelectionRange && toRange(locationLink.originSelectionRange),
+  const result: monaco.languages.LocationLink = {
     range: toRange(locationLink.targetRange),
     targetSelectionRange: toRange(locationLink.targetSelectionRange),
     uri: Uri.parse(locationLink.targetUri)
   }
+
+  if (locationLink.originSelectionRange) {
+    result.originSelectionRange = toRange(locationLink.originSelectionRange)
+  }
+
+  return result
 }

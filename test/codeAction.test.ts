@@ -12,17 +12,9 @@ runTests(fromCodeAction, toCodeAction)(
         {
           message: 'Something is wrong',
           range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-          code: undefined,
-          codeDescription: undefined,
-          relatedInformation: undefined,
-          severity: ls.DiagnosticSeverity.Error,
-          source: undefined,
-          tags: undefined
+          severity: ls.DiagnosticSeverity.Error
         }
       ],
-      disabled: undefined,
-      edit: undefined,
-      kind: undefined,
       isPreferred: false
     },
     monaco: {
@@ -30,20 +22,13 @@ runTests(fromCodeAction, toCodeAction)(
       diagnostics: [
         {
           message: 'Something is wrong',
-          code: undefined,
           startLineNumber: 1,
           startColumn: 11,
           endLineNumber: 3,
           endColumn: 21,
-          relatedInformation: undefined,
-          severity: monaco.MarkerSeverity.Error,
-          source: undefined,
-          tags: undefined
+          severity: monaco.MarkerSeverity.Error
         }
       ],
-      disabled: undefined,
-      edit: undefined,
-      kind: undefined,
       isPreferred: false
     }
   },
@@ -54,12 +39,7 @@ runTests(fromCodeAction, toCodeAction)(
         {
           message: 'Something is wrong',
           range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-          code: undefined,
-          codeDescription: undefined,
-          relatedInformation: undefined,
-          severity: ls.DiagnosticSeverity.Error,
-          source: undefined,
-          tags: undefined
+          severity: ls.DiagnosticSeverity.Error
         }
       ],
       disabled: { reason: 'Because of testing' },
@@ -72,15 +52,11 @@ runTests(fromCodeAction, toCodeAction)(
       diagnostics: [
         {
           message: 'Something is wrong',
-          code: undefined,
           startLineNumber: 1,
           startColumn: 11,
           endLineNumber: 3,
           endColumn: 21,
-          relatedInformation: undefined,
-          severity: monaco.MarkerSeverity.Error,
-          source: undefined,
-          tags: undefined
+          severity: monaco.MarkerSeverity.Error
         }
       ],
       disabled: 'Because of testing',

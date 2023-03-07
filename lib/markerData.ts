@@ -15,24 +15,28 @@ import { fromRelatedInformation, toRelatedInformation } from './relatedInformati
  */
 export function fromMarkerData(markerData: monaco.editor.IMarkerData): ls.Diagnostic {
   const diagnostic: ls.Diagnostic = {
-    code: String(markerData.code),
     message: markerData.message,
     range: fromRange(markerData),
-    severity: fromMarkerSeverity(markerData.severity),
-    source: markerData.source,
-    tags: markerData.tags?.map(fromMarkerTag),
-    relatedInformation: markerData.relatedInformation?.map(fromRelatedInformation)
+    severity: fromMarkerSeverity(markerData.severity)
   }
 
-  if (markerData.code == null) {
-    diagnostic.code = undefined
-    diagnostic.codeDescription = undefined
-  } else if (typeof markerData.code === 'string') {
+  if (typeof markerData.code === 'string') {
     diagnostic.code = markerData.code
-    diagnostic.codeDescription = undefined
-  } else {
+  } else if (markerData.code != null) {
     diagnostic.code = markerData.code.value
     diagnostic.codeDescription = { href: String(markerData.code.target) }
+  }
+
+  if (markerData.relatedInformation) {
+    diagnostic.relatedInformation = markerData.relatedInformation.map(fromRelatedInformation)
+  }
+
+  if (markerData.tags) {
+    diagnostic.tags = markerData.tags.map(fromMarkerTag)
+  }
+
+  if (markerData.source != null) {
+    diagnostic.source = markerData.source
   }
 
   return diagnostic
@@ -60,20 +64,32 @@ export function toMarkerData(
 ): monaco.editor.IMarkerData {
   const { MarkerSeverity, Uri } = getMonaco()
 
-  return {
+  const markerData: monaco.editor.IMarkerData = {
     ...toRange(diagnostic.range),
-    code:
-      diagnostic.code == null
-        ? undefined
-        : diagnostic.codeDescription
-        ? { value: String(diagnostic.code), target: Uri.parse(diagnostic.codeDescription.href) }
-        : String(diagnostic.code),
     message: diagnostic.message,
-    relatedInformation: diagnostic.relatedInformation?.map(toRelatedInformation),
     severity: diagnostic.severity
       ? toMarkerSeverity(diagnostic.severity)
-      : options?.defaultSeverity ?? MarkerSeverity.Error,
-    source: diagnostic.source,
-    tags: diagnostic.tags?.map(toMarkerTag)
+      : options?.defaultSeverity ?? MarkerSeverity.Error
   }
+
+  if (diagnostic.code != null) {
+    markerData.code =
+      diagnostic.codeDescription == null
+        ? String(diagnostic.code)
+        : { value: String(diagnostic.code), target: Uri.parse(diagnostic.codeDescription.href) }
+  }
+
+  if (diagnostic.relatedInformation) {
+    markerData.relatedInformation = diagnostic.relatedInformation.map(toRelatedInformation)
+  }
+
+  if (diagnostic.tags) {
+    markerData.tags = diagnostic.tags.map(toMarkerTag)
+  }
+
+  if (diagnostic.source != null) {
+    markerData.source = diagnostic.source
+  }
+
+  return markerData
 }

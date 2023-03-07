@@ -8,13 +8,10 @@ runTests(fromMarkerData, toMarkerData)(
   {
     lsp: {
       code: 'unused',
-      codeDescription: undefined,
       message: 'Unused variable "foo"',
       range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-      relatedInformation: undefined,
       severity: ls.DiagnosticSeverity.Warning,
-      source: 'ESLint',
-      tags: undefined
+      source: 'ESLint'
     },
     monaco: {
       code: 'unused',
@@ -23,31 +20,24 @@ runTests(fromMarkerData, toMarkerData)(
       startColumn: 11,
       endLineNumber: 3,
       endColumn: 21,
-      relatedInformation: undefined,
       severity: monaco.MarkerSeverity.Warning,
-      source: 'ESLint',
-      tags: undefined
+      source: 'ESLint'
     }
   },
   {
     lsp: {
-      code: undefined,
-      codeDescription: undefined,
       message: 'Deprecated and unused',
       range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-      relatedInformation: undefined,
       severity: ls.DiagnosticSeverity.Hint,
       source: 'TypeScript',
       tags: [ls.DiagnosticTag.Deprecated, ls.DiagnosticTag.Unnecessary]
     },
     monaco: {
-      code: undefined,
       message: 'Deprecated and unused',
       startLineNumber: 1,
       startColumn: 11,
       endLineNumber: 3,
       endColumn: 21,
-      relatedInformation: undefined,
       severity: monaco.MarkerSeverity.Hint,
       source: 'TypeScript',
       tags: [monaco.MarkerTag.Deprecated, monaco.MarkerTag.Unnecessary]
@@ -69,8 +59,7 @@ runTests(fromMarkerData, toMarkerData)(
         }
       ],
       severity: ls.DiagnosticSeverity.Information,
-      source: 'ESLint',
-      tags: undefined
+      source: 'ESLint'
     },
     monaco: {
       code: { value: 'Other location', target: monaco.Uri.parse('file:///contributing.md') },
@@ -90,20 +79,16 @@ runTests(fromMarkerData, toMarkerData)(
         }
       ],
       severity: monaco.MarkerSeverity.Info,
-      source: 'ESLint',
-      tags: undefined
+      source: 'ESLint'
     }
   },
   {
     only: 'to',
     lsp: {
       code: 'unused',
-      codeDescription: undefined,
       message: 'Unused variable "foo"',
       range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-      relatedInformation: undefined,
-      source: 'ESLint',
-      tags: undefined
+      source: 'ESLint'
     },
     monaco: {
       code: 'unused',
@@ -112,10 +97,9 @@ runTests(fromMarkerData, toMarkerData)(
       startColumn: 11,
       endLineNumber: 3,
       endColumn: 21,
-      relatedInformation: undefined,
+
       severity: monaco.MarkerSeverity.Error,
-      source: 'ESLint',
-      tags: undefined
+      source: 'ESLint'
     }
   },
   {
@@ -123,12 +107,9 @@ runTests(fromMarkerData, toMarkerData)(
     toOptions: { defaultSeverity: monaco.MarkerSeverity.Hint },
     lsp: {
       code: 'unused',
-      codeDescription: undefined,
       message: 'Unused variable "foo"',
       range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-      relatedInformation: undefined,
-      source: 'ESLint',
-      tags: undefined
+      source: 'ESLint'
     },
     monaco: {
       code: 'unused',
@@ -137,10 +118,8 @@ runTests(fromMarkerData, toMarkerData)(
       startColumn: 11,
       endLineNumber: 3,
       endColumn: 21,
-      relatedInformation: undefined,
       severity: monaco.MarkerSeverity.Hint,
-      source: 'ESLint',
-      tags: undefined
+      source: 'ESLint'
     }
   }
 )

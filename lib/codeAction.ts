@@ -11,18 +11,31 @@ import { fromWorkspaceEdit, toWorkspaceEdit } from './workspaceEdit.js'
  * @returns The code action as an LSP code action.
  */
 export function fromCodeAction(codeAction: monaco.languages.CodeAction): ls.CodeAction {
-  return {
-    title: codeAction.title,
-    diagnostics: codeAction.diagnostics?.map(fromMarkerData),
-    disabled: codeAction.disabled
-      ? {
-          reason: codeAction.disabled
-        }
-      : undefined,
-    edit: codeAction.edit ? fromWorkspaceEdit(codeAction.edit) : undefined,
-    kind: codeAction.kind,
-    isPreferred: codeAction.isPreferred
+  const result: ls.CodeAction = {
+    title: codeAction.title
   }
+
+  if (codeAction.diagnostics) {
+    result.diagnostics = codeAction.diagnostics.map(fromMarkerData)
+  }
+
+  if (codeAction.disabled != null) {
+    result.disabled = { reason: codeAction.disabled }
+  }
+
+  if (codeAction.edit) {
+    result.edit = fromWorkspaceEdit(codeAction.edit)
+  }
+
+  if (codeAction.isPreferred != null) {
+    result.isPreferred = codeAction.isPreferred
+  }
+
+  if (codeAction.kind) {
+    result.kind = codeAction.kind
+  }
+
+  return result
 }
 
 export interface ToCodeActionOptions {
@@ -45,12 +58,32 @@ export function toCodeAction(
   codeAction: ls.CodeAction,
   options?: ToCodeActionOptions
 ): monaco.languages.CodeAction {
-  return {
+  const result: monaco.languages.CodeAction = {
     title: codeAction.title,
-    diagnostics: codeAction.diagnostics?.map((diagnostic) => toMarkerData(diagnostic, options)),
-    disabled: codeAction.disabled?.reason,
-    edit: codeAction.edit ? toWorkspaceEdit(codeAction.edit) : undefined,
-    kind: codeAction.kind,
     isPreferred: codeAction.isPreferred
   }
+
+  if (codeAction.diagnostics) {
+    result.diagnostics = codeAction.diagnostics.map((diagnostic) =>
+      toMarkerData(diagnostic, options)
+    )
+  }
+
+  if (codeAction.disabled) {
+    result.disabled = codeAction.disabled.reason
+  }
+
+  if (codeAction.edit) {
+    result.edit = toWorkspaceEdit(codeAction.edit)
+  }
+
+  if (codeAction.isPreferred != null) {
+    result.isPreferred = codeAction.isPreferred
+  }
+
+  if (codeAction.kind) {
+    result.kind = codeAction.kind
+  }
+
+  return result
 }

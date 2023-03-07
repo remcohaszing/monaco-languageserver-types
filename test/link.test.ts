@@ -29,9 +29,7 @@ runTests(fromLink, toLink)(
       range: {
         start: { line: 0, character: 10 },
         end: { line: 2, character: 20 }
-      },
-      tooltip: undefined,
-      target: undefined
+      }
     },
     monaco: {
       range: {
@@ -39,9 +37,7 @@ runTests(fromLink, toLink)(
         startColumn: 11,
         endLineNumber: 3,
         endColumn: 21
-      },
-      tooltip: undefined,
-      url: undefined
+      }
     }
   }
 )

@@ -44,7 +44,6 @@ runTests(fromLocationLink, toLocationLink)(
   },
   {
     lsp: {
-      originSelectionRange: undefined,
       targetRange: {
         start: { line: 0, character: 10 },
         end: { line: 2, character: 20 }
@@ -56,7 +55,6 @@ runTests(fromLocationLink, toLocationLink)(
       targetUri: 'file:///example'
     },
     monaco: {
-      originSelectionRange: undefined,
       range: {
         startLineNumber: 1,
         startColumn: 11,
@@ -75,7 +73,6 @@ runTests(fromLocationLink, toLocationLink)(
   {
     only: 'from',
     lsp: {
-      originSelectionRange: undefined,
       targetRange: {
         start: { line: 0, character: 10 },
         end: { line: 2, character: 20 }
@@ -87,7 +84,6 @@ runTests(fromLocationLink, toLocationLink)(
       targetUri: 'file:///example'
     },
     monaco: {
-      originSelectionRange: undefined,
       range: {
         startLineNumber: 1,
         startColumn: 11,

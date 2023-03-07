@@ -22,44 +22,36 @@ runTests(fromHover, toHover)(
   },
   {
     lsp: {
-      range: undefined,
       contents: { kind: 'markdown', value: 'This is markdown' }
     },
     monaco: {
-      range: undefined,
       contents: [{ value: 'This is markdown' }]
     }
   },
   {
     only: 'to',
     lsp: {
-      range: undefined,
       contents: 'This is markdown'
     },
     monaco: {
-      range: undefined,
       contents: [{ value: 'This is markdown' }]
     }
   },
   {
     only: 'to',
     lsp: {
-      range: undefined,
       contents: { language: 'typescript', value: 'string' }
     },
     monaco: {
-      range: undefined,
       contents: [{ value: '```typescript\nstring\n```' }]
     }
   },
   {
     only: 'to',
     lsp: {
-      range: undefined,
       contents: ['This is markdown', { language: 'typescript', value: 'string' }]
     },
     monaco: {
-      range: undefined,
       contents: [{ value: 'This is markdown' }, { value: '```typescript\nstring\n```' }]
     }
   }

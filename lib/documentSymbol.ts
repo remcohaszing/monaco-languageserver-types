@@ -14,8 +14,7 @@ import { fromSymbolTag, toSymbolTag } from './symbolTag.js'
 export function fromDocumentSymbol(
   documentSymbol: monaco.languages.DocumentSymbol
 ): ls.DocumentSymbol {
-  return {
-    children: documentSymbol.children?.map(fromDocumentSymbol),
+  const result: ls.DocumentSymbol = {
     detail: documentSymbol.detail,
     kind: fromSymbolKind(documentSymbol.kind),
     name: documentSymbol.name,
@@ -23,6 +22,12 @@ export function fromDocumentSymbol(
     selectionRange: fromRange(documentSymbol.selectionRange),
     tags: documentSymbol.tags.map(fromSymbolTag)
   }
+
+  if (documentSymbol.children) {
+    result.children = documentSymbol.children.map(fromDocumentSymbol)
+  }
+
+  return result
 }
 
 /**
@@ -34,8 +39,7 @@ export function fromDocumentSymbol(
 export function toDocumentSymbol(
   documentSymbol: ls.DocumentSymbol
 ): monaco.languages.DocumentSymbol {
-  return {
-    children: documentSymbol.children?.map(toDocumentSymbol),
+  const result: monaco.languages.DocumentSymbol = {
     detail: documentSymbol.detail ?? '',
     kind: toSymbolKind(documentSymbol.kind),
     name: documentSymbol.name,
@@ -43,4 +47,10 @@ export function toDocumentSymbol(
     selectionRange: toRange(documentSymbol.selectionRange),
     tags: documentSymbol.tags?.map(toSymbolTag) ?? []
   }
+
+  if (documentSymbol.children) {
+    result.children = documentSymbol.children.map(toDocumentSymbol)
+  }
+
+  return result
 }

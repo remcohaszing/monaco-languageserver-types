@@ -11,11 +11,19 @@ import { fromRange, toRange } from './range.js'
  * @returns The link as an LSP document link.
  */
 export function fromLink(link: monaco.languages.ILink): ls.DocumentLink {
-  return {
-    range: fromRange(link.range),
-    target: link.url ? String(link.url) : undefined,
-    tooltip: link.tooltip
+  const result: ls.DocumentLink = {
+    range: fromRange(link.range)
   }
+
+  if (link.tooltip != null) {
+    result.tooltip = link.tooltip
+  }
+
+  if (link.url != null) {
+    result.target = String(link.url)
+  }
+
+  return result
 }
 
 /**
@@ -27,9 +35,17 @@ export function fromLink(link: monaco.languages.ILink): ls.DocumentLink {
 export function toLink(documentLink: ls.DocumentLink): monaco.languages.ILink {
   const { Uri } = getMonaco()
 
-  return {
-    range: toRange(documentLink.range),
-    url: documentLink.target ? Uri.parse(documentLink.target) : undefined,
-    tooltip: documentLink.tooltip
+  const result: monaco.languages.ILink = {
+    range: toRange(documentLink.range)
   }
+
+  if (documentLink.tooltip != null) {
+    result.tooltip = documentLink.tooltip
+  }
+
+  if (documentLink.target != null) {
+    result.url = Uri.parse(documentLink.target)
+  }
+
+  return result
 }

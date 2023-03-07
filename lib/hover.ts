@@ -11,10 +11,15 @@ import { fromRange, toRange } from './range.js'
  * @returns The hover as an LSP hover.
  */
 export function fromHover(hover: monaco.languages.Hover): ls.Hover {
-  return {
-    range: hover.range && fromRange(hover.range),
+  const result: ls.Hover = {
     contents: fromMarkdownString(hover.contents[0])
   }
+
+  if (hover.range) {
+    result.range = fromRange(hover.range)
+  }
+
+  return result
 }
 
 /**
@@ -58,8 +63,13 @@ function toHoverContents(
  * @returns The hover as Monaco editor hover.
  */
 export function toHover(hover: ls.Hover): monaco.languages.Hover {
-  return {
-    range: hover.range && toRange(hover.range),
+  const result: monaco.languages.Hover = {
     contents: toHoverContents(hover.contents)
   }
+
+  if (hover.range) {
+    result.range = toRange(hover.range)
+  }
+
+  return result
 }

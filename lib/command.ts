@@ -8,11 +8,16 @@ import type * as ls from 'vscode-languageserver-protocol'
  * @returns The command as an LSP command.
  */
 export function fromCommand(command: monaco.languages.Command): ls.Command {
-  return {
+  const result: ls.Command = {
     title: command.title,
-    command: command.id,
-    arguments: command.arguments
+    command: command.id
   }
+
+  if (command.arguments) {
+    result.arguments = command.arguments
+  }
+
+  return result
 }
 
 /**
@@ -22,9 +27,14 @@ export function fromCommand(command: monaco.languages.Command): ls.Command {
  * @returns The command as Monaco editor command.
  */
 export function toCommand(command: ls.Command): monaco.languages.Command {
-  return {
+  const result: monaco.languages.Command = {
     title: command.title,
-    id: command.command,
-    arguments: command.arguments
+    id: command.command
   }
+
+  if (command.arguments) {
+    result.arguments = command.arguments
+  }
+
+  return result
 }
