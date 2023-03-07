@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-types'
+import type * as ls from 'vscode-languageserver-protocol'
 
 import { fromCommand, toCommand } from './command.js'
 import { fromCompletionItemKind, toCompletionItemKind } from './completionItemKind.js'

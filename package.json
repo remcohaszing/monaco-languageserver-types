@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "monaco-types": "^0.1.0",
-    "vscode-languageserver-types": "^3.0.0"
+    "vscode-languageserver-protocol": "^3.0.0"
   },
   "devDependencies": {
     "@vitest/coverage-c8": "^0.29.0",

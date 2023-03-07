@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-types'
+import type * as ls from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor symbol tag to an LSP symbol tag.

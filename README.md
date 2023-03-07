@@ -17,8 +17,8 @@ npm install monaco-languageserver-types
 ## Usage
 
 This package exports function to convert language server types to Monaco editor types and vise
-versa. It does so without importing `monaco-editor` or `vscode-languageserver-types`, meaning it has
-no runtime dependencies.
+versa. It does so without importing `monaco-editor` or `vscode-languageserver-protocol`, meaning it
+has no runtime dependencies.
 
 For each Monaco editor / language server type, there are two functions:
 

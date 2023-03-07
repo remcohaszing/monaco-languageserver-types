@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-types'
+import type * as ls from 'vscode-languageserver-protocol'
 
 import { fromMarkerData, toMarkerData } from './markerData.js'
 import { fromWorkspaceEdit, toWorkspaceEdit } from './workspaceEdit.js'

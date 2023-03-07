@@ -1,5 +1,5 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
-import * as ls from 'vscode-languageserver-types'
+import * as ls from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
 import { fromDocumentSymbol, toDocumentSymbol } from '../index.js'
