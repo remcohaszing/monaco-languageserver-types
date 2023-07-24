@@ -2,10 +2,3 @@ root: true
 extends:
   - remcohaszing
   - remcohaszing/typechecking
-rules:
-  '@typescript-eslint/consistent-type-imports':
-    - error
-    - prefer: type-imports
-  '@typescript-eslint/no-explicit-any': off
-  '@typescript-eslint/no-use-before-define': off
-  import/no-extraneous-dependencies: off

@@ -1,5 +1,5 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
-import type { MonacoEditor } from 'monaco-types'
+import { type MonacoEditor } from 'monaco-types'
 import { afterEach, expect, test } from 'vitest'
 
 import { setMonaco } from '../index.js'
