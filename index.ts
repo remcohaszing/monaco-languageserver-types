@@ -1,4 +1,5 @@
 export * from './lib/codeAction.js'
+export * from './lib/codeLens.js'
 export * from './lib/color.js'
 export * from './lib/colorInformation.js'
 export * from './lib/command.js'
