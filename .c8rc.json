@@ -1,4 +1,0 @@
-{
-  "100": true,
-  "reporter": ["html", "lcov", "text"]
-}
