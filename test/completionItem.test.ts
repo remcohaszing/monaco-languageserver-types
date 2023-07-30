@@ -310,6 +310,23 @@ runTests(fromCompletionItem, toCompletionItem)(
     }
   },
   {
+    only: 'from',
+    lsp: {
+      kind: ls.CompletionItemKind.Class,
+      label: 'Insert "text"',
+      textEdit: {
+        newText: '',
+        range: { start: { line: 998, character: 998 }, end: { line: 998, character: 998 } }
+      }
+    },
+    monaco: {
+      insertText: '',
+      kind: monaco.languages.CompletionItemKind.Class,
+      label: { label: 'Insert "text"' },
+      range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
+    }
+  },
+  {
     only: 'to',
     toOptions: {
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
@@ -321,6 +338,21 @@ runTests(fromCompletionItem, toCompletionItem)(
     monaco: {
       insertText: '',
       kind: monaco.languages.CompletionItemKind.Class,
+      label: 'Insert "text"',
+      range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
+    }
+  },
+  {
+    only: 'to',
+    toOptions: {
+      range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
+    },
+    lsp: {
+      label: 'Insert "text"'
+    },
+    monaco: {
+      insertText: '',
+      kind: monaco.languages.CompletionItemKind.Text,
       label: 'Insert "text"',
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     }

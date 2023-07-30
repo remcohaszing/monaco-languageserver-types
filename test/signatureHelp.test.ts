@@ -16,9 +16,9 @@ runTests(fromSignatureHelp, toSignatureHelp)(
   },
   {
     only: 'to',
-    lsp: { activeParameter: 1, activeSignature: 0, signatures: [{ label: 'Label' }] },
+    lsp: { signatures: [{ label: 'Label' }] },
     monaco: {
-      activeParameter: 1,
+      activeParameter: 0,
       activeSignature: 0,
       signatures: [{ label: 'Label', parameters: [] }]
     }
