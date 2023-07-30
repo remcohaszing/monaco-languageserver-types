@@ -83,6 +83,8 @@ jobs:
       - tsc
       - vitest
     if: startsWith(github.ref, 'refs/tags/')
+    permissions:
+      id-token: write
     steps:
       - uses: actions/setup-node@v3
         with:
