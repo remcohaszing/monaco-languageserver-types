@@ -4,7 +4,8 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     deps: { inline: ['monaco-editor'] },
+    isolate: false,
     reporters: 'verbose',
-    isolate: false
+    threads: false
   }
 })
