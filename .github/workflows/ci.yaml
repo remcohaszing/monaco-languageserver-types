@@ -68,7 +68,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      - run: npm install --global npm@latest
       - run: npm ci
       - run: npm test
       - uses: codecov/codecov-action@v3
