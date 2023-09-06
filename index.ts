@@ -1,4 +1,5 @@
 export { fromCodeAction, toCodeAction } from './lib/codeAction.js'
+export { fromCodeActionContext, toCodeActionContext } from './lib/codeActionContext.js'
 export { fromCodeActionTriggerType, toCodeActionTriggerType } from './lib/codeActionTriggerType.js'
 export { fromCodeLens, toCodeLens } from './lib/codeLens.js'
 export { fromColor, toColor } from './lib/color.js'
