@@ -1,8 +1,6 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
 
-import { getMonaco } from './monaco.js'
-
 /**
  * Convert a Monaco editor marker severity to an LSP diagnostic severity.
  *
@@ -10,15 +8,13 @@ import { getMonaco } from './monaco.js'
  * @returns The marker severity as an LSP diagnostic severity.
  */
 export function fromMarkerSeverity(severity: monaco.MarkerSeverity): ls.DiagnosticSeverity {
-  const { MarkerSeverity } = getMonaco()
-
-  if (severity === MarkerSeverity.Error) {
+  if (severity === 8 satisfies monaco.MarkerSeverity.Error) {
     return 1
   }
-  if (severity === MarkerSeverity.Warning) {
+  if (severity === 4 satisfies monaco.MarkerSeverity.Warning) {
     return 2
   }
-  if (severity === MarkerSeverity.Info) {
+  if (severity === 2 satisfies monaco.MarkerSeverity.Info) {
     return 3
   }
   // Severity === MarkerSeverity.Hint
@@ -32,17 +28,15 @@ export function fromMarkerSeverity(severity: monaco.MarkerSeverity): ls.Diagnost
  * @returns The diagnostic severity as Monaco editor marker severity.
  */
 export function toMarkerSeverity(severity: ls.DiagnosticSeverity): monaco.MarkerSeverity {
-  const { MarkerSeverity } = getMonaco()
-
   if (severity === 1) {
-    return MarkerSeverity.Error
+    return 8 satisfies monaco.MarkerSeverity.Error
   }
   if (severity === 2) {
-    return MarkerSeverity.Warning
+    return 4 satisfies monaco.MarkerSeverity.Warning
   }
   if (severity === 3) {
-    return MarkerSeverity.Info
+    return 2 satisfies monaco.MarkerSeverity.Info
   }
   // Severity === 4
-  return MarkerSeverity.Hint
+  return 1 satisfies monaco.MarkerSeverity.Hint
 }

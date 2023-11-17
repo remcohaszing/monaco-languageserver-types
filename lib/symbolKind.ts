@@ -1,8 +1,6 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
 
-import { getMonaco } from './monaco.js'
-
 /**
  * Convert a Monaco editor symbol kind to an LSP symbol kind.
  *
@@ -10,81 +8,79 @@ import { getMonaco } from './monaco.js'
  * @returns The symbol kind as an LSP symbol kind.
  */
 export function fromSymbolKind(symbolKind: monaco.languages.SymbolKind): ls.SymbolKind {
-  const { SymbolKind } = getMonaco().languages
-
-  if (symbolKind === SymbolKind.File) {
+  if (symbolKind === 0 satisfies monaco.languages.SymbolKind.File) {
     return 1
   }
-  if (symbolKind === SymbolKind.Module) {
+  if (symbolKind === 1 satisfies monaco.languages.SymbolKind.Module) {
     return 2
   }
-  if (symbolKind === SymbolKind.Namespace) {
+  if (symbolKind === 2 satisfies monaco.languages.SymbolKind.Namespace) {
     return 3
   }
-  if (symbolKind === SymbolKind.Package) {
+  if (symbolKind === 3 satisfies monaco.languages.SymbolKind.Package) {
     return 4
   }
-  if (symbolKind === SymbolKind.Class) {
+  if (symbolKind === 4 satisfies monaco.languages.SymbolKind.Class) {
     return 5
   }
-  if (symbolKind === SymbolKind.Method) {
+  if (symbolKind === 5 satisfies monaco.languages.SymbolKind.Method) {
     return 6
   }
-  if (symbolKind === SymbolKind.Property) {
+  if (symbolKind === 6 satisfies monaco.languages.SymbolKind.Property) {
     return 7
   }
-  if (symbolKind === SymbolKind.Field) {
+  if (symbolKind === 7 satisfies monaco.languages.SymbolKind.Field) {
     return 8
   }
-  if (symbolKind === SymbolKind.Constructor) {
+  if (symbolKind === 8 satisfies monaco.languages.SymbolKind.Constructor) {
     return 9
   }
-  if (symbolKind === SymbolKind.Enum) {
+  if (symbolKind === 9 satisfies monaco.languages.SymbolKind.Enum) {
     return 10
   }
-  if (symbolKind === SymbolKind.Interface) {
+  if (symbolKind === 10 satisfies monaco.languages.SymbolKind.Interface) {
     return 11
   }
-  if (symbolKind === SymbolKind.Function) {
+  if (symbolKind === 11 satisfies monaco.languages.SymbolKind.Function) {
     return 12
   }
-  if (symbolKind === SymbolKind.Variable) {
+  if (symbolKind === 12 satisfies monaco.languages.SymbolKind.Variable) {
     return 13
   }
-  if (symbolKind === SymbolKind.Constant) {
+  if (symbolKind === 13 satisfies monaco.languages.SymbolKind.Constant) {
     return 14
   }
-  if (symbolKind === SymbolKind.String) {
+  if (symbolKind === 14 satisfies monaco.languages.SymbolKind.String) {
     return 15
   }
-  if (symbolKind === SymbolKind.Number) {
+  if (symbolKind === 15 satisfies monaco.languages.SymbolKind.Number) {
     return 16
   }
-  if (symbolKind === SymbolKind.Boolean) {
+  if (symbolKind === 16 satisfies monaco.languages.SymbolKind.Boolean) {
     return 17
   }
-  if (symbolKind === SymbolKind.Array) {
+  if (symbolKind === 17 satisfies monaco.languages.SymbolKind.Array) {
     return 18
   }
-  if (symbolKind === SymbolKind.Object) {
+  if (symbolKind === 18 satisfies monaco.languages.SymbolKind.Object) {
     return 19
   }
-  if (symbolKind === SymbolKind.Key) {
+  if (symbolKind === 19 satisfies monaco.languages.SymbolKind.Key) {
     return 20
   }
-  if (symbolKind === SymbolKind.Null) {
+  if (symbolKind === 20 satisfies monaco.languages.SymbolKind.Null) {
     return 21
   }
-  if (symbolKind === SymbolKind.EnumMember) {
+  if (symbolKind === 21 satisfies monaco.languages.SymbolKind.EnumMember) {
     return 22
   }
-  if (symbolKind === SymbolKind.Struct) {
+  if (symbolKind === 22 satisfies monaco.languages.SymbolKind.Struct) {
     return 23
   }
-  if (symbolKind === SymbolKind.Event) {
+  if (symbolKind === 23 satisfies monaco.languages.SymbolKind.Event) {
     return 24
   }
-  if (symbolKind === SymbolKind.Operator) {
+  if (symbolKind === 24 satisfies monaco.languages.SymbolKind.Operator) {
     return 25
   }
   // SymbolKind === SymbolKind.TypeParameter
@@ -98,83 +94,81 @@ export function fromSymbolKind(symbolKind: monaco.languages.SymbolKind): ls.Symb
  * @returns The symbol kind as Monaco editor symbol kind.
  */
 export function toSymbolKind(symbolKind: ls.SymbolKind): monaco.languages.SymbolKind {
-  const { SymbolKind } = getMonaco().languages
-
   if (symbolKind === 1) {
-    return SymbolKind.File
+    return 0 satisfies monaco.languages.SymbolKind.File
   }
   if (symbolKind === 2) {
-    return SymbolKind.Module
+    return 1 satisfies monaco.languages.SymbolKind.Module
   }
   if (symbolKind === 3) {
-    return SymbolKind.Namespace
+    return 2 satisfies monaco.languages.SymbolKind.Namespace
   }
   if (symbolKind === 4) {
-    return SymbolKind.Package
+    return 3 satisfies monaco.languages.SymbolKind.Package
   }
   if (symbolKind === 5) {
-    return SymbolKind.Class
+    return 4 satisfies monaco.languages.SymbolKind.Class
   }
   if (symbolKind === 6) {
-    return SymbolKind.Method
+    return 5 satisfies monaco.languages.SymbolKind.Method
   }
   if (symbolKind === 7) {
-    return SymbolKind.Property
+    return 6 satisfies monaco.languages.SymbolKind.Property
   }
   if (symbolKind === 8) {
-    return SymbolKind.Field
+    return 7 satisfies monaco.languages.SymbolKind.Field
   }
   if (symbolKind === 9) {
-    return SymbolKind.Constructor
+    return 8 satisfies monaco.languages.SymbolKind.Constructor
   }
   if (symbolKind === 10) {
-    return SymbolKind.Enum
+    return 9 satisfies monaco.languages.SymbolKind.Enum
   }
   if (symbolKind === 11) {
-    return SymbolKind.Interface
+    return 10 satisfies monaco.languages.SymbolKind.Interface
   }
   if (symbolKind === 12) {
-    return SymbolKind.Function
+    return 11 satisfies monaco.languages.SymbolKind.Function
   }
   if (symbolKind === 13) {
-    return SymbolKind.Variable
+    return 12 satisfies monaco.languages.SymbolKind.Variable
   }
   if (symbolKind === 14) {
-    return SymbolKind.Constant
+    return 13 satisfies monaco.languages.SymbolKind.Constant
   }
   if (symbolKind === 15) {
-    return SymbolKind.String
+    return 14 satisfies monaco.languages.SymbolKind.String
   }
   if (symbolKind === 16) {
-    return SymbolKind.Number
+    return 15 satisfies monaco.languages.SymbolKind.Number
   }
   if (symbolKind === 17) {
-    return SymbolKind.Boolean
+    return 16 satisfies monaco.languages.SymbolKind.Boolean
   }
   if (symbolKind === 18) {
-    return SymbolKind.Array
+    return 17 satisfies monaco.languages.SymbolKind.Array
   }
   if (symbolKind === 19) {
-    return SymbolKind.Object
+    return 18 satisfies monaco.languages.SymbolKind.Object
   }
   if (symbolKind === 20) {
-    return SymbolKind.Key
+    return 19 satisfies monaco.languages.SymbolKind.Key
   }
   if (symbolKind === 21) {
-    return SymbolKind.Null
+    return 20 satisfies monaco.languages.SymbolKind.Null
   }
   if (symbolKind === 22) {
-    return SymbolKind.EnumMember
+    return 21 satisfies monaco.languages.SymbolKind.EnumMember
   }
   if (symbolKind === 23) {
-    return SymbolKind.Struct
+    return 22 satisfies monaco.languages.SymbolKind.Struct
   }
   if (symbolKind === 24) {
-    return SymbolKind.Event
+    return 23 satisfies monaco.languages.SymbolKind.Event
   }
   if (symbolKind === 25) {
-    return SymbolKind.Operator
+    return 24 satisfies monaco.languages.SymbolKind.Operator
   }
   // SymbolKind === 26
-  return SymbolKind.TypeParameter
+  return 25 satisfies monaco.languages.SymbolKind.TypeParameter
 }

@@ -1,11 +1,11 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
 
-import { getMonaco } from './monaco.js'
 import {
   fromWorkspaceFileEditOptions,
   toWorkspaceFileEditOptions
 } from './workspaceFileEditOptions.js'
+import { URI } from 'vscode-uri'
 
 type WorkspaceFileEdit = ls.CreateFile | ls.DeleteFile | ls.RenameFile
 
@@ -58,15 +58,14 @@ export function fromWorkspaceFileEdit(
 export function toWorkspaceFileEdit(
   workspaceFileEdit: WorkspaceFileEdit
 ): monaco.languages.IWorkspaceFileEdit {
-  const { Uri } = getMonaco()
   const result: monaco.languages.IWorkspaceFileEdit =
     workspaceFileEdit.kind === 'create'
-      ? { newResource: Uri.parse(workspaceFileEdit.uri) }
+      ? { newResource: URI.parse(workspaceFileEdit.uri) }
       : workspaceFileEdit.kind === 'delete'
-      ? { oldResource: Uri.parse(workspaceFileEdit.uri) }
+      ? { oldResource: URI.parse(workspaceFileEdit.uri) }
       : {
-          oldResource: Uri.parse(workspaceFileEdit.oldUri),
-          newResource: Uri.parse(workspaceFileEdit.newUri)
+          oldResource: URI.parse(workspaceFileEdit.oldUri),
+          newResource: URI.parse(workspaceFileEdit.newUri)
         }
 
   if (workspaceFileEdit.options) {

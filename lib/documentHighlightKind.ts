@@ -1,8 +1,6 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
 
-import { getMonaco } from './monaco.js'
-
 /**
  * Convert a Monaco editor document highlight kind to an LSP document highlight kind.
  *
@@ -12,12 +10,10 @@ import { getMonaco } from './monaco.js'
 export function fromDocumentHighlightKind(
   kind: monaco.languages.DocumentHighlightKind
 ): ls.DocumentHighlightKind {
-  const { DocumentHighlightKind } = getMonaco().languages
-
-  if (kind === DocumentHighlightKind.Read) {
+  if (kind === 1 satisfies monaco.languages.DocumentHighlightKind.Read) {
     return 2
   }
-  if (kind === DocumentHighlightKind.Write) {
+  if (kind === 2 satisfies monaco.languages.DocumentHighlightKind.Write) {
     return 3
   }
   return 1
@@ -32,13 +28,11 @@ export function fromDocumentHighlightKind(
 export function toDocumentHighlightKind(
   kind: ls.DocumentHighlightKind
 ): monaco.languages.DocumentHighlightKind {
-  const { DocumentHighlightKind } = getMonaco().languages
-
   if (kind === 2) {
-    return DocumentHighlightKind.Read
+    return 1 satisfies monaco.languages.DocumentHighlightKind.Read
   }
   if (kind === 3) {
-    return DocumentHighlightKind.Write
+    return 2 satisfies monaco.languages.DocumentHighlightKind.Write
   }
-  return DocumentHighlightKind.Text
+  return 0 satisfies monaco.languages.DocumentHighlightKind.Text
 }

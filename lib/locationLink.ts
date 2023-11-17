@@ -1,8 +1,8 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
 
-import { getMonaco } from './monaco.js'
 import { fromRange, toRange } from './range.js'
+import { URI } from 'vscode-uri'
 
 /**
  * Convert a Monaco editor location link to an LSP location link.
@@ -33,12 +33,10 @@ export function fromLocationLink(locationLink: monaco.languages.LocationLink): l
  * @returns The location link as Monaco editor location link.
  */
 export function toLocationLink(locationLink: ls.LocationLink): monaco.languages.LocationLink {
-  const { Uri } = getMonaco()
-
   const result: monaco.languages.LocationLink = {
     range: toRange(locationLink.targetRange),
     targetSelectionRange: toRange(locationLink.targetSelectionRange),
-    uri: Uri.parse(locationLink.targetUri)
+    uri: URI.parse(locationLink.targetUri)
   }
 
   if (locationLink.originSelectionRange) {

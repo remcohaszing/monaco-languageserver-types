@@ -1,8 +1,6 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
 
-import { getMonaco } from './monaco.js'
-
 /**
  * Convert a Monaco editor completion item kind to an LSP completion item kind.
  *
@@ -12,81 +10,79 @@ import { getMonaco } from './monaco.js'
 export function fromCompletionItemKind(
   kind: monaco.languages.CompletionItemKind
 ): ls.CompletionItemKind | undefined {
-  const { CompletionItemKind } = getMonaco().languages
-
-  if (kind === CompletionItemKind.Text) {
+  if (kind === 18 satisfies monaco.languages.CompletionItemKind.Text) {
     return 1
   }
-  if (kind === CompletionItemKind.Method) {
+  if (kind === 0 satisfies monaco.languages.CompletionItemKind.Method) {
     return 2
   }
-  if (kind === CompletionItemKind.Function) {
+  if (kind === 1 satisfies monaco.languages.CompletionItemKind.Function) {
     return 3
   }
-  if (kind === CompletionItemKind.Constructor) {
+  if (kind === 2 satisfies monaco.languages.CompletionItemKind.Constructor) {
     return 4
   }
-  if (kind === CompletionItemKind.Field) {
+  if (kind === 3 satisfies monaco.languages.CompletionItemKind.Field) {
     return 5
   }
-  if (kind === CompletionItemKind.Variable) {
+  if (kind === 4 satisfies monaco.languages.CompletionItemKind.Variable) {
     return 6
   }
-  if (kind === CompletionItemKind.Class) {
+  if (kind === 5 satisfies monaco.languages.CompletionItemKind.Class) {
     return 7
   }
-  if (kind === CompletionItemKind.Interface) {
+  if (kind === 7 satisfies monaco.languages.CompletionItemKind.Interface) {
     return 8
   }
-  if (kind === CompletionItemKind.Module) {
+  if (kind === 8 satisfies monaco.languages.CompletionItemKind.Module) {
     return 9
   }
-  if (kind === CompletionItemKind.Property) {
+  if (kind === 9 satisfies monaco.languages.CompletionItemKind.Property) {
     return 10
   }
-  if (kind === CompletionItemKind.Unit) {
+  if (kind === 12 satisfies monaco.languages.CompletionItemKind.Unit) {
     return 11
   }
-  if (kind === CompletionItemKind.Value) {
+  if (kind === 13 satisfies monaco.languages.CompletionItemKind.Value) {
     return 12
   }
-  if (kind === CompletionItemKind.Enum) {
+  if (kind === 15 satisfies monaco.languages.CompletionItemKind.Enum) {
     return 13
   }
-  if (kind === CompletionItemKind.Keyword) {
+  if (kind === 17 satisfies monaco.languages.CompletionItemKind.Keyword) {
     return 14
   }
-  if (kind === CompletionItemKind.Snippet) {
+  if (kind === 27 satisfies monaco.languages.CompletionItemKind.Snippet) {
     return 15
   }
-  if (kind === CompletionItemKind.Color) {
+  if (kind === 19 satisfies monaco.languages.CompletionItemKind.Color) {
     return 16
   }
-  if (kind === CompletionItemKind.File) {
+  if (kind === 20 satisfies monaco.languages.CompletionItemKind.File) {
     return 17
   }
-  if (kind === CompletionItemKind.Reference) {
+  if (kind === 21 satisfies monaco.languages.CompletionItemKind.Reference) {
     return 18
   }
-  if (kind === CompletionItemKind.Folder) {
+  if (kind === 23 satisfies monaco.languages.CompletionItemKind.Folder) {
     return 19
   }
-  if (kind === CompletionItemKind.EnumMember) {
+  if (kind === 16 satisfies monaco.languages.CompletionItemKind.EnumMember) {
     return 20
   }
-  if (kind === CompletionItemKind.Constant) {
+  if (kind === 14 satisfies monaco.languages.CompletionItemKind.Constant) {
     return 21
   }
-  if (kind === CompletionItemKind.Struct) {
+  if (kind === 6 satisfies monaco.languages.CompletionItemKind.Struct) {
     return 22
   }
-  if (kind === CompletionItemKind.Event) {
+  if (kind === 10 satisfies monaco.languages.CompletionItemKind.Event) {
     return 23
   }
-  if (kind === CompletionItemKind.Operator) {
+  if (kind === 11 satisfies monaco.languages.CompletionItemKind.Operator) {
     return 24
   }
-  if (kind === CompletionItemKind.TypeParameter) {
+  if (kind === 24 satisfies monaco.languages.CompletionItemKind.TypeParameter) {
     return 25
   }
 }
@@ -100,81 +96,79 @@ export function fromCompletionItemKind(
 export function toCompletionItemKind(
   kind: ls.CompletionItemKind
 ): monaco.languages.CompletionItemKind {
-  const { CompletionItemKind } = getMonaco().languages
-
   if (kind === 1) {
-    return CompletionItemKind.Text
+    return 18 satisfies monaco.languages.CompletionItemKind.Text
   }
   if (kind === 2) {
-    return CompletionItemKind.Method
+    return 0 satisfies monaco.languages.CompletionItemKind.Method
   }
   if (kind === 3) {
-    return CompletionItemKind.Function
+    return 1 satisfies monaco.languages.CompletionItemKind.Function
   }
   if (kind === 4) {
-    return CompletionItemKind.Constructor
+    return 2 satisfies monaco.languages.CompletionItemKind.Constructor
   }
   if (kind === 5) {
-    return CompletionItemKind.Field
+    return 3 satisfies monaco.languages.CompletionItemKind.Field
   }
   if (kind === 6) {
-    return CompletionItemKind.Variable
+    return 4 satisfies monaco.languages.CompletionItemKind.Variable
   }
   if (kind === 7) {
-    return CompletionItemKind.Class
+    return 5 satisfies monaco.languages.CompletionItemKind.Class
   }
   if (kind === 8) {
-    return CompletionItemKind.Interface
+    return 7 satisfies monaco.languages.CompletionItemKind.Interface
   }
   if (kind === 9) {
-    return CompletionItemKind.Module
+    return 8 satisfies monaco.languages.CompletionItemKind.Module
   }
   if (kind === 10) {
-    return CompletionItemKind.Property
+    return 9 satisfies monaco.languages.CompletionItemKind.Property
   }
   if (kind === 11) {
-    return CompletionItemKind.Unit
+    return 12 satisfies monaco.languages.CompletionItemKind.Unit
   }
   if (kind === 12) {
-    return CompletionItemKind.Value
+    return 13 satisfies monaco.languages.CompletionItemKind.Value
   }
   if (kind === 13) {
-    return CompletionItemKind.Enum
+    return 15 satisfies monaco.languages.CompletionItemKind.Enum
   }
   if (kind === 14) {
-    return CompletionItemKind.Keyword
+    return 17 satisfies monaco.languages.CompletionItemKind.Keyword
   }
   if (kind === 15) {
-    return CompletionItemKind.Snippet
+    return 27 satisfies monaco.languages.CompletionItemKind.Snippet
   }
   if (kind === 16) {
-    return CompletionItemKind.Color
+    return 19 satisfies monaco.languages.CompletionItemKind.Color
   }
   if (kind === 17) {
-    return CompletionItemKind.File
+    return 20 satisfies monaco.languages.CompletionItemKind.File
   }
   if (kind === 18) {
-    return CompletionItemKind.Reference
+    return 21 satisfies monaco.languages.CompletionItemKind.Reference
   }
   if (kind === 19) {
-    return CompletionItemKind.Folder
+    return 23 satisfies monaco.languages.CompletionItemKind.Folder
   }
   if (kind === 20) {
-    return CompletionItemKind.EnumMember
+    return 16 satisfies monaco.languages.CompletionItemKind.EnumMember
   }
   if (kind === 21) {
-    return CompletionItemKind.Constant
+    return 14 satisfies monaco.languages.CompletionItemKind.Constant
   }
   if (kind === 22) {
-    return CompletionItemKind.Struct
+    return 6 satisfies monaco.languages.CompletionItemKind.Struct
   }
   if (kind === 23) {
-    return CompletionItemKind.Event
+    return 10 satisfies monaco.languages.CompletionItemKind.Event
   }
   if (kind === 24) {
-    return CompletionItemKind.Operator
+    return 11 satisfies monaco.languages.CompletionItemKind.Operator
   }
 
   // Kind === 25
-  return CompletionItemKind.TypeParameter
+  return 24 satisfies monaco.languages.CompletionItemKind.TypeParameter
 }
