@@ -76,9 +76,9 @@ export function fromCompletionItem(
   }
 
   if (completionItem.insertTextRules === 4 satisfies monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet) {
-    result.insertTextFormat = 2
+    result.insertTextFormat = 2 satisfies typeof ls.InsertTextFormat.Snippet
   } else if (completionItem.insertTextRules === 1 satisfies monaco.languages.CompletionItemInsertTextRule.KeepWhitespace) {
-    result.insertTextMode = 2
+    result.insertTextMode = 2 satisfies typeof ls.InsertTextMode.adjustIndentation
   }
 
   if (completionItem.preselect != null) {
