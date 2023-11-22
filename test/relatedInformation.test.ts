@@ -1,4 +1,4 @@
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
+import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
 import { fromRelatedInformation, toRelatedInformation } from '../index.js'
@@ -16,7 +16,7 @@ runTests(
   },
   monaco: {
     message: 'Additional info is found here',
-    resource: monaco.Uri.parse('file:///example.ts'),
+    resource: URI.parse('file:///example.ts'),
     startLineNumber: 1,
     startColumn: 11,
     endLineNumber: 3,

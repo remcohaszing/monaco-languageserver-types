@@ -1,5 +1,5 @@
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import { expect, test } from 'vitest'
+import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
 import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from '../index.js'
@@ -12,8 +12,8 @@ runTests(fromWorkspaceFileEdit, toWorkspaceFileEdit)(
       newUri: 'file:///new.txt'
     },
     monaco: {
-      oldResource: monaco.Uri.parse('file:///old.txt'),
-      newResource: monaco.Uri.parse('file:///new.txt')
+      oldResource: URI.parse('file:///old.txt'),
+      newResource: URI.parse('file:///new.txt')
     }
   },
   {
@@ -24,8 +24,8 @@ runTests(fromWorkspaceFileEdit, toWorkspaceFileEdit)(
       options: { ignoreIfExists: true, overwrite: false }
     },
     monaco: {
-      oldResource: monaco.Uri.parse('file:///old.txt'),
-      newResource: monaco.Uri.parse('file:///new.txt'),
+      oldResource: URI.parse('file:///old.txt'),
+      newResource: URI.parse('file:///new.txt'),
       options: { ignoreIfExists: true, overwrite: false }
     }
   },
@@ -35,7 +35,7 @@ runTests(fromWorkspaceFileEdit, toWorkspaceFileEdit)(
       uri: 'file:///new.txt'
     },
     monaco: {
-      newResource: monaco.Uri.parse('file:///new.txt')
+      newResource: URI.parse('file:///new.txt')
     }
   },
   {
@@ -45,7 +45,7 @@ runTests(fromWorkspaceFileEdit, toWorkspaceFileEdit)(
       options: { ignoreIfExists: false, overwrite: true }
     },
     monaco: {
-      newResource: monaco.Uri.parse('file:///new.txt'),
+      newResource: URI.parse('file:///new.txt'),
       options: { ignoreIfExists: false, overwrite: true }
     }
   },
@@ -55,7 +55,7 @@ runTests(fromWorkspaceFileEdit, toWorkspaceFileEdit)(
       uri: 'file:///new.txt'
     },
     monaco: {
-      oldResource: monaco.Uri.parse('file:///new.txt')
+      oldResource: URI.parse('file:///new.txt')
     }
   },
   {
@@ -65,7 +65,7 @@ runTests(fromWorkspaceFileEdit, toWorkspaceFileEdit)(
       options: { recursive: true }
     },
     monaco: {
-      oldResource: monaco.Uri.parse('file:///new.txt'),
+      oldResource: URI.parse('file:///new.txt'),
       options: { recursive: true }
     }
   }
