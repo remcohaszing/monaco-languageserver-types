@@ -10,79 +10,79 @@ import type * as ls from 'vscode-languageserver-protocol'
 export function fromCompletionItemKind(
   kind: monaco.languages.CompletionItemKind
 ): ls.CompletionItemKind | undefined {
-  if (kind === 18 satisfies monaco.languages.CompletionItemKind.Text) {
+  if (kind === (18 satisfies monaco.languages.CompletionItemKind.Text)) {
     return 1 satisfies typeof ls.CompletionItemKind.Text
   }
-  if (kind === 0 satisfies monaco.languages.CompletionItemKind.Method) {
+  if (kind === (0 satisfies monaco.languages.CompletionItemKind.Method)) {
     return 2 satisfies typeof ls.CompletionItemKind.Method
   }
-  if (kind === 1 satisfies monaco.languages.CompletionItemKind.Function) {
+  if (kind === (1 satisfies monaco.languages.CompletionItemKind.Function)) {
     return 3 satisfies typeof ls.CompletionItemKind.Function
   }
-  if (kind === 2 satisfies monaco.languages.CompletionItemKind.Constructor) {
+  if (kind === (2 satisfies monaco.languages.CompletionItemKind.Constructor)) {
     return 4 satisfies typeof ls.CompletionItemKind.Constructor
   }
-  if (kind === 3 satisfies monaco.languages.CompletionItemKind.Field) {
+  if (kind === (3 satisfies monaco.languages.CompletionItemKind.Field)) {
     return 5 satisfies typeof ls.CompletionItemKind.Field
   }
-  if (kind === 4 satisfies monaco.languages.CompletionItemKind.Variable) {
+  if (kind === (4 satisfies monaco.languages.CompletionItemKind.Variable)) {
     return 6 satisfies typeof ls.CompletionItemKind.Variable
   }
-  if (kind === 5 satisfies monaco.languages.CompletionItemKind.Class) {
+  if (kind === (5 satisfies monaco.languages.CompletionItemKind.Class)) {
     return 7 satisfies typeof ls.CompletionItemKind.Class
   }
-  if (kind === 7 satisfies monaco.languages.CompletionItemKind.Interface) {
+  if (kind === (7 satisfies monaco.languages.CompletionItemKind.Interface)) {
     return 8 satisfies typeof ls.CompletionItemKind.Interface
   }
-  if (kind === 8 satisfies monaco.languages.CompletionItemKind.Module) {
+  if (kind === (8 satisfies monaco.languages.CompletionItemKind.Module)) {
     return 9 satisfies typeof ls.CompletionItemKind.Module
   }
-  if (kind === 9 satisfies monaco.languages.CompletionItemKind.Property) {
+  if (kind === (9 satisfies monaco.languages.CompletionItemKind.Property)) {
     return 10 satisfies typeof ls.CompletionItemKind.Property
   }
-  if (kind === 12 satisfies monaco.languages.CompletionItemKind.Unit) {
+  if (kind === (12 satisfies monaco.languages.CompletionItemKind.Unit)) {
     return 11 satisfies typeof ls.CompletionItemKind.Unit
   }
-  if (kind === 13 satisfies monaco.languages.CompletionItemKind.Value) {
+  if (kind === (13 satisfies monaco.languages.CompletionItemKind.Value)) {
     return 12 satisfies typeof ls.CompletionItemKind.Value
   }
-  if (kind === 15 satisfies monaco.languages.CompletionItemKind.Enum) {
+  if (kind === (15 satisfies monaco.languages.CompletionItemKind.Enum)) {
     return 13 satisfies typeof ls.CompletionItemKind.Enum
   }
-  if (kind === 17 satisfies monaco.languages.CompletionItemKind.Keyword) {
+  if (kind === (17 satisfies monaco.languages.CompletionItemKind.Keyword)) {
     return 14 satisfies typeof ls.CompletionItemKind.Keyword
   }
-  if (kind === 27 satisfies monaco.languages.CompletionItemKind.Snippet) {
+  if (kind === (27 satisfies monaco.languages.CompletionItemKind.Snippet)) {
     return 15 satisfies typeof ls.CompletionItemKind.Snippet
   }
-  if (kind === 19 satisfies monaco.languages.CompletionItemKind.Color) {
+  if (kind === (19 satisfies monaco.languages.CompletionItemKind.Color)) {
     return 16 satisfies typeof ls.CompletionItemKind.Color
   }
-  if (kind === 20 satisfies monaco.languages.CompletionItemKind.File) {
+  if (kind === (20 satisfies monaco.languages.CompletionItemKind.File)) {
     return 17 satisfies typeof ls.CompletionItemKind.File
   }
-  if (kind === 21 satisfies monaco.languages.CompletionItemKind.Reference) {
+  if (kind === (21 satisfies monaco.languages.CompletionItemKind.Reference)) {
     return 18 satisfies typeof ls.CompletionItemKind.Reference
   }
-  if (kind === 23 satisfies monaco.languages.CompletionItemKind.Folder) {
+  if (kind === (23 satisfies monaco.languages.CompletionItemKind.Folder)) {
     return 19 satisfies typeof ls.CompletionItemKind.Folder
   }
-  if (kind === 16 satisfies monaco.languages.CompletionItemKind.EnumMember) {
+  if (kind === (16 satisfies monaco.languages.CompletionItemKind.EnumMember)) {
     return 20 satisfies typeof ls.CompletionItemKind.EnumMember
   }
-  if (kind === 14 satisfies monaco.languages.CompletionItemKind.Constant) {
+  if (kind === (14 satisfies monaco.languages.CompletionItemKind.Constant)) {
     return 21 satisfies typeof ls.CompletionItemKind.Constant
   }
-  if (kind === 6 satisfies monaco.languages.CompletionItemKind.Struct) {
+  if (kind === (6 satisfies monaco.languages.CompletionItemKind.Struct)) {
     return 22 satisfies typeof ls.CompletionItemKind.Struct
   }
-  if (kind === 10 satisfies monaco.languages.CompletionItemKind.Event) {
+  if (kind === (10 satisfies monaco.languages.CompletionItemKind.Event)) {
     return 23 satisfies typeof ls.CompletionItemKind.Event
   }
-  if (kind === 11 satisfies monaco.languages.CompletionItemKind.Operator) {
+  if (kind === (11 satisfies monaco.languages.CompletionItemKind.Operator)) {
     return 24 satisfies typeof ls.CompletionItemKind.Operator
   }
-  if (kind === 24 satisfies monaco.languages.CompletionItemKind.TypeParameter) {
+  if (kind === (24 satisfies monaco.languages.CompletionItemKind.TypeParameter)) {
     return 25 satisfies typeof ls.CompletionItemKind.TypeParameter
   }
 }
@@ -96,76 +96,76 @@ export function fromCompletionItemKind(
 export function toCompletionItemKind(
   kind: ls.CompletionItemKind
 ): monaco.languages.CompletionItemKind {
-  if (kind === 1 satisfies typeof ls.CompletionItemKind.Text) {
+  if (kind === (1 satisfies typeof ls.CompletionItemKind.Text)) {
     return 18 satisfies monaco.languages.CompletionItemKind.Text
   }
-  if (kind === 2 satisfies typeof ls.CompletionItemKind.Method) {
+  if (kind === (2 satisfies typeof ls.CompletionItemKind.Method)) {
     return 0 satisfies monaco.languages.CompletionItemKind.Method
   }
-  if (kind === 3 satisfies typeof ls.CompletionItemKind.Function) {
+  if (kind === (3 satisfies typeof ls.CompletionItemKind.Function)) {
     return 1 satisfies monaco.languages.CompletionItemKind.Function
   }
-  if (kind === 4 satisfies typeof ls.CompletionItemKind.Constructor) {
+  if (kind === (4 satisfies typeof ls.CompletionItemKind.Constructor)) {
     return 2 satisfies monaco.languages.CompletionItemKind.Constructor
   }
-  if (kind === 5 satisfies typeof ls.CompletionItemKind.Field) {
+  if (kind === (5 satisfies typeof ls.CompletionItemKind.Field)) {
     return 3 satisfies monaco.languages.CompletionItemKind.Field
   }
-  if (kind === 6 satisfies typeof ls.CompletionItemKind.Variable) {
+  if (kind === (6 satisfies typeof ls.CompletionItemKind.Variable)) {
     return 4 satisfies monaco.languages.CompletionItemKind.Variable
   }
-  if (kind === 7 satisfies typeof ls.CompletionItemKind.Class) {
+  if (kind === (7 satisfies typeof ls.CompletionItemKind.Class)) {
     return 5 satisfies monaco.languages.CompletionItemKind.Class
   }
-  if (kind === 8 satisfies typeof ls.CompletionItemKind.Interface) {
+  if (kind === (8 satisfies typeof ls.CompletionItemKind.Interface)) {
     return 7 satisfies monaco.languages.CompletionItemKind.Interface
   }
-  if (kind === 9 satisfies typeof ls.CompletionItemKind.Module) {
+  if (kind === (9 satisfies typeof ls.CompletionItemKind.Module)) {
     return 8 satisfies monaco.languages.CompletionItemKind.Module
   }
-  if (kind === 10 satisfies typeof ls.CompletionItemKind.Property) {
+  if (kind === (10 satisfies typeof ls.CompletionItemKind.Property)) {
     return 9 satisfies monaco.languages.CompletionItemKind.Property
   }
-  if (kind === 11 satisfies typeof ls.CompletionItemKind.Unit) {
+  if (kind === (11 satisfies typeof ls.CompletionItemKind.Unit)) {
     return 12 satisfies monaco.languages.CompletionItemKind.Unit
   }
-  if (kind === 12 satisfies typeof ls.CompletionItemKind.Value) {
+  if (kind === (12 satisfies typeof ls.CompletionItemKind.Value)) {
     return 13 satisfies monaco.languages.CompletionItemKind.Value
   }
-  if (kind === 13 satisfies typeof ls.CompletionItemKind.Enum) {
+  if (kind === (13 satisfies typeof ls.CompletionItemKind.Enum)) {
     return 15 satisfies monaco.languages.CompletionItemKind.Enum
   }
-  if (kind === 14 satisfies typeof ls.CompletionItemKind.Keyword) {
+  if (kind === (14 satisfies typeof ls.CompletionItemKind.Keyword)) {
     return 17 satisfies monaco.languages.CompletionItemKind.Keyword
   }
-  if (kind === 15 satisfies typeof ls.CompletionItemKind.Snippet) {
+  if (kind === (15 satisfies typeof ls.CompletionItemKind.Snippet)) {
     return 27 satisfies monaco.languages.CompletionItemKind.Snippet
   }
-  if (kind === 16 satisfies typeof ls.CompletionItemKind.Color) {
+  if (kind === (16 satisfies typeof ls.CompletionItemKind.Color)) {
     return 19 satisfies monaco.languages.CompletionItemKind.Color
   }
-  if (kind === 17 satisfies typeof ls.CompletionItemKind.File) {
+  if (kind === (17 satisfies typeof ls.CompletionItemKind.File)) {
     return 20 satisfies monaco.languages.CompletionItemKind.File
   }
-  if (kind === 18 satisfies typeof ls.CompletionItemKind.Reference) {
+  if (kind === (18 satisfies typeof ls.CompletionItemKind.Reference)) {
     return 21 satisfies monaco.languages.CompletionItemKind.Reference
   }
-  if (kind === 19 satisfies typeof ls.CompletionItemKind.Folder) {
+  if (kind === (19 satisfies typeof ls.CompletionItemKind.Folder)) {
     return 23 satisfies monaco.languages.CompletionItemKind.Folder
   }
-  if (kind === 20 satisfies typeof ls.CompletionItemKind.EnumMember) {
+  if (kind === (20 satisfies typeof ls.CompletionItemKind.EnumMember)) {
     return 16 satisfies monaco.languages.CompletionItemKind.EnumMember
   }
-  if (kind === 21 satisfies typeof ls.CompletionItemKind.Constant) {
+  if (kind === (21 satisfies typeof ls.CompletionItemKind.Constant)) {
     return 14 satisfies monaco.languages.CompletionItemKind.Constant
   }
-  if (kind === 22 satisfies typeof ls.CompletionItemKind.Struct) {
+  if (kind === (22 satisfies typeof ls.CompletionItemKind.Struct)) {
     return 6 satisfies monaco.languages.CompletionItemKind.Struct
   }
-  if (kind === 23 satisfies typeof ls.CompletionItemKind.Event) {
+  if (kind === (23 satisfies typeof ls.CompletionItemKind.Event)) {
     return 10 satisfies monaco.languages.CompletionItemKind.Event
   }
-  if (kind === 24 satisfies typeof ls.CompletionItemKind.Operator) {
+  if (kind === (24 satisfies typeof ls.CompletionItemKind.Operator)) {
     return 11 satisfies monaco.languages.CompletionItemKind.Operator
   }
 

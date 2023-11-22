@@ -49,7 +49,9 @@ export function toCodeActionContext(
     -readonly [K in keyof monaco.languages.CodeActionContext]: monaco.languages.CodeActionContext[K]
   } = {
     markers: codeActionContext.diagnostics.map((diagnostic) => toMarkerData(diagnostic, options)),
-    trigger: fromCodeActionTriggerType(codeActionContext.triggerKind ?? 2 satisfies monaco.languages.CodeActionTriggerType.Auto)
+    trigger: fromCodeActionTriggerType(
+      codeActionContext.triggerKind ?? (2 satisfies monaco.languages.CodeActionTriggerType.Auto)
+    )
   }
 
   if (codeActionContext.only?.[0]) {

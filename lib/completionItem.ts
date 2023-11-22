@@ -75,9 +75,15 @@ export function fromCompletionItem(
     result.filterText = completionItem.filterText
   }
 
-  if (completionItem.insertTextRules === 4 satisfies monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet) {
+  if (
+    completionItem.insertTextRules ===
+    (4 satisfies monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet)
+  ) {
     result.insertTextFormat = 2 satisfies typeof ls.InsertTextFormat.Snippet
-  } else if (completionItem.insertTextRules === 1 satisfies monaco.languages.CompletionItemInsertTextRule.KeepWhitespace) {
+  } else if (
+    completionItem.insertTextRules ===
+    (1 satisfies monaco.languages.CompletionItemInsertTextRule.KeepWhitespace)
+  ) {
     result.insertTextMode = 2 satisfies typeof ls.InsertTextMode.adjustIndentation
   }
 
@@ -164,7 +170,7 @@ export function toCompletionItem(
     insertText: text ?? '',
     kind:
       completionItem.kind == null
-        ? 18 satisfies monaco.languages.CompletionItemKind.Text
+        ? (18 satisfies monaco.languages.CompletionItemKind.Text)
         : toCompletionItemKind(completionItem.kind),
     label: completionItem.label,
     range
@@ -197,9 +203,11 @@ export function toCompletionItem(
   }
 
   if (insertTextFormat === 2) {
-    result.insertTextRules = 4 satisfies monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
+    result.insertTextRules =
+      4 satisfies monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
   } else if (insertTextMode === 2) {
-    result.insertTextRules = 1 satisfies monaco.languages.CompletionItemInsertTextRule.KeepWhitespace
+    result.insertTextRules =
+      1 satisfies monaco.languages.CompletionItemInsertTextRule.KeepWhitespace
   }
 
   if (completionItem.preselect != null) {

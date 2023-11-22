@@ -1,9 +1,9 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
+import { URI } from 'vscode-uri'
 
 import { fromTextEdit, toTextEdit } from './textEdit.js'
 import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from './workspaceFileEdit.js'
-import { URI } from 'vscode-uri'
 
 /**
  * Convert a Monaco editor workspace edit to an LSP workspace edit.

@@ -1,11 +1,11 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
+import { URI } from 'vscode-uri'
 
 import {
   fromWorkspaceFileEditOptions,
   toWorkspaceFileEditOptions
 } from './workspaceFileEditOptions.js'
-import { URI } from 'vscode-uri'
 
 type WorkspaceFileEdit = ls.CreateFile | ls.DeleteFile | ls.RenameFile
 

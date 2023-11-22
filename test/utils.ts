@@ -1,4 +1,5 @@
 import { inspect, type InspectOptions } from 'node:util'
+
 import { expect, test } from 'vitest'
 
 interface TestCase<M, L, MO, LO> {

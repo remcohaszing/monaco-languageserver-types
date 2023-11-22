@@ -1,8 +1,8 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
+import { URI } from 'vscode-uri'
 
 import { fromRange, toRange } from './range.js'
-import { URI } from 'vscode-uri'
 
 /**
  * Convert a Monaco editor link to an LSP document link.

@@ -10,10 +10,10 @@ import type * as ls from 'vscode-languageserver-protocol'
 export function fromCompletionTriggerKind(
   kind: monaco.languages.CompletionTriggerKind
 ): ls.CompletionTriggerKind {
-  if (kind === 0 satisfies monaco.languages.CompletionTriggerKind.Invoke) {
+  if (kind === (0 satisfies monaco.languages.CompletionTriggerKind.Invoke)) {
     return 1 satisfies typeof ls.CompletionTriggerKind.Invoked
   }
-  if (kind === 1 satisfies monaco.languages.CompletionTriggerKind.TriggerCharacter) {
+  if (kind === (1 satisfies monaco.languages.CompletionTriggerKind.TriggerCharacter)) {
     return 2 satisfies typeof ls.CompletionTriggerKind.TriggerCharacter
   }
 
@@ -30,10 +30,10 @@ export function fromCompletionTriggerKind(
 export function toCompletionTriggerKind(
   kind: ls.CompletionTriggerKind
 ): monaco.languages.CompletionTriggerKind {
-  if (kind === 1 satisfies typeof ls.CompletionTriggerKind.Invoked) {
+  if (kind === (1 satisfies typeof ls.CompletionTriggerKind.Invoked)) {
     return 0 satisfies monaco.languages.CompletionTriggerKind.Invoke
   }
-  if (kind === 2 satisfies typeof ls.CompletionTriggerKind.TriggerCharacter) {
+  if (kind === (2 satisfies typeof ls.CompletionTriggerKind.TriggerCharacter)) {
     return 1 satisfies monaco.languages.CompletionTriggerKind.TriggerCharacter
   }
 

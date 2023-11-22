@@ -1,11 +1,11 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
+import { URI } from 'vscode-uri'
 
 import { fromMarkerSeverity, toMarkerSeverity } from './markerSeverity.js'
 import { fromMarkerTag, toMarkerTag } from './markerTag.js'
 import { fromRange, toRange } from './range.js'
 import { fromRelatedInformation, toRelatedInformation } from './relatedInformation.js'
-import { URI } from 'vscode-uri'
 
 /**
  * Convert a Monaco editor marker data to an LSP diagnostic.
@@ -67,7 +67,7 @@ export function toMarkerData(
     message: diagnostic.message,
     severity: diagnostic.severity
       ? toMarkerSeverity(diagnostic.severity)
-      : options?.defaultSeverity ?? 8 satisfies monaco.MarkerSeverity.Error
+      : options?.defaultSeverity ?? (8 satisfies monaco.MarkerSeverity.Error)
   }
 
   if (diagnostic.code != null) {
