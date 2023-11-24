@@ -62,11 +62,11 @@ export function toWorkspaceFileEdit(
     workspaceFileEdit.kind === 'create'
       ? { newResource: URI.parse(workspaceFileEdit.uri) }
       : workspaceFileEdit.kind === 'delete'
-      ? { oldResource: URI.parse(workspaceFileEdit.uri) }
-      : {
-          oldResource: URI.parse(workspaceFileEdit.oldUri),
-          newResource: URI.parse(workspaceFileEdit.newUri)
-        }
+        ? { oldResource: URI.parse(workspaceFileEdit.uri) }
+        : {
+            oldResource: URI.parse(workspaceFileEdit.oldUri),
+            newResource: URI.parse(workspaceFileEdit.newUri)
+          }
 
   if (workspaceFileEdit.options) {
     result.options = toWorkspaceFileEditOptions(workspaceFileEdit.options)
