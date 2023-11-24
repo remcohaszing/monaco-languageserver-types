@@ -6,6 +6,7 @@ export default defineConfig({
     environment: 'jsdom',
     isolate: false,
     reporters: 'verbose',
+    include: ['test/*.test.ts'],
     threads: false
   }
 })
