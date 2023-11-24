@@ -5,7 +5,6 @@ import { fromCommand, toCommand } from './command.js'
 import { fromCompletionItemKind, toCompletionItemKind } from './completionItemKind.js'
 import { fromCompletionItemTag, toCompletionItemTag } from './completionItemTag.js'
 import { fromMarkdownString, toMarkdownString } from './markdownString.js'
-import { getMonaco } from './monaco.js'
 import { fromRange, toRange } from './range.js'
 import { fromSingleEditOperation, toSingleEditOperation } from './singleEditOperation.js'
 
@@ -43,8 +42,6 @@ function fromCompletionItemRange(
 export function fromCompletionItem(
   completionItem: monaco.languages.CompletionItem
 ): ls.CompletionItem {
-  const { CompletionItemInsertTextRule } = getMonaco().languages
-
   const result: ls.CompletionItem = {
     kind: fromCompletionItemKind(completionItem.kind),
     label:
@@ -78,10 +75,16 @@ export function fromCompletionItem(
     result.filterText = completionItem.filterText
   }
 
-  if (completionItem.insertTextRules === CompletionItemInsertTextRule.InsertAsSnippet) {
-    result.insertTextFormat = 2
-  } else if (completionItem.insertTextRules === CompletionItemInsertTextRule.KeepWhitespace) {
-    result.insertTextMode = 2
+  if (
+    completionItem.insertTextRules ===
+    (4 satisfies monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet)
+  ) {
+    result.insertTextFormat = 2 satisfies typeof ls.InsertTextFormat.Snippet
+  } else if (
+    completionItem.insertTextRules ===
+    (1 satisfies monaco.languages.CompletionItemInsertTextRule.KeepWhitespace)
+  ) {
+    result.insertTextMode = 2 satisfies typeof ls.InsertTextMode.adjustIndentation
   }
 
   if (completionItem.preselect != null) {
@@ -145,7 +148,6 @@ export function toCompletionItem(
   completionItem: ls.CompletionItem,
   options: ToCompletionItemOptions
 ): monaco.languages.CompletionItem {
-  const { CompletionItemInsertTextRule, CompletionItemKind } = getMonaco().languages
   const itemDefaults = options.itemDefaults ?? {}
   const textEdit = completionItem.textEdit ?? itemDefaults.editRange
   const commitCharacters = completionItem.commitCharacters ?? itemDefaults.commitCharacters
@@ -168,7 +170,7 @@ export function toCompletionItem(
     insertText: text ?? '',
     kind:
       completionItem.kind == null
-        ? CompletionItemKind.Text
+        ? (18 satisfies monaco.languages.CompletionItemKind.Text)
         : toCompletionItemKind(completionItem.kind),
     label: completionItem.label,
     range
@@ -201,9 +203,11 @@ export function toCompletionItem(
   }
 
   if (insertTextFormat === 2) {
-    result.insertTextRules = CompletionItemInsertTextRule.InsertAsSnippet
+    result.insertTextRules =
+      4 satisfies monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet
   } else if (insertTextMode === 2) {
-    result.insertTextRules = CompletionItemInsertTextRule.KeepWhitespace
+    result.insertTextRules =
+      1 satisfies monaco.languages.CompletionItemInsertTextRule.KeepWhitespace
   }
 
   if (completionItem.preselect != null) {

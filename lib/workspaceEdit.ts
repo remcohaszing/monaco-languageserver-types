@@ -1,7 +1,7 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
+import { URI } from 'vscode-uri'
 
-import { getMonaco } from './monaco.js'
 import { fromTextEdit, toTextEdit } from './textEdit.js'
 import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from './workspaceFileEdit.js'
 
@@ -64,10 +64,8 @@ function toWorkspaceTextEdit(
   uri: string,
   versionId?: number
 ): monaco.languages.IWorkspaceTextEdit {
-  const { Uri } = getMonaco()
-
   return {
-    resource: Uri.parse(uri),
+    resource: URI.parse(uri),
     versionId,
     textEdit: toTextEdit(textEdit)
   }

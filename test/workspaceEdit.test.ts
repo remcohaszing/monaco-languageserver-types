@@ -1,4 +1,4 @@
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
+import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
 import { fromWorkspaceEdit, toWorkspaceEdit } from '../index.js'
@@ -34,7 +34,7 @@ runTests(fromWorkspaceEdit, toWorkspaceEdit)(
     monaco: {
       edits: [
         {
-          resource: monaco.Uri.parse('file:///changes.txt'),
+          resource: URI.parse('file:///changes.txt'),
           versionId: undefined,
           textEdit: {
             text: 'new text',
@@ -42,7 +42,7 @@ runTests(fromWorkspaceEdit, toWorkspaceEdit)(
           }
         },
         {
-          resource: monaco.Uri.parse('file:///versioned.txt'),
+          resource: URI.parse('file:///versioned.txt'),
           versionId: 42,
           textEdit: {
             text: 'new text',
@@ -50,8 +50,8 @@ runTests(fromWorkspaceEdit, toWorkspaceEdit)(
           }
         },
         {
-          oldResource: monaco.Uri.parse('file:///old.txt'),
-          newResource: monaco.Uri.parse('file:///new.txt')
+          oldResource: URI.parse('file:///old.txt'),
+          newResource: URI.parse('file:///new.txt')
         }
       ]
     }
@@ -75,7 +75,7 @@ runTests(fromWorkspaceEdit, toWorkspaceEdit)(
     monaco: {
       edits: [
         {
-          resource: monaco.Uri.parse('file:///versioned.txt'),
+          resource: URI.parse('file:///versioned.txt'),
           versionId: undefined,
           textEdit: {
             text: 'new text',

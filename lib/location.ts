@@ -1,7 +1,7 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
+import { URI } from 'vscode-uri'
 
-import { getMonaco } from './monaco.js'
 import { fromRange, toRange } from './range.js'
 
 /**
@@ -24,10 +24,8 @@ export function fromLocation(location: monaco.languages.Location): ls.Location {
  * @returns The location as Monaco editor location.
  */
 export function toLocation(location: ls.Location): monaco.languages.Location {
-  const { Uri } = getMonaco()
-
   return {
     range: toRange(location.range),
-    uri: Uri.parse(location.uri)
+    uri: URI.parse(location.uri)
   }
 }

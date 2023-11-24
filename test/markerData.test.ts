@@ -1,5 +1,6 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import * as ls from 'vscode-languageserver-protocol'
+import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
 import { fromMarkerData, toMarkerData } from '../index.js'
@@ -62,7 +63,7 @@ runTests(fromMarkerData, toMarkerData)(
       source: 'ESLint'
     },
     monaco: {
-      code: { value: 'Other location', target: monaco.Uri.parse('file:///contributing.md') },
+      code: { value: 'Other location', target: URI.parse('file:///contributing.md') },
       message: 'Look over there!',
       startLineNumber: 1,
       startColumn: 11,
@@ -71,7 +72,7 @@ runTests(fromMarkerData, toMarkerData)(
       relatedInformation: [
         {
           message: 'Look over here!',
-          resource: monaco.Uri.parse('file:///readme.md'),
+          resource: URI.parse('file:///readme.md'),
           startLineNumber: 1,
           startColumn: 11,
           endLineNumber: 3,

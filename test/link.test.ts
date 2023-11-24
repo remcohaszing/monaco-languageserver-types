@@ -1,4 +1,4 @@
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
+import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
 import { fromLink, toLink } from '../index.js'
@@ -21,7 +21,7 @@ runTests(fromLink, toLink)(
         endColumn: 21
       },
       tooltip: 'Hello',
-      url: monaco.Uri.parse('file:///example')
+      url: URI.parse('file:///example')
     }
   },
   {

@@ -1,8 +1,6 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
 
-import { getMonaco } from './monaco.js'
-
 /**
  * Convert a Monaco editor completion trigger kind to an LSP completion trigger kind.
  *
@@ -12,13 +10,11 @@ import { getMonaco } from './monaco.js'
 export function fromCompletionTriggerKind(
   kind: monaco.languages.CompletionTriggerKind
 ): ls.CompletionTriggerKind {
-  const { CompletionTriggerKind } = getMonaco().languages
-
-  if (kind === CompletionTriggerKind.Invoke) {
-    return 1
+  if (kind === (0 satisfies monaco.languages.CompletionTriggerKind.Invoke)) {
+    return 1 satisfies typeof ls.CompletionTriggerKind.Invoked
   }
-  if (kind === CompletionTriggerKind.TriggerCharacter) {
-    return 2
+  if (kind === (1 satisfies monaco.languages.CompletionTriggerKind.TriggerCharacter)) {
+    return 2 satisfies typeof ls.CompletionTriggerKind.TriggerCharacter
   }
 
   // Kind === TriggerForIncompleteCompletions.
@@ -34,15 +30,13 @@ export function fromCompletionTriggerKind(
 export function toCompletionTriggerKind(
   kind: ls.CompletionTriggerKind
 ): monaco.languages.CompletionTriggerKind {
-  const { CompletionTriggerKind } = getMonaco().languages
-
-  if (kind === 1) {
-    return CompletionTriggerKind.Invoke
+  if (kind === (1 satisfies typeof ls.CompletionTriggerKind.Invoked)) {
+    return 0 satisfies monaco.languages.CompletionTriggerKind.Invoke
   }
-  if (kind === 2) {
-    return CompletionTriggerKind.TriggerCharacter
+  if (kind === (2 satisfies typeof ls.CompletionTriggerKind.TriggerCharacter)) {
+    return 1 satisfies monaco.languages.CompletionTriggerKind.TriggerCharacter
   }
 
   // Kind === 3
-  return CompletionTriggerKind.TriggerForIncompleteCompletions
+  return 2 satisfies monaco.languages.CompletionTriggerKind.TriggerForIncompleteCompletions
 }

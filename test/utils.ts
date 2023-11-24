@@ -1,9 +1,6 @@
 import { inspect, type InspectOptions } from 'node:util'
 
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import { expect, test } from 'vitest'
-
-import { setMonaco } from '../index.js'
 
 interface TestCase<M, L, MO, LO> {
   /**
@@ -31,8 +28,6 @@ interface TestCase<M, L, MO, LO> {
    */
   fromOptions?: MO
 }
-
-setMonaco(monaco)
 
 const inspectOptions: InspectOptions = {
   breakLength: Number.POSITIVE_INFINITY,

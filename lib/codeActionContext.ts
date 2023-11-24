@@ -3,7 +3,6 @@ import type * as ls from 'vscode-languageserver-protocol'
 
 import { fromCodeActionTriggerType } from './codeActionTriggerType.js'
 import { fromMarkerData, toMarkerData } from './markerData.js'
-import { getMonaco } from './monaco.js'
 
 /**
  * Convert a Monaco editor code action context to an LSP code action context.
@@ -46,13 +45,13 @@ export function toCodeActionContext(
   codeActionContext: ls.CodeActionContext,
   options?: ToCodeActionContextOptions
 ): monaco.languages.CodeActionContext {
-  const { CodeActionTriggerType } = getMonaco().languages
-
   const result: {
     -readonly [K in keyof monaco.languages.CodeActionContext]: monaco.languages.CodeActionContext[K]
   } = {
     markers: codeActionContext.diagnostics.map((diagnostic) => toMarkerData(diagnostic, options)),
-    trigger: fromCodeActionTriggerType(codeActionContext.triggerKind ?? CodeActionTriggerType.Auto)
+    trigger: fromCodeActionTriggerType(
+      codeActionContext.triggerKind ?? (2 satisfies monaco.languages.CodeActionTriggerType.Auto)
+    )
   }
 
   if (codeActionContext.only?.[0]) {

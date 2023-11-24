@@ -1,7 +1,7 @@
 import type * as monaco from 'monaco-types'
 import type * as ls from 'vscode-languageserver-protocol'
+import { URI } from 'vscode-uri'
 
-import { getMonaco } from './monaco.js'
 import { fromRange, toRange } from './range.js'
 
 /**
@@ -31,11 +31,9 @@ export function fromRelatedInformation(
 export function toRelatedInformation(
   relatedInformation: ls.DiagnosticRelatedInformation
 ): monaco.editor.IRelatedInformation {
-  const { Uri } = getMonaco()
-
   return {
     ...toRange(relatedInformation.location.range),
     message: relatedInformation.message,
-    resource: Uri.parse(relatedInformation.location.uri)
+    resource: URI.parse(relatedInformation.location.uri)
   }
 }

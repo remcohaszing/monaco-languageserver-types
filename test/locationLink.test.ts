@@ -1,4 +1,4 @@
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
+import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
 import { fromLocationLink, toLocationLink } from '../index.js'
@@ -39,7 +39,7 @@ runTests(fromLocationLink, toLocationLink)(
         endLineNumber: 3,
         endColumn: 21
       },
-      uri: monaco.Uri.parse('file:///example')
+      uri: URI.parse('file:///example')
     }
   },
   {
@@ -67,7 +67,7 @@ runTests(fromLocationLink, toLocationLink)(
         endLineNumber: 3,
         endColumn: 21
       },
-      uri: monaco.Uri.parse('file:///example')
+      uri: URI.parse('file:///example')
     }
   },
   {
@@ -90,7 +90,7 @@ runTests(fromLocationLink, toLocationLink)(
         endLineNumber: 3,
         endColumn: 21
       },
-      uri: monaco.Uri.parse('file:///example')
+      uri: URI.parse('file:///example')
     }
   }
 )
