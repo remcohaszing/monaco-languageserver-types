@@ -1,5 +1,5 @@
 import { runTests } from './utils.js'
-import { fromFormattingOptions, toFormattingOptions } from '../index.js'
+import { fromFormattingOptions, toFormattingOptions } from '../src/index.js'
 
 runTests(
   fromFormattingOptions,

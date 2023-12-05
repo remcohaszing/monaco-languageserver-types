@@ -2,7 +2,7 @@ import { expect, test } from 'vitest'
 import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
-import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from '../index.js'
+import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from '../src/index.js'
 
 runTests(fromWorkspaceFileEdit, toWorkspaceFileEdit)(
   {

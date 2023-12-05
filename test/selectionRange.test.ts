@@ -1,5 +1,5 @@
 import { runTests } from './utils.js'
-import { fromSelectionRange, toSelectionRange } from '../index.js'
+import { fromSelectionRange, toSelectionRange } from '../src/index.js'
 
 runTests(
   fromSelectionRange,

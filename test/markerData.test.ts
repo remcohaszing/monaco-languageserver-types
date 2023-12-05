@@ -3,7 +3,7 @@ import * as ls from 'vscode-languageserver-protocol'
 import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
-import { fromMarkerData, toMarkerData } from '../index.js'
+import { fromMarkerData, toMarkerData } from '../src/index.js'
 
 runTests(fromMarkerData, toMarkerData)(
   {

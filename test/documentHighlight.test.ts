@@ -2,7 +2,7 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import * as ls from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
-import { fromDocumentHighlight, toDocumentHighlight } from '../index.js'
+import { fromDocumentHighlight, toDocumentHighlight } from '../src/index.js'
 
 runTests(fromDocumentHighlight, toDocumentHighlight)(
   {

@@ -2,7 +2,7 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import * as ls from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
-import { fromCompletionItemKind, toCompletionItemKind } from '../index.js'
+import { fromCompletionItemKind, toCompletionItemKind } from '../src/index.js'
 
 runTests(fromCompletionItemKind, toCompletionItemKind)(
   { lsp: ls.CompletionItemKind.Text, monaco: monaco.languages.CompletionItemKind.Text },

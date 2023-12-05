@@ -1,7 +1,7 @@
 import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
-import { fromDefinition, toDefinition } from '../index.js'
+import { fromDefinition, toDefinition } from '../src/index.js'
 
 runTests(fromDefinition, toDefinition)(
   {

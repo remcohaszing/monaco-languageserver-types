@@ -1,5 +1,5 @@
 import { runTests } from './utils.js'
-import { fromCodeLens, toCodeLens } from '../index.js'
+import { fromCodeLens, toCodeLens } from '../src/index.js'
 
 runTests(fromCodeLens, toCodeLens)(
   {

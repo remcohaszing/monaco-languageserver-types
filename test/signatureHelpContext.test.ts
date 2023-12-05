@@ -2,7 +2,7 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import * as ls from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
-import { fromSignatureHelpContext, toSignatureHelpContext } from '../index.js'
+import { fromSignatureHelpContext, toSignatureHelpContext } from '../src/index.js'
 
 runTests(fromSignatureHelpContext, toSignatureHelpContext)(
   {

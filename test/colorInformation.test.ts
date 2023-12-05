@@ -1,5 +1,5 @@
 import { runTests } from './utils.js'
-import { fromColorInformation, toColorInformation } from '../index.js'
+import { fromColorInformation, toColorInformation } from '../src/index.js'
 
 runTests(
   fromColorInformation,

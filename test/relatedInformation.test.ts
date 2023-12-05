@@ -1,7 +1,7 @@
 import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
-import { fromRelatedInformation, toRelatedInformation } from '../index.js'
+import { fromRelatedInformation, toRelatedInformation } from '../src/index.js'
 
 runTests(
   fromRelatedInformation,

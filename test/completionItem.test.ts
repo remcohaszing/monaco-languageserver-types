@@ -2,7 +2,7 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import * as ls from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
-import { fromCompletionItem, toCompletionItem } from '../index.js'
+import { fromCompletionItem, toCompletionItem } from '../src/index.js'
 
 runTests(fromCompletionItem, toCompletionItem)(
   {

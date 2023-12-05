@@ -2,7 +2,7 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import * as ls from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
-import { fromInlayHint, toInlayHint } from '../index.js'
+import { fromInlayHint, toInlayHint } from '../src/index.js'
 
 runTests(fromInlayHint, toInlayHint)(
   {

@@ -1,7 +1,7 @@
 import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
-import { fromWorkspaceEdit, toWorkspaceEdit } from '../index.js'
+import { fromWorkspaceEdit, toWorkspaceEdit } from '../src/index.js'
 
 runTests(fromWorkspaceEdit, toWorkspaceEdit)(
   {

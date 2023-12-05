@@ -1,5 +1,5 @@
 import { runTests } from './utils.js'
-import { fromWorkspaceFileEditOptions, toWorkspaceFileEditOptions } from '../index.js'
+import { fromWorkspaceFileEditOptions, toWorkspaceFileEditOptions } from '../src/index.js'
 
 runTests(fromWorkspaceFileEditOptions, toWorkspaceFileEditOptions)(
   {

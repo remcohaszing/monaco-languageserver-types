@@ -3,7 +3,8 @@
   "version": "0.3.0",
   "description": "Convert between language server types and Monaco editor types",
   "type": "module",
-  "exports": "./index.js",
+  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
   "repository": "remcohaszing/monaco-languageserver-types",
   "bugs": "https://github.com/remcohaszing/monaco-languageserver-types/issues",
   "homepage": "https://github.com/remcohaszing/monaco-languageserver-types",
@@ -18,11 +19,11 @@
     "vscode-languageserver-types"
   ],
   "files": [
-    "index.*",
-    "lib"
+    "dist",
+    "src"
   ],
   "scripts": {
-    "prepack": "tsc --noEmit false",
+    "prepack": "tsc --build",
     "start": "vitest",
     "test": "vitest --run --coverage"
   },

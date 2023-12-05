@@ -1,7 +1,7 @@
 import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
-import { fromLocationLink, toLocationLink } from '../index.js'
+import { fromLocationLink, toLocationLink } from '../src/index.js'
 
 runTests(fromLocationLink, toLocationLink)(
   {

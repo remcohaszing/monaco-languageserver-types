@@ -1,12 +1,15 @@
 {
-  "exclude": ["src"],
-  "references": [{ "path": "./tsconfig.build.json" }],
+  "include": ["src"],
   "compilerOptions": {
     "composite": true,
+    "declaration": true,
+    "declarationMap": true,
     "lib": ["es2018", "es2022.error"],
     "module": "node16",
-    "noEmit": true,
+    "outDir": "dist",
+    "rootDir": "src",
     "skipLibCheck": true,
+    "sourceMap": true,
     "strict": true,
     "target": "es2018"
   }

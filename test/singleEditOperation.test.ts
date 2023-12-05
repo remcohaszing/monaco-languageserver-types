@@ -1,5 +1,5 @@
 import { runTests } from './utils.js'
-import { fromSingleEditOperation, toSingleEditOperation } from '../index.js'
+import { fromSingleEditOperation, toSingleEditOperation } from '../src/index.js'
 
 runTests(fromSingleEditOperation, toSingleEditOperation)(
   {
