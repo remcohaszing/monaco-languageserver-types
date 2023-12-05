@@ -1,6 +1,3 @@
 root: true
 extends:
   - remcohaszing
-  - remcohaszing/typechecking
-rules:
-  '@typescript-eslint/no-unsafe-enum-comparison': off
