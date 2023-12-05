@@ -4,9 +4,12 @@ export default defineConfig({
   test: {
     css: true,
     environment: 'jsdom',
-    isolate: false,
     reporters: 'verbose',
     include: ['test/*.test.ts'],
-    threads: false
+    poolOptions: {
+      threads: {
+        isolate: false
+      }
+    }
   }
 })
