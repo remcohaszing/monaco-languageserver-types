@@ -35,6 +35,7 @@ export { fromRange, toRange } from './range.js'
 export { fromRelatedInformation, toRelatedInformation } from './relatedInformation.js'
 export { fromSelectionRange, toSelectionRange } from './selectionRange.js'
 export { fromSemanticTokens, toSemanticTokens } from './semanticTokens.js'
+export { fromSemanticTokensEdit, toSemanticTokensEdit } from './semanticTokensEdit.js'
 export { fromSignatureHelpContext, toSignatureHelpContext } from './signatureHelpContext.js'
 export { fromSignatureHelp, toSignatureHelp } from './signatureHelp.js'
 export {
