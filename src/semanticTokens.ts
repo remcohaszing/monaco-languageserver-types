@@ -1,4 +1,5 @@
 import type * as monaco from 'monaco-types'
+import { type Writable } from 'type-fest'
 import type * as ls from 'vscode-languageserver-protocol'
 
 /**
@@ -34,9 +35,7 @@ export function fromSemanticTokens(
 export function toSemanticTokens(
   semanticTokens: ls.SemanticTokens
 ): monaco.languages.SemanticTokens {
-  const result: {
-    -readonly [K in keyof monaco.languages.SemanticTokens]: monaco.languages.SemanticTokens[K]
-  } = {
+  const result: Writable<monaco.languages.SemanticTokens> = {
     data: Uint32Array.from(semanticTokens.data)
   }
 

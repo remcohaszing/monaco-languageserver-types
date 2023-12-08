@@ -1,4 +1,5 @@
 import type * as monaco from 'monaco-types'
+import { type Writable } from 'type-fest'
 import type * as ls from 'vscode-languageserver-protocol'
 
 /**
@@ -35,9 +36,7 @@ export function fromSemanticTokensEdit(
 export function toSemanticTokensEdit(
   semanticTokensEdit: ls.SemanticTokensEdit
 ): monaco.languages.SemanticTokensEdit {
-  const result: {
-    -readonly [K in keyof monaco.languages.SemanticTokensEdit]: monaco.languages.SemanticTokensEdit[K]
-  } = {
+  const result: Writable<monaco.languages.SemanticTokensEdit> = {
     deleteCount: semanticTokensEdit.deleteCount,
     start: semanticTokensEdit.start
   }

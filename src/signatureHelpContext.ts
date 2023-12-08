@@ -1,4 +1,5 @@
 import type * as monaco from 'monaco-types'
+import { type Writable } from 'type-fest'
 import type * as ls from 'vscode-languageserver-protocol'
 
 import { fromSignatureHelp, toSignatureHelp } from './signatureHelp.js'
@@ -42,9 +43,7 @@ export function fromSignatureHelpContext(
 export function toSignatureHelpContext(
   signatureHelpContext: ls.SignatureHelpContext
 ): monaco.languages.SignatureHelpContext {
-  const result: {
-    -readonly [K in keyof monaco.languages.SignatureHelpContext]: monaco.languages.SignatureHelpContext[K]
-  } = {
+  const result: Writable<monaco.languages.SignatureHelpContext> = {
     isRetrigger: signatureHelpContext.isRetrigger,
     triggerKind: fromSignatureHelpTriggerKind(signatureHelpContext.triggerKind)
   }

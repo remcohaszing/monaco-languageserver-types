@@ -1,4 +1,5 @@
 import type * as monaco from 'monaco-types'
+import { type Writable } from 'type-fest'
 import type * as ls from 'vscode-languageserver-protocol'
 
 import { fromSemanticTokensEdit, toSemanticTokensEdit } from './semanticTokensEdit.js'
@@ -14,9 +15,7 @@ import { fromSemanticTokensEdit, toSemanticTokensEdit } from './semanticTokensEd
 export function fromSemanticTokensEdits(
   semanticTokensEdits: monaco.languages.SemanticTokensEdits
 ): ls.SemanticTokensDelta {
-  const result: {
-    -readonly [K in keyof ls.SemanticTokensDelta]: ls.SemanticTokensDelta[K]
-  } = {
+  const result: Writable<ls.SemanticTokensDelta> = {
     edits: semanticTokensEdits.edits.map(fromSemanticTokensEdit)
   }
 
@@ -38,9 +37,7 @@ export function fromSemanticTokensEdits(
 export function toSemanticTokensEdits(
   semanticTokensDelta: ls.SemanticTokensDelta
 ): monaco.languages.SemanticTokensEdits {
-  const result: {
-    -readonly [K in keyof monaco.languages.SemanticTokensEdits]: monaco.languages.SemanticTokensEdits[K]
-  } = {
+  const result: Writable<monaco.languages.SemanticTokensEdits> = {
     edits: semanticTokensDelta.edits.map(toSemanticTokensEdit)
   }
 

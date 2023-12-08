@@ -40,6 +40,7 @@
     "monaco-editor": "^0.44.0",
     "remark-cli": "^11.0.0",
     "remark-preset-remcohaszing": "^2.0.0",
+    "type-fest": "^4.0.0",
     "vitest": "^1.0.0"
   }
 }

@@ -1,4 +1,5 @@
 import type * as monaco from 'monaco-types'
+import { type Writable } from 'type-fest'
 import type * as ls from 'vscode-languageserver-protocol'
 
 import { fromCodeActionTriggerType } from './codeActionTriggerType.js'
@@ -50,9 +51,7 @@ export function toCodeActionContext(
   codeActionContext: ls.CodeActionContext,
   options?: ToCodeActionContextOptions
 ): monaco.languages.CodeActionContext {
-  const result: {
-    -readonly [K in keyof monaco.languages.CodeActionContext]: monaco.languages.CodeActionContext[K]
-  } = {
+  const result: Writable<monaco.languages.CodeActionContext> = {
     markers: codeActionContext.diagnostics.map((diagnostic) => toMarkerData(diagnostic, options)),
     trigger: fromCodeActionTriggerType(
       codeActionContext.triggerKind ?? (2 satisfies monaco.languages.CodeActionTriggerType.Auto)
