@@ -4,8 +4,10 @@ import type * as ls from 'vscode-languageserver-protocol'
 /**
  * Convert a Monaco editor folding range to an LSP folding range.
  *
- * @param foldingRange The Monaco folding range to convert.
- * @returns The folding range as an LSP folding range.
+ * @param foldingRange
+ *   The Monaco folding range to convert.
+ * @returns
+ *   The folding range as an LSP folding range.
  */
 export function fromFoldingRange(foldingRange: monaco.languages.FoldingRange): ls.FoldingRange {
   const result: ls.FoldingRange = {
@@ -23,8 +25,10 @@ export function fromFoldingRange(foldingRange: monaco.languages.FoldingRange): l
 /**
  * Convert an LSP folding range to a Monaco editor folding range.
  *
- * @param foldingRange The LSP folding range to convert.
- * @returns The folding range as Monaco editor folding range.
+ * @param foldingRange
+ *   The LSP folding range to convert.
+ * @returns
+ *   The folding range as Monaco editor folding range.
  */
 export function toFoldingRange(foldingRange: ls.FoldingRange): monaco.languages.FoldingRange {
   const result: monaco.languages.FoldingRange = {

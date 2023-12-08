@@ -4,8 +4,10 @@ import type * as ls from 'vscode-languageserver-protocol'
 /**
  * Convert a Monaco editor position to an LSP range.
  *
- * @param position The Monaco position to convert.
- * @returns The position as an LSP position.
+ * @param position
+ *   The Monaco position to convert.
+ * @returns
+ *   The position as an LSP position.
  */
 export function fromPosition(position: monaco.IPosition): ls.Position {
   return { character: position.column - 1, line: position.lineNumber - 1 }
@@ -14,8 +16,10 @@ export function fromPosition(position: monaco.IPosition): ls.Position {
 /**
  * Convert an LSP position to a Monaco editor position.
  *
- * @param position The LSP position to convert.
- * @returns The position as Monaco editor position.
+ * @param position
+ *   The LSP position to convert.
+ * @returns
+ *   The position as Monaco editor position.
  */
 export function toPosition(position: ls.Position): monaco.IPosition {
   return { lineNumber: position.line + 1, column: position.character + 1 }

@@ -4,8 +4,10 @@ import type * as ls from 'vscode-languageserver-protocol'
 /**
  * Convert a Monaco editor color to an LSP color.
  *
- * @param color The Monaco color to convert.
- * @returns The color as an LSP color.
+ * @param color
+ *   The Monaco color to convert.
+ * @returns
+ *   The color as an LSP color.
  */
 export function fromColor(color: monaco.languages.IColor): ls.Color {
   return {
@@ -19,8 +21,10 @@ export function fromColor(color: monaco.languages.IColor): ls.Color {
 /**
  * Convert an LSP color to a Monaco editor color.
  *
- * @param color The LSP color to convert.
- * @returns The color as Monaco editor color.
+ * @param color
+ *   The LSP color to convert.
+ * @returns
+ *   The color as Monaco editor color.
  */
 export function toColor(color: ls.Color): monaco.languages.IColor {
   return {

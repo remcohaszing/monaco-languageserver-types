@@ -8,8 +8,10 @@ import { fromMarkdownString, toMarkdownString } from './markdownString.js'
 /**
  * Convert a Monaco editor inlay hint label part to an LSP inlay hint label part.
  *
- * @param inlayHintLabelPart The Monaco inlay hint label part to convert.
- * @returns The inlay hint label part as an LSP inlay hint label part.
+ * @param inlayHintLabelPart
+ *   The Monaco inlay hint label part to convert.
+ * @returns
+ *   The inlay hint label part as an LSP inlay hint label part.
  */
 export function fromInlayHintLabelPart(
   inlayHintLabelPart: monaco.languages.InlayHintLabelPart
@@ -38,8 +40,10 @@ export function fromInlayHintLabelPart(
 /**
  * Convert an LSP inlay hint label part to a Monaco editor inlay hint label part.
  *
- * @param inlayHintLabelPart The LSP inlay hint label part to convert.
- * @returns The inlay hint label part as Monaco editor inlay hint label part.
+ * @param inlayHintLabelPart
+ *   The LSP inlay hint label part to convert.
+ * @returns
+ *   The inlay hint label part as Monaco editor inlay hint label part.
  */
 export function toInlayHintLabelPart(
   inlayHintLabelPart: ls.InlayHintLabelPart

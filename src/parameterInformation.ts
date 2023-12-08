@@ -6,8 +6,10 @@ import { fromMarkdownString, toMarkdownString } from './markdownString.js'
 /**
  * Convert a Monaco editor parameter information to an LSP parameter information.
  *
- * @param parameterInformation The Monaco parameter information to convert.
- * @returns The parameter information as an LSP parameter information.
+ * @param parameterInformation
+ *   The Monaco parameter information to convert.
+ * @returns
+ *   The parameter information as an LSP parameter information.
  */
 export function fromParameterInformation(
   parameterInformation: monaco.languages.ParameterInformation
@@ -28,8 +30,10 @@ export function fromParameterInformation(
 /**
  * Convert an LSP parameter information to a Monaco editor parameter information.
  *
- * @param parameterInformation The LSP parameter information to convert.
- * @returns The parameter information as Monaco editor parameter information.
+ * @param parameterInformation
+ *   The LSP parameter information to convert.
+ * @returns
+ *   The parameter information as Monaco editor parameter information.
  */
 export function toParameterInformation(
   parameterInformation: ls.ParameterInformation

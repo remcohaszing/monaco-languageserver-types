@@ -10,8 +10,10 @@ import { fromRelatedInformation, toRelatedInformation } from './relatedInformati
 /**
  * Convert a Monaco editor marker data to an LSP diagnostic.
  *
- * @param markerData The Monaco marker data to convert.
- * @returns The marker data as an LSP diagnostic.
+ * @param markerData
+ *   The Monaco marker data to convert.
+ * @returns
+ *   The marker data as an LSP diagnostic.
  */
 export function fromMarkerData(markerData: monaco.editor.IMarkerData): ls.Diagnostic {
   const diagnostic: ls.Diagnostic = {
@@ -54,9 +56,12 @@ export interface ToMarkerDataOptions {
 /**
  * Convert an LSP diagnostic to a Monaco editor marker data.
  *
- * @param diagnostic The LSP diagnostic to convert.
- * @param options Additional options needed to construct the Monaco marker data.
- * @returns The diagnostic as Monaco editor marker data.
+ * @param diagnostic
+ *   The LSP diagnostic to convert.
+ * @param options
+ *   Additional options needed to construct the Monaco marker data.
+ * @returns
+ *   The diagnostic as Monaco editor marker data.
  */
 export function toMarkerData(
   diagnostic: ls.Diagnostic,

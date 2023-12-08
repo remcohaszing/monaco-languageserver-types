@@ -7,8 +7,10 @@ import { fromRange, toRange } from './range.js'
 /**
  * Convert a Monaco editor location to an LSP location.
  *
- * @param location The Monaco location to convert.
- * @returns The location as an LSP location.
+ * @param location
+ *   The Monaco location to convert.
+ * @returns
+ *   The location as an LSP location.
  */
 export function fromLocation(location: monaco.languages.Location): ls.Location {
   return {
@@ -20,8 +22,10 @@ export function fromLocation(location: monaco.languages.Location): ls.Location {
 /**
  * Convert an LSP location to a Monaco editor location.
  *
- * @param location The LSP location to convert.
- * @returns The location as Monaco editor location.
+ * @param location
+ *   The LSP location to convert.
+ * @returns
+ *   The location as Monaco editor location.
  */
 export function toLocation(location: ls.Location): monaco.languages.Location {
   return {

@@ -7,8 +7,10 @@ import { fromRange, toRange } from './range.js'
 /**
  * Convert a Monaco editor location link to an LSP location link.
  *
- * @param locationLink The Monaco location link to convert.
- * @returns The location link as an LSP location link.
+ * @param locationLink
+ *   The Monaco location link to convert.
+ * @returns
+ *   The location link as an LSP location link.
  */
 export function fromLocationLink(locationLink: monaco.languages.LocationLink): ls.LocationLink {
   const result: ls.LocationLink = {
@@ -29,8 +31,10 @@ export function fromLocationLink(locationLink: monaco.languages.LocationLink): l
 /**
  * Convert an LSP location link to a Monaco editor location link.
  *
- * @param locationLink The LSP location link to convert.
- * @returns The location link as Monaco editor location link.
+ * @param locationLink
+ *   The LSP location link to convert.
+ * @returns
+ *   The location link as Monaco editor location link.
  */
 export function toLocationLink(locationLink: ls.LocationLink): monaco.languages.LocationLink {
   const result: monaco.languages.LocationLink = {

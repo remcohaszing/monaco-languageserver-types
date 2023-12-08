@@ -7,8 +7,10 @@ import { fromRange, toRange } from './range.js'
 /**
  * Convert a Monaco editor code lens to an LSP code lens.
  *
- * @param codeLens The Monaco code lens to convert.
- * @returns The code lens as an LSP code lens.
+ * @param codeLens
+ *   The Monaco code lens to convert.
+ * @returns
+ *   The code lens as an LSP code lens.
  */
 export function fromCodeLens(codeLens: monaco.languages.CodeLens): ls.CodeLens {
   const result: ls.CodeLens = {
@@ -25,8 +27,10 @@ export function fromCodeLens(codeLens: monaco.languages.CodeLens): ls.CodeLens {
 /**
  * Convert an LSP code lens to a Monaco editor code lens.
  *
- * @param codeLens The LSP code lens to convert.
- * @returns The code lens as Monaco editor code lens.
+ * @param codeLens
+ *   The LSP code lens to convert.
+ * @returns
+ *   The code lens as Monaco editor code lens.
  */
 export function toCodeLens(codeLens: ls.CodeLens): monaco.languages.CodeLens {
   const result: monaco.languages.CodeLens = {

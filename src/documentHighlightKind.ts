@@ -4,8 +4,10 @@ import type * as ls from 'vscode-languageserver-protocol'
 /**
  * Convert a Monaco editor document highlight kind to an LSP document highlight kind.
  *
- * @param kind The Monaco document highlight kind to convert.
- * @returns The document highlight kind as an LSP document highlight kind.
+ * @param kind
+ *   The Monaco document highlight kind to convert.
+ * @returns
+ *   The document highlight kind as an LSP document highlight kind.
  */
 export function fromDocumentHighlightKind(
   kind: monaco.languages.DocumentHighlightKind
@@ -22,8 +24,10 @@ export function fromDocumentHighlightKind(
 /**
  * Convert an LSP document highlight kind to a Monaco editor document highlight kind.
  *
- * @param kind The LSP document highlight kind to convert.
- * @returns The document highlight kind as Monaco editor document highlight kind.
+ * @param kind
+ *   The LSP document highlight kind to convert.
+ * @returns
+ *   The document highlight kind as Monaco editor document highlight kind.
  */
 export function toDocumentHighlightKind(
   kind: ls.DocumentHighlightKind

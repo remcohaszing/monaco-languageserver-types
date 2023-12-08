@@ -7,8 +7,10 @@ import { fromParameterInformation, toParameterInformation } from './parameterInf
 /**
  * Convert a Monaco editor signature information to an LSP signature information.
  *
- * @param signatureInformation The Monaco signature information to convert.
- * @returns The signature information as an LSP signature information.
+ * @param signatureInformation
+ *   The Monaco signature information to convert.
+ * @returns
+ *   The signature information as an LSP signature information.
  */
 export function fromSignatureInformation(
   signatureInformation: monaco.languages.SignatureInformation
@@ -34,8 +36,10 @@ export function fromSignatureInformation(
 /**
  * Convert an LSP signature information to a Monaco editor signature information.
  *
- * @param signatureInformation The LSP signature information to convert.
- * @returns The signature information as Monaco editor signature information.
+ * @param signatureInformation
+ *   The LSP signature information to convert.
+ * @returns
+ *   The signature information as Monaco editor signature information.
  */
 export function toSignatureInformation(
   signatureInformation: ls.SignatureInformation

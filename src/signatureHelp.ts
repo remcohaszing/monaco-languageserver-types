@@ -6,8 +6,10 @@ import { fromSignatureInformation, toSignatureInformation } from './signatureInf
 /**
  * Convert a Monaco editor signature help to an LSP signature help.
  *
- * @param signatureHelp The Monaco signature help to convert.
- * @returns The signature help as an LSP signature help.
+ * @param signatureHelp
+ *   The Monaco signature help to convert.
+ * @returns
+ *   The signature help as an LSP signature help.
  */
 export function fromSignatureHelp(signatureHelp: monaco.languages.SignatureHelp): ls.SignatureHelp {
   return {
@@ -20,8 +22,10 @@ export function fromSignatureHelp(signatureHelp: monaco.languages.SignatureHelp)
 /**
  * Convert an LSP signature help to a Monaco editor signature help.
  *
- * @param signatureHelp The LSP signature help to convert.
- * @returns The signature help as Monaco editor signature help.
+ * @param signatureHelp
+ *   The LSP signature help to convert.
+ * @returns
+ *   The signature help as Monaco editor signature help.
  */
 export function toSignatureHelp(signatureHelp: ls.SignatureHelp): monaco.languages.SignatureHelp {
   return {

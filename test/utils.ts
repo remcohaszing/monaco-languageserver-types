@@ -38,9 +38,12 @@ const inspectOptions: InspectOptions = {
 }
 
 /**
- * @param from The function to convert from a Monaco editor type to a language server type.
- * @param to The function to convert from a language server type to a Monaco editor type.
- * @returns A function for running tests.
+ * @param from
+ *   The function to convert from a Monaco editor type to a language server type.
+ * @param to
+ *   The function to convert from a language server type to a Monaco editor type.
+ * @returns
+ *   A function for running tests.
  */
 export function runTests<M, L, MO = never, LO = never>(
   from: (monacoType: M, fromOptions: MO) => L | undefined,

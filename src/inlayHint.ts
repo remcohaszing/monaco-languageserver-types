@@ -10,8 +10,10 @@ import { fromTextEdit, toTextEdit } from './textEdit.js'
 /**
  * Convert a Monaco editor inlay hint to an LSP inlay hint.
  *
- * @param inlayHint The Monaco inlay hint to convert.
- * @returns The inlay hint as an LSP inlay hint.
+ * @param inlayHint
+ *   The Monaco inlay hint to convert.
+ * @returns
+ *   The inlay hint as an LSP inlay hint.
  */
 export function fromInlayHint(inlayHint: monaco.languages.InlayHint): ls.InlayHint {
   const result: ls.InlayHint = {
@@ -50,8 +52,10 @@ export function fromInlayHint(inlayHint: monaco.languages.InlayHint): ls.InlayHi
 /**
  * Convert an LSP inlay hint to a Monaco editor inlay hint.
  *
- * @param inlayHint The LSP inlay hint to convert.
- * @returns The inlay hint as Monaco editor inlay hint.
+ * @param inlayHint
+ *   The LSP inlay hint to convert.
+ * @returns
+ *   The inlay hint as Monaco editor inlay hint.
  */
 export function toInlayHint(inlayHint: ls.InlayHint): monaco.languages.InlayHint {
   const result: monaco.languages.InlayHint = {

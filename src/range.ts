@@ -4,8 +4,10 @@ import type * as ls from 'vscode-languageserver-protocol'
 /**
  * Convert a Monaco editor range to an LSP range.
  *
- * @param range The Monaco range to convert.
- * @returns The range as an LSP range.
+ * @param range
+ *   The Monaco range to convert.
+ * @returns
+ *   The range as an LSP range.
  */
 export function fromRange(range: monaco.IRange): ls.Range {
   return {
@@ -17,8 +19,10 @@ export function fromRange(range: monaco.IRange): ls.Range {
 /**
  * Convert an LSP range to a Monaco editor range.
  *
- * @param range The LSP range to convert.
- * @returns The range as Monaco editor range.
+ * @param range
+ *   The LSP range to convert.
+ * @returns
+ *   The range as Monaco editor range.
  */
 export function toRange(range: ls.Range): monaco.IRange {
   return {

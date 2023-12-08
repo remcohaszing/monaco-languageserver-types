@@ -4,8 +4,10 @@ import type * as ls from 'vscode-languageserver-protocol'
 /**
  * Convert a Monaco editor completion item kind to an LSP completion item kind.
  *
- * @param kind The Monaco completion item kind to convert.
- * @returns The completion item kind as an LSP completion item kind.
+ * @param kind
+ *   The Monaco completion item kind to convert.
+ * @returns
+ *   The completion item kind as an LSP completion item kind.
  */
 export function fromCompletionItemKind(
   kind: monaco.languages.CompletionItemKind
@@ -90,8 +92,10 @@ export function fromCompletionItemKind(
 /**
  * Convert an LSP completion item kind to a Monaco editor completion item kind.
  *
- * @param kind The LSP completion item kind to convert.
- * @returns The completion item kind as Monaco editor completion item kind.
+ * @param kind
+ *   The LSP completion item kind to convert.
+ * @returns
+ *   The completion item kind as Monaco editor completion item kind.
  */
 export function toCompletionItemKind(
   kind: ls.CompletionItemKind

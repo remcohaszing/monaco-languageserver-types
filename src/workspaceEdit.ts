@@ -8,8 +8,10 @@ import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from './workspaceFileEdit.
 /**
  * Convert a Monaco editor workspace edit to an LSP workspace edit.
  *
- * @param workspaceEdit The Monaco workspace edit to convert.
- * @returns The workspace edit as an LSP workspace edit.
+ * @param workspaceEdit
+ *   The Monaco workspace edit to convert.
+ * @returns
+ *   The workspace edit as an LSP workspace edit.
  */
 export function fromWorkspaceEdit(workspaceEdit: monaco.languages.WorkspaceEdit): ls.WorkspaceEdit {
   const changes: Record<string, ls.TextEdit[]> = {}
@@ -54,10 +56,14 @@ export function fromWorkspaceEdit(workspaceEdit: monaco.languages.WorkspaceEdit)
 /**
  * Convert an LSP text edit and uri to a Monaco editor workspace text edit.
  *
- * @param textEdit The LSP text edit to convert.
- * @param uri The uri of the workspace text edit.
- * @param versionId The version ID of the workspace text edit.
- * @returns The text edit and uri as Monaco editor workspace text edit.
+ * @param textEdit
+ *   The LSP text edit to convert.
+ * @param uri
+ *   The uri of the workspace text edit.
+ * @param versionId
+ *   The version ID of the workspace text edit.
+ * @returns
+ *   The text edit and uri as Monaco editor workspace text edit.
  */
 function toWorkspaceTextEdit(
   textEdit: ls.TextEdit,
@@ -74,8 +80,10 @@ function toWorkspaceTextEdit(
 /**
  * Convert an LSP workspace edit to a Monaco editor workspace edit.
  *
- * @param workspaceEdit The LSP workspace edit to convert.
- * @returns The workspace edit as Monaco editor workspace edit.
+ * @param workspaceEdit
+ *   The LSP workspace edit to convert.
+ * @returns
+ *   The workspace edit as Monaco editor workspace edit.
  */
 export function toWorkspaceEdit(workspaceEdit: ls.WorkspaceEdit): monaco.languages.WorkspaceEdit {
   const edits: monaco.languages.WorkspaceEdit['edits'] = []

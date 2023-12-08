@@ -11,9 +11,12 @@ import { fromSingleEditOperation, toSingleEditOperation } from './singleEditOper
 /**
  * Convert a Monaco editor completion item range to an LSP completion item text edit.
  *
- * @param edit The Monaco completion item range to convert.
- * @param newText The text of the text edit.
- * @returns The completion item range as an LSP completion item text edit.
+ * @param edit
+ *   The Monaco completion item range to convert.
+ * @param newText
+ *   The text of the text edit.
+ * @returns
+ *   The completion item range as an LSP completion item text edit.
  */
 function fromCompletionItemRange(
   edit: monaco.languages.CompletionItem['range'],
@@ -36,8 +39,10 @@ function fromCompletionItemRange(
 /**
  * Convert a Monaco editor completion item to an LSP completion item.
  *
- * @param completionItem The Monaco completion item to convert.
- * @returns The completion item as an LSP completion item.
+ * @param completionItem
+ *   The Monaco completion item to convert.
+ * @returns
+ *   The completion item as an LSP completion item.
  */
 export function fromCompletionItem(
   completionItem: monaco.languages.CompletionItem
@@ -117,8 +122,10 @@ interface ToCompletionItemOptions {
 /**
  * Convert an LSP completion item text edit to a Monaco editor range.
  *
- * @param edit The LSP completion item text edit to convert.
- * @returns The completion item text edit as Monaco editor range.
+ * @param edit
+ *   The LSP completion item text edit to convert.
+ * @returns
+ *   The completion item text edit as Monaco editor range.
  */
 function toCompletionItemRange(
   edit: ls.Range | ls.TextEdit | Omit<ls.InsertReplaceEdit, 'newText'>
@@ -140,9 +147,12 @@ function toCompletionItemRange(
 /**
  * Convert an LSP completion item to a Monaco editor completion item.
  *
- * @param completionItem The LSP completion item to convert.
- * @param options Additional options needed to construct the Monaco completion item.
- * @returns The completion item as Monaco editor completion item.
+ * @param completionItem
+ *   The LSP completion item to convert.
+ * @param options
+ *   Additional options needed to construct the Monaco completion item.
+ * @returns
+ *   The completion item as Monaco editor completion item.
  */
 export function toCompletionItem(
   completionItem: ls.CompletionItem,

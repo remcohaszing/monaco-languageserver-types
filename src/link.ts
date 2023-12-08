@@ -7,8 +7,10 @@ import { fromRange, toRange } from './range.js'
 /**
  * Convert a Monaco editor link to an LSP document link.
  *
- * @param link The Monaco link to convert.
- * @returns The link as an LSP document link.
+ * @param link
+ *   The Monaco link to convert.
+ * @returns
+ *   The link as an LSP document link.
  */
 export function fromLink(link: monaco.languages.ILink): ls.DocumentLink {
   const result: ls.DocumentLink = {
@@ -29,8 +31,10 @@ export function fromLink(link: monaco.languages.ILink): ls.DocumentLink {
 /**
  * Convert an LSP document link to a Monaco editor link.
  *
- * @param documentLink The LSP document link to convert.
- * @returns The document link as Monaco editor link.
+ * @param documentLink
+ *   The LSP document link to convert.
+ * @returns
+ *   The document link as Monaco editor link.
  */
 export function toLink(documentLink: ls.DocumentLink): monaco.languages.ILink {
   const result: monaco.languages.ILink = {

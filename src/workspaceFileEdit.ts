@@ -12,8 +12,10 @@ type WorkspaceFileEdit = ls.CreateFile | ls.DeleteFile | ls.RenameFile
 /**
  * Convert Monaco editor workspace file edit options to LSP workspace file edit options.
  *
- * @param workspaceFileEdit The Monaco workspace file edit options to convert.
- * @returns The range as LSP workspace file edit options.
+ * @param workspaceFileEdit
+ *   The Monaco workspace file edit options to convert.
+ * @returns
+ *   The range as LSP workspace file edit options.
  */
 export function fromWorkspaceFileEdit(
   workspaceFileEdit: monaco.languages.IWorkspaceFileEdit
@@ -52,8 +54,10 @@ export function fromWorkspaceFileEdit(
 /**
  * Convert an LSP workspace file edit to a Monaco editor workspace file edit.
  *
- * @param workspaceFileEdit The LSP workspace file edit to convert.
- * @returns The workspace file edit options Monaco editor workspace file edit options.
+ * @param workspaceFileEdit
+ *   The LSP workspace file edit to convert.
+ * @returns
+ *   The workspace file edit options Monaco editor workspace file edit options.
  */
 export function toWorkspaceFileEdit(
   workspaceFileEdit: WorkspaceFileEdit

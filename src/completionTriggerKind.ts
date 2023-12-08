@@ -4,8 +4,10 @@ import type * as ls from 'vscode-languageserver-protocol'
 /**
  * Convert a Monaco editor completion trigger kind to an LSP completion trigger kind.
  *
- * @param kind The Monaco completion trigger kind to convert.
- * @returns The completion trigger kind as an LSP completion trigger kind.
+ * @param kind
+ *   The Monaco completion trigger kind to convert.
+ * @returns
+ *   The completion trigger kind as an LSP completion trigger kind.
  */
 export function fromCompletionTriggerKind(
   kind: monaco.languages.CompletionTriggerKind
@@ -24,8 +26,10 @@ export function fromCompletionTriggerKind(
 /**
  * Convert an LSP completion trigger kind to a Monaco editor completion trigger kind.
  *
- * @param kind The LSP completion trigger kind to convert.
- * @returns The completion trigger kind as Monaco editor completion trigger kind.
+ * @param kind
+ *   The LSP completion trigger kind to convert.
+ * @returns
+ *   The completion trigger kind as Monaco editor completion trigger kind.
  */
 export function toCompletionTriggerKind(
   kind: ls.CompletionTriggerKind

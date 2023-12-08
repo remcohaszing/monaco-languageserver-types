@@ -4,8 +4,10 @@ import type * as ls from 'vscode-languageserver-protocol'
 /**
  * Convert a Monaco editor marker severity to an LSP diagnostic severity.
  *
- * @param severity The Monaco marker severity to convert.
- * @returns The marker severity as an LSP diagnostic severity.
+ * @param severity
+ *   The Monaco marker severity to convert.
+ * @returns
+ *   The marker severity as an LSP diagnostic severity.
  */
 export function fromMarkerSeverity(severity: monaco.MarkerSeverity): ls.DiagnosticSeverity {
   if (severity === (8 satisfies monaco.MarkerSeverity.Error)) {
@@ -24,8 +26,10 @@ export function fromMarkerSeverity(severity: monaco.MarkerSeverity): ls.Diagnost
 /**
  * Convert an LSP diagnostic severity to a Monaco editor marker severity.
  *
- * @param severity The LSP diagnostic severity to convert.
- * @returns The diagnostic severity as Monaco editor marker severity.
+ * @param severity
+ *   The LSP diagnostic severity to convert.
+ * @returns
+ *   The diagnostic severity as Monaco editor marker severity.
  */
 export function toMarkerSeverity(severity: ls.DiagnosticSeverity): monaco.MarkerSeverity {
   if (severity === (1 satisfies typeof ls.DiagnosticSeverity.Error)) {

@@ -7,8 +7,10 @@ import { fromRange, toRange } from './range.js'
 /**
  * Convert a Monaco editor hover to an LSP hover.
  *
- * @param hover The Monaco hover to convert.
- * @returns The hover as an LSP hover.
+ * @param hover
+ *   The Monaco hover to convert.
+ * @returns
+ *   The hover as an LSP hover.
  */
 export function fromHover(hover: monaco.languages.Hover): ls.Hover {
   const result: ls.Hover = {
@@ -25,8 +27,10 @@ export function fromHover(hover: monaco.languages.Hover): ls.Hover {
 /**
  * Get value of a marked string.
  *
- * @param value The marked string to get the value from.
- * @returns The value of the marked string.
+ * @param value
+ *   The marked string to get the value from.
+ * @returns
+ *   The value of the marked string.
  */
 function getDeprecatedMarkupValue(value: ls.MarkedString): monaco.IMarkdownString {
   if (typeof value === 'string') {
@@ -39,8 +43,10 @@ function getDeprecatedMarkupValue(value: ls.MarkedString): monaco.IMarkdownStrin
 /**
  * Convert LSP hover item contents to a Monaco markdown string.
  *
- * @param contents The LSP hover contents to convert.
- * @returns The hover contents as a Monaco markdown string.
+ * @param contents
+ *   The LSP hover contents to convert.
+ * @returns
+ *   The hover contents as a Monaco markdown string.
  */
 function toHoverContents(
   contents: ls.MarkedString | ls.MarkedString[] | ls.MarkupContent
@@ -59,8 +65,10 @@ function toHoverContents(
 /**
  * Convert an LSP hover to a Monaco editor hover.
  *
- * @param hover The LSP hover to convert.
- * @returns The hover as Monaco editor hover.
+ * @param hover
+ *   The LSP hover to convert.
+ * @returns
+ *   The hover as Monaco editor hover.
  */
 export function toHover(hover: ls.Hover): monaco.languages.Hover {
   const result: monaco.languages.Hover = {
