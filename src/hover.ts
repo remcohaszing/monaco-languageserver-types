@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromMarkdownString, toMarkdownString } from './markdownString.js'
 import { fromRange, toRange } from './range.js'
@@ -12,8 +12,8 @@ import { fromRange, toRange } from './range.js'
  * @returns
  *   The hover as an LSP hover.
  */
-export function fromHover(hover: monaco.languages.Hover): ls.Hover {
-  const result: ls.Hover = {
+export function fromHover(hover: monaco.languages.Hover): lsp.Hover {
+  const result: lsp.Hover = {
     contents: fromMarkdownString(hover.contents[0])
   }
 
@@ -32,7 +32,7 @@ export function fromHover(hover: monaco.languages.Hover): ls.Hover {
  * @returns
  *   The value of the marked string.
  */
-function getDeprecatedMarkupValue(value: ls.MarkedString): monaco.IMarkdownString {
+function getDeprecatedMarkupValue(value: lsp.MarkedString): monaco.IMarkdownString {
   if (typeof value === 'string') {
     return { value }
   }
@@ -49,7 +49,7 @@ function getDeprecatedMarkupValue(value: ls.MarkedString): monaco.IMarkdownStrin
  *   The hover contents as a Monaco markdown string.
  */
 function toHoverContents(
-  contents: ls.MarkedString | ls.MarkedString[] | ls.MarkupContent
+  contents: lsp.MarkedString | lsp.MarkedString[] | lsp.MarkupContent
 ): monaco.IMarkdownString[] {
   if (typeof contents === 'string' || 'language' in contents) {
     return [getDeprecatedMarkupValue(contents)]
@@ -70,7 +70,7 @@ function toHoverContents(
  * @returns
  *   The hover as Monaco editor hover.
  */
-export function toHover(hover: ls.Hover): monaco.languages.Hover {
+export function toHover(hover: lsp.Hover): monaco.languages.Hover {
   const result: monaco.languages.Hover = {
     contents: toHoverContents(hover.contents)
   }

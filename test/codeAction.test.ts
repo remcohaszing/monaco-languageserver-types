@@ -1,5 +1,5 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
-import * as ls from 'vscode-languageserver-protocol'
+import * as lsp from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
 import { fromCodeAction, toCodeAction } from '../src/index.js'
@@ -12,7 +12,7 @@ runTests(fromCodeAction, toCodeAction)(
         {
           message: 'Something is wrong',
           range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-          severity: ls.DiagnosticSeverity.Error
+          severity: lsp.DiagnosticSeverity.Error
         }
       ],
       isPreferred: false
@@ -39,7 +39,7 @@ runTests(fromCodeAction, toCodeAction)(
         {
           message: 'Something is wrong',
           range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-          severity: ls.DiagnosticSeverity.Error
+          severity: lsp.DiagnosticSeverity.Error
         }
       ],
       disabled: { reason: 'Because of testing' },

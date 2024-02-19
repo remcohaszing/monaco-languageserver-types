@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromCommand, toCommand } from './command.js'
 import { fromRange, toRange } from './range.js'
@@ -12,8 +12,8 @@ import { fromRange, toRange } from './range.js'
  * @returns
  *   The code lens as an LSP code lens.
  */
-export function fromCodeLens(codeLens: monaco.languages.CodeLens): ls.CodeLens {
-  const result: ls.CodeLens = {
+export function fromCodeLens(codeLens: monaco.languages.CodeLens): lsp.CodeLens {
+  const result: lsp.CodeLens = {
     range: fromRange(codeLens.range)
   }
 
@@ -32,7 +32,7 @@ export function fromCodeLens(codeLens: monaco.languages.CodeLens): ls.CodeLens {
  * @returns
  *   The code lens as Monaco editor code lens.
  */
-export function toCodeLens(codeLens: ls.CodeLens): monaco.languages.CodeLens {
+export function toCodeLens(codeLens: lsp.CodeLens): monaco.languages.CodeLens {
   const result: monaco.languages.CodeLens = {
     range: toRange(codeLens.range)
   }

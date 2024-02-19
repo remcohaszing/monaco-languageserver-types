@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor code action trigger type to an LSP completion item kind.
@@ -11,7 +11,7 @@ import type * as ls from 'vscode-languageserver-protocol'
  */
 export function fromCodeActionTriggerType(
   type: monaco.languages.CodeActionTriggerType
-): ls.CodeActionTriggerKind {
+): lsp.CodeActionTriggerKind {
   return type
 }
 
@@ -24,7 +24,7 @@ export function fromCodeActionTriggerType(
  *   The completion item kind as Monaco editor code action trigger type.
  */
 export function toCodeActionTriggerType(
-  kind: ls.CodeActionTriggerKind
+  kind: lsp.CodeActionTriggerKind
 ): monaco.languages.CodeActionTriggerType {
   return kind
 }

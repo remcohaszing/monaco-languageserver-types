@@ -1,6 +1,6 @@
 import type * as monaco from 'monaco-types'
 import { type Writable } from 'type-fest'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert Monaco editor semantic tokens to LSP semantic tokens.
@@ -12,8 +12,8 @@ import type * as ls from 'vscode-languageserver-protocol'
  */
 export function fromSemanticTokensEdit(
   semanticTokensEdit: monaco.languages.SemanticTokensEdit
-): ls.SemanticTokensEdit {
-  const result: ls.SemanticTokensEdit = {
+): lsp.SemanticTokensEdit {
+  const result: lsp.SemanticTokensEdit = {
     deleteCount: semanticTokensEdit.deleteCount,
     start: semanticTokensEdit.start
   }
@@ -34,7 +34,7 @@ export function fromSemanticTokensEdit(
  *   The semantic tokens as Monaco editor semantic tokens.
  */
 export function toSemanticTokensEdit(
-  semanticTokensEdit: ls.SemanticTokensEdit
+  semanticTokensEdit: lsp.SemanticTokensEdit
 ): monaco.languages.SemanticTokensEdit {
   const result: Writable<monaco.languages.SemanticTokensEdit> = {
     deleteCount: semanticTokensEdit.deleteCount,

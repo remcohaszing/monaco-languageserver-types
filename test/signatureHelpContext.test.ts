@@ -1,18 +1,18 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
-import * as ls from 'vscode-languageserver-protocol'
+import * as lsp from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
 import { fromSignatureHelpContext, toSignatureHelpContext } from '../src/index.js'
 
 runTests(fromSignatureHelpContext, toSignatureHelpContext)(
   {
-    lsp: { isRetrigger: true, triggerKind: ls.SignatureHelpTriggerKind.Invoked },
+    lsp: { isRetrigger: true, triggerKind: lsp.SignatureHelpTriggerKind.Invoked },
     monaco: { isRetrigger: true, triggerKind: monaco.languages.SignatureHelpTriggerKind.Invoke }
   },
   {
     lsp: {
       isRetrigger: true,
-      triggerKind: ls.SignatureHelpTriggerKind.Invoked,
+      triggerKind: lsp.SignatureHelpTriggerKind.Invoked,
       triggerCharacter: '{'
     },
     monaco: {
@@ -24,7 +24,7 @@ runTests(fromSignatureHelpContext, toSignatureHelpContext)(
   {
     lsp: {
       isRetrigger: true,
-      triggerKind: ls.SignatureHelpTriggerKind.Invoked,
+      triggerKind: lsp.SignatureHelpTriggerKind.Invoked,
       triggerCharacter: '{',
       activeSignatureHelp: { activeParameter: 2, activeSignature: 3, signatures: [] }
     },

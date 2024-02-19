@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromRange, toRange } from './range.js'
 
@@ -13,7 +13,7 @@ import { fromRange, toRange } from './range.js'
  */
 export function fromSelectionRange(
   selectionRange: monaco.languages.SelectionRange
-): ls.SelectionRange {
+): lsp.SelectionRange {
   return {
     range: fromRange(selectionRange.range)
   }
@@ -28,7 +28,7 @@ export function fromSelectionRange(
  *   The selection range as Monaco editor selection range.
  */
 export function toSelectionRange(
-  selectionRange: ls.SelectionRange
+  selectionRange: lsp.SelectionRange
 ): monaco.languages.SelectionRange {
   return {
     range: toRange(selectionRange.range)

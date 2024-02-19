@@ -1,7 +1,7 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
-type LSFileEditOptions = ls.CreateFileOptions & ls.DeleteFileOptions & ls.RenameFileOptions
+type LSFileEditOptions = lsp.CreateFileOptions & lsp.DeleteFileOptions & lsp.RenameFileOptions
 
 /**
  * Convert Monaco editor workspace file edit options to LSP workspace file edit options.

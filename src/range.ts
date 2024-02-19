@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor range to an LSP range.
@@ -9,7 +9,7 @@ import type * as ls from 'vscode-languageserver-protocol'
  * @returns
  *   The range as an LSP range.
  */
-export function fromRange(range: monaco.IRange): ls.Range {
+export function fromRange(range: monaco.IRange): lsp.Range {
   return {
     start: { line: range.startLineNumber - 1, character: range.startColumn - 1 },
     end: { line: range.endLineNumber - 1, character: range.endColumn - 1 }
@@ -24,7 +24,7 @@ export function fromRange(range: monaco.IRange): ls.Range {
  * @returns
  *   The range as Monaco editor range.
  */
-export function toRange(range: ls.Range): monaco.IRange {
+export function toRange(range: lsp.Range): monaco.IRange {
   return {
     startLineNumber: range.start.line + 1,
     startColumn: range.start.character + 1,

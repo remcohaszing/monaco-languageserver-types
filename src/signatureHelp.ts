@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromSignatureInformation, toSignatureInformation } from './signatureInformation.js'
 
@@ -11,7 +11,9 @@ import { fromSignatureInformation, toSignatureInformation } from './signatureInf
  * @returns
  *   The signature help as an LSP signature help.
  */
-export function fromSignatureHelp(signatureHelp: monaco.languages.SignatureHelp): ls.SignatureHelp {
+export function fromSignatureHelp(
+  signatureHelp: monaco.languages.SignatureHelp
+): lsp.SignatureHelp {
   return {
     activeParameter: signatureHelp.activeParameter,
     activeSignature: signatureHelp.activeSignature,
@@ -27,7 +29,7 @@ export function fromSignatureHelp(signatureHelp: monaco.languages.SignatureHelp)
  * @returns
  *   The signature help as Monaco editor signature help.
  */
-export function toSignatureHelp(signatureHelp: ls.SignatureHelp): monaco.languages.SignatureHelp {
+export function toSignatureHelp(signatureHelp: lsp.SignatureHelp): monaco.languages.SignatureHelp {
   return {
     activeParameter: signatureHelp.activeParameter ?? 0,
     activeSignature: signatureHelp.activeSignature ?? 0,

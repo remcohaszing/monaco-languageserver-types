@@ -1,5 +1,5 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
-import * as ls from 'vscode-languageserver-protocol'
+import * as lsp from 'vscode-languageserver-protocol'
 import { URI } from 'vscode-uri'
 
 import { runTests } from './utils.js'
@@ -11,7 +11,7 @@ runTests(fromMarkerData, toMarkerData)(
       code: 'unused',
       message: 'Unused variable "foo"',
       range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-      severity: ls.DiagnosticSeverity.Warning,
+      severity: lsp.DiagnosticSeverity.Warning,
       source: 'ESLint'
     },
     monaco: {
@@ -29,9 +29,9 @@ runTests(fromMarkerData, toMarkerData)(
     lsp: {
       message: 'Deprecated and unused',
       range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-      severity: ls.DiagnosticSeverity.Hint,
+      severity: lsp.DiagnosticSeverity.Hint,
       source: 'TypeScript',
-      tags: [ls.DiagnosticTag.Deprecated, ls.DiagnosticTag.Unnecessary]
+      tags: [lsp.DiagnosticTag.Deprecated, lsp.DiagnosticTag.Unnecessary]
     },
     monaco: {
       message: 'Deprecated and unused',
@@ -59,7 +59,7 @@ runTests(fromMarkerData, toMarkerData)(
           }
         }
       ],
-      severity: ls.DiagnosticSeverity.Information,
+      severity: lsp.DiagnosticSeverity.Information,
       source: 'ESLint'
     },
     monaco: {

@@ -1,5 +1,5 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
-import * as ls from 'vscode-languageserver-protocol'
+import * as lsp from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
 import { fromCompletionList, toCompletionList } from '../src/index.js'
@@ -13,7 +13,7 @@ runTests(fromCompletionList, toCompletionList)(
       isIncomplete: false,
       items: [
         {
-          kind: ls.CompletionItemKind.Class,
+          kind: lsp.CompletionItemKind.Class,
           label: 'Insert "text"',
           textEdit: {
             newText: 'text',
@@ -44,11 +44,11 @@ runTests(fromCompletionList, toCompletionList)(
       itemDefaults: {
         commitCharacters: ['"'],
         editRange: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } },
-        insertTextFormat: ls.InsertTextFormat.Snippet
+        insertTextFormat: lsp.InsertTextFormat.Snippet
       },
       items: [
         {
-          kind: ls.CompletionItemKind.Class,
+          kind: lsp.CompletionItemKind.Class,
           label: 'Insert "text"'
         }
       ]

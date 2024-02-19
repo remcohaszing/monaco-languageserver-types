@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor symbol tag to an LSP symbol tag.
@@ -9,7 +9,7 @@ import type * as ls from 'vscode-languageserver-protocol'
  * @returns
  *   The symbol tag as an LSP symbol tag.
  */
-export function fromSymbolTag(symbolTag: monaco.languages.SymbolTag): ls.SymbolTag {
+export function fromSymbolTag(symbolTag: monaco.languages.SymbolTag): lsp.SymbolTag {
   return symbolTag
 }
 
@@ -21,6 +21,6 @@ export function fromSymbolTag(symbolTag: monaco.languages.SymbolTag): ls.SymbolT
  * @returns
  *   The symbol tag as Monaco editor symbol tag.
  */
-export function toSymbolTag(symbolTag: ls.SymbolTag): monaco.languages.SymbolTag {
+export function toSymbolTag(symbolTag: lsp.SymbolTag): monaco.languages.SymbolTag {
   return symbolTag
 }

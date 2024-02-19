@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromCommand, toCommand } from './command.js'
 import { fromLocation, toLocation } from './location.js'
@@ -15,8 +15,8 @@ import { fromMarkdownString, toMarkdownString } from './markdownString.js'
  */
 export function fromInlayHintLabelPart(
   inlayHintLabelPart: monaco.languages.InlayHintLabelPart
-): ls.InlayHintLabelPart {
-  const result: ls.InlayHintLabelPart = {
+): lsp.InlayHintLabelPart {
+  const result: lsp.InlayHintLabelPart = {
     value: inlayHintLabelPart.label
   }
 
@@ -46,7 +46,7 @@ export function fromInlayHintLabelPart(
  *   The inlay hint label part as Monaco editor inlay hint label part.
  */
 export function toInlayHintLabelPart(
-  inlayHintLabelPart: ls.InlayHintLabelPart
+  inlayHintLabelPart: lsp.InlayHintLabelPart
 ): monaco.languages.InlayHintLabelPart {
   const result: monaco.languages.InlayHintLabelPart = {
     label: inlayHintLabelPart.value

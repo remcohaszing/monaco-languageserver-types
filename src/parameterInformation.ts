@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromMarkdownString, toMarkdownString } from './markdownString.js'
 
@@ -13,8 +13,8 @@ import { fromMarkdownString, toMarkdownString } from './markdownString.js'
  */
 export function fromParameterInformation(
   parameterInformation: monaco.languages.ParameterInformation
-): ls.ParameterInformation {
-  const result: ls.ParameterInformation = {
+): lsp.ParameterInformation {
+  const result: lsp.ParameterInformation = {
     label: parameterInformation.label
   }
 
@@ -36,7 +36,7 @@ export function fromParameterInformation(
  *   The parameter information as Monaco editor parameter information.
  */
 export function toParameterInformation(
-  parameterInformation: ls.ParameterInformation
+  parameterInformation: lsp.ParameterInformation
 ): monaco.languages.ParameterInformation {
   const result: monaco.languages.ParameterInformation = {
     label: parameterInformation.label

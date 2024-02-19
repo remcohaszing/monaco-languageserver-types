@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor folding range to an LSP folding range.
@@ -9,8 +9,8 @@ import type * as ls from 'vscode-languageserver-protocol'
  * @returns
  *   The folding range as an LSP folding range.
  */
-export function fromFoldingRange(foldingRange: monaco.languages.FoldingRange): ls.FoldingRange {
-  const result: ls.FoldingRange = {
+export function fromFoldingRange(foldingRange: monaco.languages.FoldingRange): lsp.FoldingRange {
+  const result: lsp.FoldingRange = {
     startLine: foldingRange.start - 1,
     endLine: foldingRange.end - 1
   }
@@ -30,7 +30,7 @@ export function fromFoldingRange(foldingRange: monaco.languages.FoldingRange): l
  * @returns
  *   The folding range as Monaco editor folding range.
  */
-export function toFoldingRange(foldingRange: ls.FoldingRange): monaco.languages.FoldingRange {
+export function toFoldingRange(foldingRange: lsp.FoldingRange): monaco.languages.FoldingRange {
   const result: monaco.languages.FoldingRange = {
     start: foldingRange.startLine + 1,
     end: foldingRange.endLine + 1

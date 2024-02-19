@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromColor, toColor } from './color.js'
 import { fromRange, toRange } from './range.js'
@@ -14,7 +14,7 @@ import { fromRange, toRange } from './range.js'
  */
 export function fromColorInformation(
   colorInformation: monaco.languages.IColorInformation
-): ls.ColorInformation {
+): lsp.ColorInformation {
   return {
     range: fromRange(colorInformation.range),
     color: fromColor(colorInformation.color)
@@ -30,7 +30,7 @@ export function fromColorInformation(
  *   The color information as Monaco editor color information.
  */
 export function toColorInformation(
-  colorInformation: ls.ColorInformation
+  colorInformation: lsp.ColorInformation
 ): monaco.languages.IColorInformation {
   return {
     range: toRange(colorInformation.range),

@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromRange, toRange } from './range.js'
 
@@ -13,8 +13,8 @@ import { fromRange, toRange } from './range.js'
  */
 export function fromLinkedEditingRanges(
   linkedEditingRanges: monaco.languages.LinkedEditingRanges
-): ls.LinkedEditingRanges {
-  const result: ls.LinkedEditingRanges = {
+): lsp.LinkedEditingRanges {
+  const result: lsp.LinkedEditingRanges = {
     ranges: linkedEditingRanges.ranges.map(fromRange)
   }
 
@@ -34,7 +34,7 @@ export function fromLinkedEditingRanges(
  *   The linked editing ranges Monaco editor linked editing ranges.
  */
 export function toLinkedEditingRanges(
-  linkedEditingRanges: ls.LinkedEditingRanges
+  linkedEditingRanges: lsp.LinkedEditingRanges
 ): monaco.languages.LinkedEditingRanges {
   const result: monaco.languages.LinkedEditingRanges = {
     ranges: linkedEditingRanges.ranges.map(toRange)

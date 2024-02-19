@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromRange, toRange } from './range.js'
 
@@ -13,7 +13,7 @@ import { fromRange, toRange } from './range.js'
  */
 export function fromSingleEditOperation(
   singleEditOperation: monaco.editor.ISingleEditOperation
-): ls.TextEdit {
+): lsp.TextEdit {
   return {
     newText: singleEditOperation.text ?? '',
     range: fromRange(singleEditOperation.range)
@@ -28,7 +28,7 @@ export function fromSingleEditOperation(
  * @returns
  *   The text edit as Monaco editor single edit operation.
  */
-export function toSingleEditOperation(textEdit: ls.TextEdit): monaco.editor.ISingleEditOperation {
+export function toSingleEditOperation(textEdit: lsp.TextEdit): monaco.editor.ISingleEditOperation {
   return {
     range: toRange(textEdit.range),
     text: textEdit.newText

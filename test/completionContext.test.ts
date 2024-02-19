@@ -1,5 +1,5 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
-import * as ls from 'vscode-languageserver-protocol'
+import * as lsp from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
 import { fromCompletionContext, toCompletionContext } from '../src/index.js'
@@ -7,7 +7,7 @@ import { fromCompletionContext, toCompletionContext } from '../src/index.js'
 runTests(fromCompletionContext, toCompletionContext)(
   {
     lsp: {
-      triggerKind: ls.CompletionTriggerKind.Invoked
+      triggerKind: lsp.CompletionTriggerKind.Invoked
     },
     monaco: {
       triggerKind: monaco.languages.CompletionTriggerKind.Invoke
@@ -15,7 +15,7 @@ runTests(fromCompletionContext, toCompletionContext)(
   },
   {
     lsp: {
-      triggerKind: ls.CompletionTriggerKind.TriggerCharacter,
+      triggerKind: lsp.CompletionTriggerKind.TriggerCharacter,
       triggerCharacter: '<'
     },
     monaco: {

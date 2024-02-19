@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromCommand, toCommand } from './command.js'
 import { fromCompletionItemKind, toCompletionItemKind } from './completionItemKind.js'
@@ -21,7 +21,7 @@ import { fromSingleEditOperation, toSingleEditOperation } from './singleEditOper
 function fromCompletionItemRange(
   edit: monaco.languages.CompletionItem['range'],
   newText: string
-): ls.InsertReplaceEdit | ls.TextEdit {
+): lsp.InsertReplaceEdit | lsp.TextEdit {
   if ('insert' in edit) {
     return {
       newText,
@@ -46,8 +46,8 @@ function fromCompletionItemRange(
  */
 export function fromCompletionItem(
   completionItem: monaco.languages.CompletionItem
-): ls.CompletionItem {
-  const result: ls.CompletionItem = {
+): lsp.CompletionItem {
+  const result: lsp.CompletionItem = {
     kind: fromCompletionItemKind(completionItem.kind),
     label:
       typeof completionItem.label === 'string' ? completionItem.label : completionItem.label.label,
@@ -84,12 +84,12 @@ export function fromCompletionItem(
     completionItem.insertTextRules ===
     (4 satisfies monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet)
   ) {
-    result.insertTextFormat = 2 satisfies typeof ls.InsertTextFormat.Snippet
+    result.insertTextFormat = 2 satisfies typeof lsp.InsertTextFormat.Snippet
   } else if (
     completionItem.insertTextRules ===
     (1 satisfies monaco.languages.CompletionItemInsertTextRule.KeepWhitespace)
   ) {
-    result.insertTextMode = 2 satisfies typeof ls.InsertTextMode.adjustIndentation
+    result.insertTextMode = 2 satisfies typeof lsp.InsertTextMode.adjustIndentation
   }
 
   if (completionItem.preselect != null) {
@@ -111,7 +111,7 @@ interface ToCompletionItemOptions {
   /**
    * The item defaults of a completion list.
    */
-  itemDefaults?: ls.CompletionList['itemDefaults'] | undefined
+  itemDefaults?: lsp.CompletionList['itemDefaults'] | undefined
 
   /**
    * A fallback range to use in case the completion item doesn’t provide one.
@@ -128,7 +128,7 @@ interface ToCompletionItemOptions {
  *   The completion item text edit as Monaco editor range.
  */
 function toCompletionItemRange(
-  edit: ls.Range | ls.TextEdit | Omit<ls.InsertReplaceEdit, 'newText'>
+  edit: lsp.Range | lsp.TextEdit | Omit<lsp.InsertReplaceEdit, 'newText'>
 ): monaco.languages.CompletionItem['range'] {
   if ('range' in edit) {
     return toRange(edit.range)
@@ -155,7 +155,7 @@ function toCompletionItemRange(
  *   The completion item as Monaco editor completion item.
  */
 export function toCompletionItem(
-  completionItem: ls.CompletionItem,
+  completionItem: lsp.CompletionItem,
   options: ToCompletionItemOptions
 ): monaco.languages.CompletionItem {
   const itemDefaults = options.itemDefaults ?? {}

@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromRange, toRange } from './range.js'
 import { fromSymbolKind, toSymbolKind } from './symbolKind.js'
@@ -15,8 +15,8 @@ import { fromSymbolTag, toSymbolTag } from './symbolTag.js'
  */
 export function fromDocumentSymbol(
   documentSymbol: monaco.languages.DocumentSymbol
-): ls.DocumentSymbol {
-  const result: ls.DocumentSymbol = {
+): lsp.DocumentSymbol {
+  const result: lsp.DocumentSymbol = {
     detail: documentSymbol.detail,
     kind: fromSymbolKind(documentSymbol.kind),
     name: documentSymbol.name,
@@ -41,7 +41,7 @@ export function fromDocumentSymbol(
  *   The document symbol as Monaco editor document symbol.
  */
 export function toDocumentSymbol(
-  documentSymbol: ls.DocumentSymbol
+  documentSymbol: lsp.DocumentSymbol
 ): monaco.languages.DocumentSymbol {
   const result: monaco.languages.DocumentSymbol = {
     detail: documentSymbol.detail ?? '',

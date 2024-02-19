@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor color to an LSP color.
@@ -9,7 +9,7 @@ import type * as ls from 'vscode-languageserver-protocol'
  * @returns
  *   The color as an LSP color.
  */
-export function fromColor(color: monaco.languages.IColor): ls.Color {
+export function fromColor(color: monaco.languages.IColor): lsp.Color {
   return {
     red: color.red,
     blue: color.blue,
@@ -26,7 +26,7 @@ export function fromColor(color: monaco.languages.IColor): ls.Color {
  * @returns
  *   The color as Monaco editor color.
  */
-export function toColor(color: ls.Color): monaco.languages.IColor {
+export function toColor(color: lsp.Color): monaco.languages.IColor {
   return {
     red: color.red,
     blue: color.blue,

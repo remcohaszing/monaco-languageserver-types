@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 import { URI } from 'vscode-uri'
 
 import { fromTextEdit, toTextEdit } from './textEdit.js'
@@ -13,11 +13,17 @@ import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from './workspaceFileEdit.
  * @returns
  *   The workspace edit as an LSP workspace edit.
  */
-export function fromWorkspaceEdit(workspaceEdit: monaco.languages.WorkspaceEdit): ls.WorkspaceEdit {
-  const changes: Record<string, ls.TextEdit[]> = {}
-  const documentChanges: (ls.CreateFile | ls.DeleteFile | ls.RenameFile | ls.TextDocumentEdit)[] =
-    []
-  const textDocumentMap = new Map<string, Map<number, ls.TextEdit[]>>()
+export function fromWorkspaceEdit(
+  workspaceEdit: monaco.languages.WorkspaceEdit
+): lsp.WorkspaceEdit {
+  const changes: Record<string, lsp.TextEdit[]> = {}
+  const documentChanges: (
+    | lsp.CreateFile
+    | lsp.DeleteFile
+    | lsp.RenameFile
+    | lsp.TextDocumentEdit
+  )[] = []
+  const textDocumentMap = new Map<string, Map<number, lsp.TextEdit[]>>()
 
   for (const edit of workspaceEdit.edits) {
     if ('resource' in edit) {
@@ -66,7 +72,7 @@ export function fromWorkspaceEdit(workspaceEdit: monaco.languages.WorkspaceEdit)
  *   The text edit and uri as Monaco editor workspace text edit.
  */
 function toWorkspaceTextEdit(
-  textEdit: ls.TextEdit,
+  textEdit: lsp.TextEdit,
   uri: string,
   versionId?: number
 ): monaco.languages.IWorkspaceTextEdit {
@@ -85,7 +91,7 @@ function toWorkspaceTextEdit(
  * @returns
  *   The workspace edit as Monaco editor workspace edit.
  */
-export function toWorkspaceEdit(workspaceEdit: ls.WorkspaceEdit): monaco.languages.WorkspaceEdit {
+export function toWorkspaceEdit(workspaceEdit: lsp.WorkspaceEdit): monaco.languages.WorkspaceEdit {
   const edits: monaco.languages.WorkspaceEdit['edits'] = []
 
   if (workspaceEdit.changes) {

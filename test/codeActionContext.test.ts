@@ -1,5 +1,5 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
-import * as ls from 'vscode-languageserver-protocol'
+import * as lsp from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
 import { fromCodeActionContext, toCodeActionContext } from '../src/index.js'
@@ -7,12 +7,12 @@ import { fromCodeActionContext, toCodeActionContext } from '../src/index.js'
 runTests(fromCodeActionContext, toCodeActionContext)(
   {
     lsp: {
-      triggerKind: ls.CodeActionTriggerKind.Invoked,
+      triggerKind: lsp.CodeActionTriggerKind.Invoked,
       diagnostics: [
         {
           message: 'Something is wrong',
           range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-          severity: ls.DiagnosticSeverity.Error
+          severity: lsp.DiagnosticSeverity.Error
         }
       ]
     },
@@ -32,13 +32,13 @@ runTests(fromCodeActionContext, toCodeActionContext)(
   },
   {
     lsp: {
-      triggerKind: ls.CodeActionTriggerKind.Automatic,
+      triggerKind: lsp.CodeActionTriggerKind.Automatic,
       only: ['quickfix'],
       diagnostics: [
         {
           message: 'Something is wrong',
           range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-          severity: ls.DiagnosticSeverity.Error
+          severity: lsp.DiagnosticSeverity.Error
         }
       ]
     },
@@ -64,7 +64,7 @@ runTests(fromCodeActionContext, toCodeActionContext)(
         {
           message: 'Something is wrong',
           range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-          severity: ls.DiagnosticSeverity.Error
+          severity: lsp.DiagnosticSeverity.Error
         }
       ]
     },

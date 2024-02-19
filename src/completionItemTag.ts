@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor completion item tag to an LSP completion item tag.
@@ -11,7 +11,7 @@ import type * as ls from 'vscode-languageserver-protocol'
  */
 export function fromCompletionItemTag(
   tag: monaco.languages.CompletionItemTag
-): ls.CompletionItemTag {
+): lsp.CompletionItemTag {
   return tag
 }
 
@@ -23,6 +23,8 @@ export function fromCompletionItemTag(
  * @returns
  *   The completion item tag as Monaco editor completion item tag.
  */
-export function toCompletionItemTag(tag: ls.CompletionItemTag): monaco.languages.CompletionItemTag {
+export function toCompletionItemTag(
+  tag: lsp.CompletionItemTag
+): monaco.languages.CompletionItemTag {
   return tag
 }

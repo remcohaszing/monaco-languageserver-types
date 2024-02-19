@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromMarkdownString, toMarkdownString } from './markdownString.js'
 import { fromParameterInformation, toParameterInformation } from './parameterInformation.js'
@@ -14,8 +14,8 @@ import { fromParameterInformation, toParameterInformation } from './parameterInf
  */
 export function fromSignatureInformation(
   signatureInformation: monaco.languages.SignatureInformation
-): ls.SignatureInformation {
-  const result: ls.SignatureInformation = {
+): lsp.SignatureInformation {
+  const result: lsp.SignatureInformation = {
     label: signatureInformation.label,
     parameters: signatureInformation.parameters.map(fromParameterInformation)
   }
@@ -42,7 +42,7 @@ export function fromSignatureInformation(
  *   The signature information as Monaco editor signature information.
  */
 export function toSignatureInformation(
-  signatureInformation: ls.SignatureInformation
+  signatureInformation: lsp.SignatureInformation
 ): monaco.languages.SignatureInformation {
   const result: monaco.languages.SignatureInformation = {
     label: signatureInformation.label,

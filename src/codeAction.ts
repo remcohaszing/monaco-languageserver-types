@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromMarkerData, toMarkerData } from './markerData.js'
 import { fromWorkspaceEdit, toWorkspaceEdit } from './workspaceEdit.js'
@@ -12,8 +12,8 @@ import { fromWorkspaceEdit, toWorkspaceEdit } from './workspaceEdit.js'
  * @returns
  *   The code action as an LSP code action.
  */
-export function fromCodeAction(codeAction: monaco.languages.CodeAction): ls.CodeAction {
-  const result: ls.CodeAction = {
+export function fromCodeAction(codeAction: monaco.languages.CodeAction): lsp.CodeAction {
+  const result: lsp.CodeAction = {
     title: codeAction.title
   }
 
@@ -60,7 +60,7 @@ export interface ToCodeActionOptions {
  *   The code action as Monaco editor code action.
  */
 export function toCodeAction(
-  codeAction: ls.CodeAction,
+  codeAction: lsp.CodeAction,
   options?: ToCodeActionOptions
 ): monaco.languages.CodeAction {
   const result: monaco.languages.CodeAction = {

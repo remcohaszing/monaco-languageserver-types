@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromTextEdit, toTextEdit } from './textEdit.js'
 
@@ -13,8 +13,8 @@ import { fromTextEdit, toTextEdit } from './textEdit.js'
  */
 export function fromColorPresentation(
   colorPresentation: monaco.languages.IColorPresentation
-): ls.ColorPresentation {
-  const result: ls.ColorPresentation = {
+): lsp.ColorPresentation {
+  const result: lsp.ColorPresentation = {
     label: colorPresentation.label
   }
 
@@ -38,7 +38,7 @@ export function fromColorPresentation(
  *   The color presentation as Monaco editor color presentation.
  */
 export function toColorPresentation(
-  colorPresentation: ls.ColorPresentation
+  colorPresentation: lsp.ColorPresentation
 ): monaco.languages.IColorPresentation {
   const result: monaco.languages.IColorPresentation = {
     label: colorPresentation.label

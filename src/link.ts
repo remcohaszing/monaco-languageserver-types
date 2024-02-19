@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 import { URI } from 'vscode-uri'
 
 import { fromRange, toRange } from './range.js'
@@ -12,8 +12,8 @@ import { fromRange, toRange } from './range.js'
  * @returns
  *   The link as an LSP document link.
  */
-export function fromLink(link: monaco.languages.ILink): ls.DocumentLink {
-  const result: ls.DocumentLink = {
+export function fromLink(link: monaco.languages.ILink): lsp.DocumentLink {
+  const result: lsp.DocumentLink = {
     range: fromRange(link.range)
   }
 
@@ -36,7 +36,7 @@ export function fromLink(link: monaco.languages.ILink): ls.DocumentLink {
  * @returns
  *   The document link as Monaco editor link.
  */
-export function toLink(documentLink: ls.DocumentLink): monaco.languages.ILink {
+export function toLink(documentLink: lsp.DocumentLink): monaco.languages.ILink {
   const result: monaco.languages.ILink = {
     range: toRange(documentLink.range)
   }

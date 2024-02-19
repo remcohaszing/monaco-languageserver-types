@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor command to an LSP command.
@@ -9,8 +9,8 @@ import type * as ls from 'vscode-languageserver-protocol'
  * @returns
  *   The command as an LSP command.
  */
-export function fromCommand(command: monaco.languages.Command): ls.Command {
-  const result: ls.Command = {
+export function fromCommand(command: monaco.languages.Command): lsp.Command {
+  const result: lsp.Command = {
     title: command.title,
     command: command.id
   }
@@ -30,7 +30,7 @@ export function fromCommand(command: monaco.languages.Command): ls.Command {
  * @returns
  *   The command as Monaco editor command.
  */
-export function toCommand(command: ls.Command): monaco.languages.Command {
+export function toCommand(command: lsp.Command): monaco.languages.Command {
   const result: monaco.languages.Command = {
     title: command.title,
     id: command.command

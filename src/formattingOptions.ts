@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor formatting options to an LSP formatting options.
@@ -11,7 +11,7 @@ import type * as ls from 'vscode-languageserver-protocol'
  */
 export function fromFormattingOptions(
   formattingOptions: monaco.languages.FormattingOptions
-): ls.FormattingOptions {
+): lsp.FormattingOptions {
   return {
     insertSpaces: formattingOptions.insertSpaces,
     tabSize: formattingOptions.tabSize
@@ -27,7 +27,7 @@ export function fromFormattingOptions(
  *   The formatting options as Monaco editor formatting options.
  */
 export function toFormattingOptions(
-  formattingOptions: ls.FormattingOptions
+  formattingOptions: lsp.FormattingOptions
 ): monaco.languages.FormattingOptions {
   return {
     insertSpaces: formattingOptions.insertSpaces,

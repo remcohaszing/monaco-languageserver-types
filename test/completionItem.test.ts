@@ -1,5 +1,5 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
-import * as ls from 'vscode-languageserver-protocol'
+import * as lsp from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
 import { fromCompletionItem, toCompletionItem } from '../src/index.js'
@@ -10,7 +10,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
@@ -29,7 +29,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Event,
+      kind: lsp.CompletionItemKind.Event,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
@@ -52,7 +52,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
@@ -83,7 +83,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
@@ -104,7 +104,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
@@ -125,7 +125,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
@@ -146,7 +146,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
@@ -167,7 +167,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
@@ -188,7 +188,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
@@ -209,13 +209,13 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
         range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } }
       },
-      insertTextFormat: ls.InsertTextFormat.Snippet
+      insertTextFormat: lsp.InsertTextFormat.Snippet
     },
     monaco: {
       insertText: 'text',
@@ -230,13 +230,13 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
         range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } }
       },
-      insertTextMode: ls.InsertTextMode.adjustIndentation
+      insertTextMode: lsp.InsertTextMode.adjustIndentation
     },
     monaco: {
       insertText: 'text',
@@ -251,7 +251,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
@@ -272,7 +272,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
@@ -293,13 +293,13 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: 'text',
         range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } }
       },
-      tags: [ls.CompletionItemTag.Deprecated]
+      tags: [lsp.CompletionItemTag.Deprecated]
     },
     monaco: {
       insertText: 'text',
@@ -312,7 +312,7 @@ runTests(fromCompletionItem, toCompletionItem)(
   {
     only: 'from',
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"',
       textEdit: {
         newText: '',
@@ -332,7 +332,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     },
     lsp: {
-      kind: ls.CompletionItemKind.Class,
+      kind: lsp.CompletionItemKind.Class,
       label: 'Insert "text"'
     },
     monaco: {

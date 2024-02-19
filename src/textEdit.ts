@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromRange, toRange } from './range.js'
 
@@ -11,7 +11,7 @@ import { fromRange, toRange } from './range.js'
  * @returns
  *   The text edit as an LSP text edit.
  */
-export function fromTextEdit(textEdit: monaco.languages.TextEdit): ls.TextEdit {
+export function fromTextEdit(textEdit: monaco.languages.TextEdit): lsp.TextEdit {
   return {
     range: fromRange(textEdit.range),
     newText: textEdit.text
@@ -26,7 +26,7 @@ export function fromTextEdit(textEdit: monaco.languages.TextEdit): ls.TextEdit {
  * @returns
  *   The text edit as Monaco editor text edit.
  */
-export function toTextEdit(textEdit: ls.TextEdit): monaco.languages.TextEdit {
+export function toTextEdit(textEdit: lsp.TextEdit): monaco.languages.TextEdit {
   return {
     range: toRange(textEdit.range),
     text: textEdit.newText

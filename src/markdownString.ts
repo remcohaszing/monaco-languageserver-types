@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor markdown string to an LSP markup content.
@@ -9,7 +9,7 @@ import type * as ls from 'vscode-languageserver-protocol'
  * @returns
  *   The markdown string as an LSP markup content.
  */
-export function fromMarkdownString(markdownString: monaco.IMarkdownString): ls.MarkupContent {
+export function fromMarkdownString(markdownString: monaco.IMarkdownString): lsp.MarkupContent {
   return {
     kind: 'markdown',
     value: markdownString.value
@@ -24,7 +24,7 @@ export function fromMarkdownString(markdownString: monaco.IMarkdownString): ls.M
  * @returns
  *   The markup content as a Monaco editor markdown string.
  */
-export function toMarkdownString(markupContent: ls.MarkupContent): monaco.IMarkdownString {
+export function toMarkdownString(markupContent: lsp.MarkupContent): monaco.IMarkdownString {
   return {
     value: markupContent.value
   }

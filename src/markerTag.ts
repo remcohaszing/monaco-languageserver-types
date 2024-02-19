@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor marker tag to an LSP diagnostic tag.
@@ -9,7 +9,7 @@ import type * as ls from 'vscode-languageserver-protocol'
  * @returns
  *   The marker tag as an LSP diagnostic tag.
  */
-export function fromMarkerTag(tag: monaco.MarkerTag): ls.DiagnosticTag {
+export function fromMarkerTag(tag: monaco.MarkerTag): lsp.DiagnosticTag {
   return tag
 }
 
@@ -21,6 +21,6 @@ export function fromMarkerTag(tag: monaco.MarkerTag): ls.DiagnosticTag {
  * @returns
  *   The diagnostic tag as Monaco editor marker tag.
  */
-export function toMarkerTag(tag: ls.DiagnosticTag): monaco.MarkerTag {
+export function toMarkerTag(tag: lsp.DiagnosticTag): monaco.MarkerTag {
   return tag
 }

@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 import { URI } from 'vscode-uri'
 
 import {
@@ -7,7 +7,7 @@ import {
   toWorkspaceFileEditOptions
 } from './workspaceFileEditOptions.js'
 
-type WorkspaceFileEdit = ls.CreateFile | ls.DeleteFile | ls.RenameFile
+type WorkspaceFileEdit = lsp.CreateFile | lsp.DeleteFile | lsp.RenameFile
 
 /**
  * Convert Monaco editor workspace file edit options to LSP workspace file edit options.

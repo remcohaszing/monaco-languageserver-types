@@ -1,6 +1,6 @@
 import type * as monaco from 'monaco-types'
 import { type Writable } from 'type-fest'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromSignatureHelp, toSignatureHelp } from './signatureHelp.js'
 import { fromSignatureHelpTriggerKind } from './signatureHelpTriggerKind.js'
@@ -15,8 +15,8 @@ import { fromSignatureHelpTriggerKind } from './signatureHelpTriggerKind.js'
  */
 export function fromSignatureHelpContext(
   signatureHelpContext: monaco.languages.SignatureHelpContext
-): ls.SignatureHelpContext {
-  const result: ls.SignatureHelpContext = {
+): lsp.SignatureHelpContext {
+  const result: lsp.SignatureHelpContext = {
     isRetrigger: signatureHelpContext.isRetrigger,
     triggerKind: fromSignatureHelpTriggerKind(signatureHelpContext.triggerKind)
   }
@@ -41,7 +41,7 @@ export function fromSignatureHelpContext(
  *   The signature help context as Monaco editor signature help context.
  */
 export function toSignatureHelpContext(
-  signatureHelpContext: ls.SignatureHelpContext
+  signatureHelpContext: lsp.SignatureHelpContext
 ): monaco.languages.SignatureHelpContext {
   const result: Writable<monaco.languages.SignatureHelpContext> = {
     isRetrigger: signatureHelpContext.isRetrigger,

@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromCompletionItem, toCompletionItem } from './completionItem.js'
 
@@ -13,7 +13,7 @@ import { fromCompletionItem, toCompletionItem } from './completionItem.js'
  */
 export function fromCompletionList(
   completionList: monaco.languages.CompletionList
-): ls.CompletionList {
+): lsp.CompletionList {
   return {
     isIncomplete: Boolean(completionList.incomplete),
     items: completionList.suggestions.map(fromCompletionItem)
@@ -38,7 +38,7 @@ interface ToCompletionListOptions {
  *   The completion list as Monaco editor completion list.
  */
 export function toCompletionList(
-  completionList: ls.CompletionList,
+  completionList: lsp.CompletionList,
   options: ToCompletionListOptions
 ): monaco.languages.CompletionList {
   return {

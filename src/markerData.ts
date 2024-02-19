@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 import { URI } from 'vscode-uri'
 
 import { fromMarkerSeverity, toMarkerSeverity } from './markerSeverity.js'
@@ -15,8 +15,8 @@ import { fromRelatedInformation, toRelatedInformation } from './relatedInformati
  * @returns
  *   The marker data as an LSP diagnostic.
  */
-export function fromMarkerData(markerData: monaco.editor.IMarkerData): ls.Diagnostic {
-  const diagnostic: ls.Diagnostic = {
+export function fromMarkerData(markerData: monaco.editor.IMarkerData): lsp.Diagnostic {
+  const diagnostic: lsp.Diagnostic = {
     message: markerData.message,
     range: fromRange(markerData),
     severity: fromMarkerSeverity(markerData.severity)
@@ -64,7 +64,7 @@ export interface ToMarkerDataOptions {
  *   The diagnostic as Monaco editor marker data.
  */
 export function toMarkerData(
-  diagnostic: ls.Diagnostic,
+  diagnostic: lsp.Diagnostic,
   options?: ToMarkerDataOptions
 ): monaco.editor.IMarkerData {
   const markerData: monaco.editor.IMarkerData = {

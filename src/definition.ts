@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromLocation, toLocation } from './location.js'
 
@@ -11,7 +11,7 @@ import { fromLocation, toLocation } from './location.js'
  * @returns
  *   The definition as an LSP definition.
  */
-export function fromDefinition(definition: monaco.languages.Definition): ls.Definition {
+export function fromDefinition(definition: monaco.languages.Definition): lsp.Definition {
   if (Array.isArray(definition)) {
     return definition.map(fromLocation)
   }
@@ -27,7 +27,7 @@ export function fromDefinition(definition: monaco.languages.Definition): ls.Defi
  * @returns
  *   The definition as Monaco editor definition.
  */
-export function toDefinition(definition: ls.Definition): monaco.languages.Definition {
+export function toDefinition(definition: lsp.Definition): monaco.languages.Definition {
   if (Array.isArray(definition)) {
     return definition.map(toLocation)
   }

@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromDocumentHighlightKind, toDocumentHighlightKind } from './documentHighlightKind.js'
 import { fromRange, toRange } from './range.js'
@@ -14,8 +14,8 @@ import { fromRange, toRange } from './range.js'
  */
 export function fromDocumentHighlight(
   documentHighlight: monaco.languages.DocumentHighlight
-): ls.DocumentHighlight {
-  const result: ls.DocumentHighlight = {
+): lsp.DocumentHighlight {
+  const result: lsp.DocumentHighlight = {
     range: fromRange(documentHighlight.range)
   }
 
@@ -35,7 +35,7 @@ export function fromDocumentHighlight(
  *   The document highlight as Monaco editor document highlight.
  */
 export function toDocumentHighlight(
-  documentHighlight: ls.DocumentHighlight
+  documentHighlight: lsp.DocumentHighlight
 ): monaco.languages.DocumentHighlight {
   const result: monaco.languages.DocumentHighlight = {
     range: toRange(documentHighlight.range)

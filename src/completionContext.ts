@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromCompletionTriggerKind, toCompletionTriggerKind } from './completionTriggerKind.js'
 
@@ -13,8 +13,8 @@ import { fromCompletionTriggerKind, toCompletionTriggerKind } from './completion
  */
 export function fromCompletionContext(
   completionContext: monaco.languages.CompletionContext
-): ls.CompletionContext {
-  const result: ls.CompletionContext = {
+): lsp.CompletionContext {
+  const result: lsp.CompletionContext = {
     triggerKind: fromCompletionTriggerKind(completionContext.triggerKind)
   }
 
@@ -34,7 +34,7 @@ export function fromCompletionContext(
  *   The completion context as Monaco editor completion context.
  */
 export function toCompletionContext(
-  completionContext: ls.CompletionContext
+  completionContext: lsp.CompletionContext
 ): monaco.languages.CompletionContext {
   const result: monaco.languages.CompletionContext = {
     triggerKind: toCompletionTriggerKind(completionContext.triggerKind)

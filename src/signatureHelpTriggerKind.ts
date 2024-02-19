@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 /**
  * Convert a Monaco editor signature help trigger kind to an LSP signature help trigger kind.
@@ -11,7 +11,7 @@ import type * as ls from 'vscode-languageserver-protocol'
  */
 export function fromSignatureHelpTriggerKind(
   signatureHelpTriggerKind: monaco.languages.SignatureHelpTriggerKind
-): ls.SignatureHelpTriggerKind {
+): lsp.SignatureHelpTriggerKind {
   return signatureHelpTriggerKind
 }
 
@@ -24,7 +24,7 @@ export function fromSignatureHelpTriggerKind(
  *   The signature help trigger kind as Monaco editor signature help trigger kind.
  */
 export function toSignatureHelpTriggerKind(
-  signatureHelpTriggerKind: ls.SignatureHelpTriggerKind
+  signatureHelpTriggerKind: lsp.SignatureHelpTriggerKind
 ): monaco.languages.SignatureHelpTriggerKind {
   return signatureHelpTriggerKind
 }

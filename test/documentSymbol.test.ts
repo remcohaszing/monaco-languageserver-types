@@ -1,5 +1,5 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
-import * as ls from 'vscode-languageserver-protocol'
+import * as lsp from 'vscode-languageserver-protocol'
 
 import { runTests } from './utils.js'
 import { fromDocumentSymbol, toDocumentSymbol } from '../src/index.js'
@@ -8,7 +8,7 @@ runTests(fromDocumentSymbol, toDocumentSymbol)(
   {
     lsp: {
       detail: 'Person class',
-      kind: ls.SymbolKind.Class,
+      kind: lsp.SymbolKind.Class,
       name: 'Person',
       range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
       selectionRange: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
@@ -29,7 +29,7 @@ runTests(fromDocumentSymbol, toDocumentSymbol)(
         {
           children: [],
           detail: '',
-          kind: ls.SymbolKind.Property,
+          kind: lsp.SymbolKind.Property,
           name: 'name',
           range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
           selectionRange: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
@@ -37,11 +37,11 @@ runTests(fromDocumentSymbol, toDocumentSymbol)(
         }
       ],
       detail: 'Person class',
-      kind: ls.SymbolKind.Class,
+      kind: lsp.SymbolKind.Class,
       name: 'Person',
       range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
       selectionRange: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-      tags: [ls.SymbolTag.Deprecated]
+      tags: [lsp.SymbolTag.Deprecated]
     },
     monaco: {
       children: [
@@ -74,18 +74,18 @@ runTests(fromDocumentSymbol, toDocumentSymbol)(
       children: [
         {
           children: [],
-          kind: ls.SymbolKind.Property,
+          kind: lsp.SymbolKind.Property,
           name: 'name',
           range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
           selectionRange: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } }
         }
       ],
       detail: 'Person class',
-      kind: ls.SymbolKind.Class,
+      kind: lsp.SymbolKind.Class,
       name: 'Person',
       range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
       selectionRange: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-      tags: [ls.SymbolTag.Deprecated]
+      tags: [lsp.SymbolTag.Deprecated]
     },
     monaco: {
       children: [

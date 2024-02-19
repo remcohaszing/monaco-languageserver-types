@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import type * as ls from 'vscode-languageserver-protocol'
+import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromInlayHintKind, toInlayHintKind } from './inlayHintKind.js'
 import { fromInlayHintLabelPart, toInlayHintLabelPart } from './inlayHintLabelPart.js'
@@ -15,8 +15,8 @@ import { fromTextEdit, toTextEdit } from './textEdit.js'
  * @returns
  *   The inlay hint as an LSP inlay hint.
  */
-export function fromInlayHint(inlayHint: monaco.languages.InlayHint): ls.InlayHint {
-  const result: ls.InlayHint = {
+export function fromInlayHint(inlayHint: monaco.languages.InlayHint): lsp.InlayHint {
+  const result: lsp.InlayHint = {
     label:
       typeof inlayHint.label === 'string'
         ? inlayHint.label
@@ -57,7 +57,7 @@ export function fromInlayHint(inlayHint: monaco.languages.InlayHint): ls.InlayHi
  * @returns
  *   The inlay hint as Monaco editor inlay hint.
  */
-export function toInlayHint(inlayHint: ls.InlayHint): monaco.languages.InlayHint {
+export function toInlayHint(inlayHint: lsp.InlayHint): monaco.languages.InlayHint {
   const result: monaco.languages.InlayHint = {
     label:
       typeof inlayHint.label === 'string'
