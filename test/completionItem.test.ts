@@ -336,7 +336,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       label: 'Insert "text"'
     },
     monaco: {
-      insertText: '',
+      insertText: 'Insert "text"',
       kind: monaco.languages.CompletionItemKind.Class,
       label: 'Insert "text"',
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
@@ -351,7 +351,7 @@ runTests(fromCompletionItem, toCompletionItem)(
       label: 'Insert "text"'
     },
     monaco: {
-      insertText: '',
+      insertText: 'Insert "text"',
       kind: monaco.languages.CompletionItemKind.Text,
       label: 'Insert "text"',
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }

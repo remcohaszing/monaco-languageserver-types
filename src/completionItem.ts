@@ -177,7 +177,7 @@ export function toCompletionItem(
   }
 
   const result: monaco.languages.CompletionItem = {
-    insertText: text ?? '',
+    insertText: text ?? completionItem.label,
     kind:
       completionItem.kind == null
         ? (18 satisfies monaco.languages.CompletionItemKind.Text)

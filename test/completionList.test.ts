@@ -59,7 +59,7 @@ runTests(fromCompletionList, toCompletionList)(
         {
           commitCharacters: ['"'],
           insertTextRules: monaco.languages.CompletionItemInsertTextRule.InsertAsSnippet,
-          insertText: '',
+          insertText: 'Insert "text"',
           kind: monaco.languages.CompletionItemKind.Class,
           label: 'Insert "text"',
           range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 }
