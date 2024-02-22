@@ -1,7 +1,7 @@
 import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-type LSFileEditOptions = lsp.CreateFileOptions & lsp.DeleteFileOptions & lsp.RenameFileOptions
+type LSPFileEditOptions = lsp.CreateFileOptions & lsp.DeleteFileOptions & lsp.RenameFileOptions
 
 /**
  * Convert Monaco editor workspace file edit options to LSP workspace file edit options.
@@ -13,8 +13,8 @@ type LSFileEditOptions = lsp.CreateFileOptions & lsp.DeleteFileOptions & lsp.Ren
  */
 export function fromWorkspaceFileEditOptions(
   options: monaco.languages.WorkspaceFileEditOptions
-): LSFileEditOptions {
-  const result: LSFileEditOptions = {}
+): LSPFileEditOptions {
+  const result: LSPFileEditOptions = {}
 
   if (options.ignoreIfExists != null) {
     result.ignoreIfExists = options.ignoreIfExists
@@ -41,7 +41,7 @@ export function fromWorkspaceFileEditOptions(
  *   The workspace file edit options Monaco editor workspace file edit options.
  */
 export function toWorkspaceFileEditOptions(
-  options: LSFileEditOptions
+  options: LSPFileEditOptions
 ): monaco.languages.WorkspaceFileEditOptions {
   const result: monaco.languages.WorkspaceFileEditOptions = {}
 
