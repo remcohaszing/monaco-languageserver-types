@@ -10,6 +10,8 @@ import { fromRange, toRange } from './range.js'
  *   The Monaco selection range to convert.
  * @returns
  *   The selection range as an LSP selection range.
+ * @deprecated
+ * Use `fromSelectionRanges` instead.
  */
 export function fromSelectionRange(
   selectionRange: monaco.languages.SelectionRange
@@ -26,6 +28,8 @@ export function fromSelectionRange(
  *   The LSP selection range to convert.
  * @returns
  *   The selection range as Monaco editor selection range.
+ * @deprecated
+ * Use `toSelectionRanges` instead.
  */
 export function toSelectionRange(
   selectionRange: lsp.SelectionRange
