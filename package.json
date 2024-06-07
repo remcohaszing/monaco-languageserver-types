@@ -1,6 +1,6 @@
 {
   "name": "monaco-languageserver-types",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Convert between language server types and Monaco editor types",
   "type": "module",
   "main": "./dist/index.js",
