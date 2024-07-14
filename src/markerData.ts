@@ -44,35 +44,21 @@ export function fromMarkerData(markerData: monaco.editor.IMarkerData): lsp.Diagn
   return diagnostic
 }
 
-export interface ToMarkerDataOptions {
-  /**
-   * The default severity in case it’s not provided by the diagnostic.
-   *
-   * @default MarkerSeverity.Error
-   */
-  defaultSeverity?: monaco.MarkerSeverity
-}
-
 /**
  * Convert an LSP diagnostic to a Monaco editor marker data.
  *
  * @param diagnostic
  *   The LSP diagnostic to convert.
- * @param options
- *   Additional options needed to construct the Monaco marker data.
  * @returns
  *   The diagnostic as Monaco editor marker data.
  */
-export function toMarkerData(
-  diagnostic: lsp.Diagnostic,
-  options?: ToMarkerDataOptions
-): monaco.editor.IMarkerData {
+export function toMarkerData(diagnostic: lsp.Diagnostic): monaco.editor.IMarkerData {
   const markerData: monaco.editor.IMarkerData = {
     ...toRange(diagnostic.range),
     message: diagnostic.message,
     severity: diagnostic.severity
       ? toMarkerSeverity(diagnostic.severity)
-      : options?.defaultSeverity ?? (8 satisfies monaco.MarkerSeverity.Error)
+      : (8 satisfies monaco.MarkerSeverity.Error)
   }
 
   if (diagnostic.code != null) {

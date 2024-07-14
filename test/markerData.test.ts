@@ -102,25 +102,5 @@ runTests(fromMarkerData, toMarkerData)(
       severity: monaco.MarkerSeverity.Error,
       source: 'ESLint'
     }
-  },
-  {
-    only: 'to',
-    toOptions: { defaultSeverity: monaco.MarkerSeverity.Hint },
-    lsp: {
-      code: 'unused',
-      message: 'Unused variable "foo"',
-      range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
-      source: 'ESLint'
-    },
-    monaco: {
-      code: 'unused',
-      message: 'Unused variable "foo"',
-      startLineNumber: 1,
-      startColumn: 11,
-      endLineNumber: 3,
-      endColumn: 21,
-      severity: monaco.MarkerSeverity.Hint,
-      source: 'ESLint'
-    }
   }
 )

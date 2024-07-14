@@ -28,31 +28,19 @@ export function fromCodeActionContext(
   return result
 }
 
-export interface ToCodeActionContextOptions {
-  /**
-   * The default severity in case it’s not provided by a diagnostic.
-   *
-   * @default MarkerSeverity.Error
-   */
-  defaultSeverity?: monaco.MarkerSeverity
-}
-
 /**
  * Convert an LSP code action context to a Monaco editor code action context.
  *
  * @param codeActionContext
  *   The LSP code action context to convert.
- * @param options
- *   Additional options needed to construct the Monaco code action context.
  * @returns
  *   The code action context as Monaco editor code action context.
  */
 export function toCodeActionContext(
-  codeActionContext: lsp.CodeActionContext,
-  options?: ToCodeActionContextOptions
+  codeActionContext: lsp.CodeActionContext
 ): monaco.languages.CodeActionContext {
   const result: Writable<monaco.languages.CodeActionContext> = {
-    markers: codeActionContext.diagnostics.map((diagnostic) => toMarkerData(diagnostic, options)),
+    markers: codeActionContext.diagnostics.map(toMarkerData),
     trigger: fromCodeActionTriggerType(
       codeActionContext.triggerKind ?? (2 satisfies monaco.languages.CodeActionTriggerType.Auto)
     )

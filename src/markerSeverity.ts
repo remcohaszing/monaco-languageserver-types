@@ -10,17 +10,16 @@ import type * as lsp from 'vscode-languageserver-protocol'
  *   The marker severity as an LSP diagnostic severity.
  */
 export function fromMarkerSeverity(severity: monaco.MarkerSeverity): lsp.DiagnosticSeverity {
-  if (severity === (8 satisfies monaco.MarkerSeverity.Error)) {
-    return 1 satisfies typeof lsp.DiagnosticSeverity.Error
-  }
-  if (severity === (4 satisfies monaco.MarkerSeverity.Warning)) {
-    return 2 satisfies typeof lsp.DiagnosticSeverity.Warning
+  if (severity === (1 satisfies monaco.MarkerSeverity.Hint)) {
+    return 4 satisfies typeof lsp.DiagnosticSeverity.Hint
   }
   if (severity === (2 satisfies monaco.MarkerSeverity.Info)) {
     return 3 satisfies typeof lsp.DiagnosticSeverity.Information
   }
-  // Severity === MarkerSeverity.Hint
-  return 4 satisfies typeof lsp.DiagnosticSeverity.Hint
+  if (severity === (4 satisfies monaco.MarkerSeverity.Warning)) {
+    return 2 satisfies typeof lsp.DiagnosticSeverity.Warning
+  }
+  return 1 satisfies typeof lsp.DiagnosticSeverity.Error
 }
 
 /**
@@ -32,15 +31,14 @@ export function fromMarkerSeverity(severity: monaco.MarkerSeverity): lsp.Diagnos
  *   The diagnostic severity as Monaco editor marker severity.
  */
 export function toMarkerSeverity(severity: lsp.DiagnosticSeverity): monaco.MarkerSeverity {
-  if (severity === (1 satisfies typeof lsp.DiagnosticSeverity.Error)) {
-    return 8 satisfies monaco.MarkerSeverity.Error
-  }
-  if (severity === (2 satisfies typeof lsp.DiagnosticSeverity.Warning)) {
-    return 4 satisfies monaco.MarkerSeverity.Warning
+  if (severity === (4 satisfies typeof lsp.DiagnosticSeverity.Hint)) {
+    return 1 satisfies monaco.MarkerSeverity.Hint
   }
   if (severity === (3 satisfies typeof lsp.DiagnosticSeverity.Information)) {
     return 2 satisfies monaco.MarkerSeverity.Info
   }
-  // Severity === 4
-  return 1 satisfies monaco.MarkerSeverity.Hint
+  if (severity === (2 satisfies typeof lsp.DiagnosticSeverity.Warning)) {
+    return 4 satisfies monaco.MarkerSeverity.Warning
+  }
+  return 8 satisfies monaco.MarkerSeverity.Error
 }
