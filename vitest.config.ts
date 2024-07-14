@@ -2,14 +2,12 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    css: true,
     environment: 'jsdom',
     reporters: 'verbose',
-    include: ['test/*.test.ts'],
     poolOptions: {
-      threads: {
+      forks: {
         isolate: false,
-        singleThread: true
+        singleFork: true
       }
     }
   }
