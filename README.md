@@ -50,7 +50,6 @@ types.
   - [`fromRange(range)`](#fromrangerange)
   - [`fromRelatedInformation(relatedInformation)`](#fromrelatedinformationrelatedinformation)
   - [`fromSelectionRange(selectionRange)`](#fromselectionrangeselectionrange)
-  - [`fromSelectionRanges(selectionRanges)`](#fromselectionrangesselectionranges)
   - [`fromSemanticTokens(semanticTokens)`](#fromsemantictokenssemantictokens)
   - [`fromSemanticTokensEdit(semanticTokensEdit)`](#fromsemantictokenseditsemantictokensedit)
   - [`fromSemanticTokensEdits(semanticTokensEdits)`](#fromsemantictokenseditssemantictokensedits)
@@ -102,7 +101,6 @@ types.
   - [`toRange(range)`](#torangerange)
   - [`toRelatedInformation(relatedInformation)`](#torelatedinformationrelatedinformation)
   - [`toSelectionRange(selectionRange)`](#toselectionrangeselectionrange)
-  - [`toSelectionRanges(selectionRange)`](#toselectionrangesselectionrange)
   - [`toSemanticTokens(semanticTokens)`](#tosemantictokenssemantictokens)
   - [`toSemanticTokensEdit(semanticTokensEdit)`](#tosemantictokenseditsemantictokensedit)
   - [`toSemanticTokensEdits(semanticTokensDelta)`](#tosemantictokenseditssemantictokensdelta)
@@ -611,19 +609,6 @@ Convert a Monaco editor selection range to an LSP selection range.
 #### Returns
 
 The selection range as an LSP selection range (`lsp.SelectionRange`).
-
-### `fromSelectionRanges(selectionRanges)`
-
-Convert Monaco editor selection ranges to an LSP selection ranges.
-
-#### Parameters
-
-- `selectionRanges` (`Array<monaco.languages.SelectionRange>`) — the Monaco selections range to
-  convert
-
-#### Returns
-
-The selection ranges as LSP selection range (`lsp.SelectionRange | undefined`).
 
 ### `fromSemanticTokens(semanticTokens)`
 
@@ -1259,18 +1244,6 @@ Convert an LSP selection range to a Monaco editor selection range.
 #### Returns
 
 The selection range as Monaco editor selection range (`monaco.languages.SelectionRange`).
-
-### `toSelectionRanges(selectionRange)`
-
-Convert an LSP selection range to Monaco editor selection ranges.
-
-#### Parameters
-
-- `selectionRange` (`lsp.SelectionRange | undefined`) — the LSP selection range to convert
-
-#### Returns
-
-The selection range as Monaco editor selection ranges (`Array<monaco.languages.SelectionRange>`).
 
 ### `toSemanticTokens(semanticTokens)`
 
