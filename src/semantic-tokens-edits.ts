@@ -2,7 +2,7 @@ import type * as monaco from 'monaco-types'
 import { type Writable } from 'type-fest'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-import { fromSemanticTokensEdit, toSemanticTokensEdit } from './semanticTokensEdit.js'
+import { fromSemanticTokensEdit, toSemanticTokensEdit } from './semantic-tokens-edit.js'
 
 /**
  * Convert Monaco editsor semantic tokens edits to an LSP semantic tokens delta.

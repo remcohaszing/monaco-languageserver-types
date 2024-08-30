@@ -1,7 +1,7 @@
 import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-import { fromCompletionTriggerKind, toCompletionTriggerKind } from './completionTriggerKind.js'
+import { fromCompletionTriggerKind, toCompletionTriggerKind } from './completion-trigger-kind.js'
 
 /**
  * Convert a Monaco editor completion context to an LSP completion context.

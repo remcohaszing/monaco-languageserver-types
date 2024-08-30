@@ -1,8 +1,8 @@
 import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-import { fromMarkdownString, toMarkdownString } from './markdownString.js'
-import { fromParameterInformation, toParameterInformation } from './parameterInformation.js'
+import { fromMarkdownString, toMarkdownString } from './markdown-string.js'
+import { fromParameterInformation, toParameterInformation } from './parameter-information.js'
 
 /**
  * Convert a Monaco editor signature information to an LSP signature information.

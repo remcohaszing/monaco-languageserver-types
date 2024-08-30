@@ -1,7 +1,7 @@
 import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-import { fromDocumentHighlightKind, toDocumentHighlightKind } from './documentHighlightKind.js'
+import { fromDocumentHighlightKind, toDocumentHighlightKind } from './document-highlight-kind.js'
 import { fromRange, toRange } from './range.js'
 
 /**

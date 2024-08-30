@@ -2,8 +2,8 @@ import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromRange, toRange } from './range.js'
-import { fromSymbolKind, toSymbolKind } from './symbolKind.js'
-import { fromSymbolTag, toSymbolTag } from './symbolTag.js'
+import { fromSymbolKind, toSymbolKind } from './symbol-kind.js'
+import { fromSymbolTag, toSymbolTag } from './symbol-tag.js'
 
 /**
  * Convert a Monaco editor document symbol to an LSP document symbol.

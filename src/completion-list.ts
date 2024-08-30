@@ -1,7 +1,7 @@
 import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-import { fromCompletionItem, toCompletionItem } from './completionItem.js'
+import { fromCompletionItem, toCompletionItem } from './completion-item.js'
 
 /**
  * Convert a Monaco editor completion list to an LSP completion list.

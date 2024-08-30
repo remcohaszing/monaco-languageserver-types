@@ -2,8 +2,8 @@ import type * as monaco from 'monaco-types'
 import { type Writable } from 'type-fest'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-import { fromCodeActionTriggerType } from './codeActionTriggerType.js'
-import { fromMarkerData, toMarkerData } from './markerData.js'
+import { fromCodeActionTriggerType } from './code-action-trigger-type.js'
+import { fromMarkerData, toMarkerData } from './marker-data.js'
 
 /**
  * Convert a Monaco editor code action context to an LSP code action context.

@@ -2,11 +2,11 @@ import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromCommand, toCommand } from './command.js'
-import { fromCompletionItemKind, toCompletionItemKind } from './completionItemKind.js'
-import { fromCompletionItemTag, toCompletionItemTag } from './completionItemTag.js'
-import { fromMarkdownString, toMarkdownString } from './markdownString.js'
+import { fromCompletionItemKind, toCompletionItemKind } from './completion-item-kind.js'
+import { fromCompletionItemTag, toCompletionItemTag } from './completion-item-tag.js'
+import { fromMarkdownString, toMarkdownString } from './markdown-string.js'
 import { fromRange, toRange } from './range.js'
-import { fromSingleEditOperation, toSingleEditOperation } from './singleEditOperation.js'
+import { fromSingleEditOperation, toSingleEditOperation } from './single-edit-operation.js'
 
 /**
  * Convert a Monaco editor completion item range to an LSP completion item text edit.

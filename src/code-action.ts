@@ -1,8 +1,8 @@
 import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-import { fromMarkerData, toMarkerData } from './markerData.js'
-import { fromWorkspaceEdit, toWorkspaceEdit } from './workspaceEdit.js'
+import { fromMarkerData, toMarkerData } from './marker-data.js'
+import { fromWorkspaceEdit, toWorkspaceEdit } from './workspace-edit.js'
 
 /**
  * Convert a Monaco editor code action to an LSP code action.

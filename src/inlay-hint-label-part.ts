@@ -3,7 +3,7 @@ import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromCommand, toCommand } from './command.js'
 import { fromLocation, toLocation } from './location.js'
-import { fromMarkdownString, toMarkdownString } from './markdownString.js'
+import { fromMarkdownString, toMarkdownString } from './markdown-string.js'
 
 /**
  * Convert a Monaco editor inlay hint label part to an LSP inlay hint label part.

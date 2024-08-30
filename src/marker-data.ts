@@ -2,10 +2,10 @@ import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 import { URI } from 'vscode-uri'
 
-import { fromMarkerSeverity, toMarkerSeverity } from './markerSeverity.js'
-import { fromMarkerTag, toMarkerTag } from './markerTag.js'
+import { fromMarkerSeverity, toMarkerSeverity } from './marker-severity.js'
+import { fromMarkerTag, toMarkerTag } from './marker-tag.js'
 import { fromRange, toRange } from './range.js'
-import { fromRelatedInformation, toRelatedInformation } from './relatedInformation.js'
+import { fromRelatedInformation, toRelatedInformation } from './related-information.js'
 
 /**
  * Convert a Monaco editor marker data to an LSP diagnostic.

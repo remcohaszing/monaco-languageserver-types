@@ -1,11 +1,11 @@
 import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-import { fromInlayHintKind, toInlayHintKind } from './inlayHintKind.js'
-import { fromInlayHintLabelPart, toInlayHintLabelPart } from './inlayHintLabelPart.js'
-import { fromMarkdownString, toMarkdownString } from './markdownString.js'
+import { fromInlayHintKind, toInlayHintKind } from './inlay-hint-kind.js'
+import { fromInlayHintLabelPart, toInlayHintLabelPart } from './inlay-hint-label-part.js'
+import { fromMarkdownString, toMarkdownString } from './markdown-string.js'
 import { fromPosition, toPosition } from './position.js'
-import { fromTextEdit, toTextEdit } from './textEdit.js'
+import { fromTextEdit, toTextEdit } from './text-edit.js'
 
 /**
  * Convert a Monaco editor inlay hint to an LSP inlay hint.

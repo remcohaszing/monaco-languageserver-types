@@ -2,8 +2,8 @@ import type * as monaco from 'monaco-types'
 import { type Writable } from 'type-fest'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-import { fromSignatureHelp, toSignatureHelp } from './signatureHelp.js'
-import { fromSignatureHelpTriggerKind } from './signatureHelpTriggerKind.js'
+import { fromSignatureHelpTriggerKind } from './signature-help-trigger-kind.js'
+import { fromSignatureHelp, toSignatureHelp } from './signature-help.js'
 
 /**
  * Convert a Monaco editor signature help context to an LSP signature help context.

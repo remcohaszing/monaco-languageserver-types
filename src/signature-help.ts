@@ -1,7 +1,7 @@
 import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-import { fromSignatureInformation, toSignatureInformation } from './signatureInformation.js'
+import { fromSignatureInformation, toSignatureInformation } from './signature-information.js'
 
 /**
  * Convert a Monaco editor signature help to an LSP signature help.

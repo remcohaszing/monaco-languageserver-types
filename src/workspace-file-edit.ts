@@ -5,7 +5,7 @@ import { URI } from 'vscode-uri'
 import {
   fromWorkspaceFileEditOptions,
   toWorkspaceFileEditOptions
-} from './workspaceFileEditOptions.js'
+} from './workspace-file-edit-options.js'
 
 type WorkspaceFileEdit = lsp.CreateFile | lsp.DeleteFile | lsp.RenameFile
 

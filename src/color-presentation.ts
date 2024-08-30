@@ -1,7 +1,7 @@
 import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
 
-import { fromTextEdit, toTextEdit } from './textEdit.js'
+import { fromTextEdit, toTextEdit } from './text-edit.js'
 
 /**
  * Convert a Monaco editor color presentation to an LSP color presentation.
