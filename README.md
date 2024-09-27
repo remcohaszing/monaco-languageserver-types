@@ -49,7 +49,7 @@ types.
   - [`fromPosition(position)`](#frompositionposition)
   - [`fromRange(range)`](#fromrangerange)
   - [`fromRelatedInformation(relatedInformation)`](#fromrelatedinformationrelatedinformation)
-  - [`fromSelectionRanges(selectionRange)`](#fromselectionrangesselectionrange)
+  - [`fromSelectionRanges(selectionRanges)`](#fromselectionrangesselectionranges)
   - [`fromSemanticTokens(semanticTokens)`](#fromsemantictokenssemantictokens)
   - [`fromSemanticTokensEdit(semanticTokensEdit)`](#fromsemantictokenseditsemantictokensedit)
   - [`fromSemanticTokensEdits(semanticTokensEdits)`](#fromsemantictokenseditssemantictokensedits)
@@ -598,7 +598,7 @@ Convert a Monaco editor related information to an LSP diagnostic related informa
 The related information as an LSP diagnostic related information
 (`lsp.DiagnosticRelatedInformation`).
 
-### `fromSelectionRanges(selectionRange)`
+### `fromSelectionRanges(selectionRanges)`
 
 Convert Monaco editor selection ranges to an LSP selection range.
 
