@@ -4,10 +4,10 @@ import type * as lsp from 'vscode-languageserver-protocol'
 import { fromRange, toRange } from './range.js'
 
 /**
- * Convert Monaco editor selection ranges to an LSP selection ranges.
+ * Convert Monaco editor selection ranges to an LSP selection range.
  *
  * @param selectionRanges
- *   The Monaco selections range to convert.
+ *   The Monaco selections ranges to convert.
  * @returns
  *   The selection ranges as LSP selection range.
  */

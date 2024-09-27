@@ -49,7 +49,7 @@ types.
   - [`fromPosition(position)`](#frompositionposition)
   - [`fromRange(range)`](#fromrangerange)
   - [`fromRelatedInformation(relatedInformation)`](#fromrelatedinformationrelatedinformation)
-  - [`fromSelectionRange(selectionRange)`](#fromselectionrangeselectionrange)
+  - [`fromSelectionRanges(selectionRange)`](#fromselectionrangesselectionrange)
   - [`fromSemanticTokens(semanticTokens)`](#fromsemantictokenssemantictokens)
   - [`fromSemanticTokensEdit(semanticTokensEdit)`](#fromsemantictokenseditsemantictokensedit)
   - [`fromSemanticTokensEdits(semanticTokensEdits)`](#fromsemantictokenseditssemantictokensedits)
@@ -100,7 +100,7 @@ types.
   - [`toPosition(position)`](#topositionposition)
   - [`toRange(range)`](#torangerange)
   - [`toRelatedInformation(relatedInformation)`](#torelatedinformationrelatedinformation)
-  - [`toSelectionRange(selectionRange)`](#toselectionrangeselectionrange)
+  - [`toSelectionRanges(selectionRange)`](#toselectionrangesselectionrange)
   - [`toSemanticTokens(semanticTokens)`](#tosemantictokenssemantictokens)
   - [`toSemanticTokensEdit(semanticTokensEdit)`](#tosemantictokenseditsemantictokensedit)
   - [`toSemanticTokensEdits(semanticTokensDelta)`](#tosemantictokenseditssemantictokensdelta)
@@ -598,13 +598,13 @@ Convert a Monaco editor related information to an LSP diagnostic related informa
 The related information as an LSP diagnostic related information
 (`lsp.DiagnosticRelatedInformation`).
 
-### `fromSelectionRange(selectionRange)`
+### `fromSelectionRanges(selectionRange)`
 
-Convert a Monaco editor selection range to an LSP selection range.
+Convert Monaco editor selection ranges to an LSP selection range.
 
 #### Parameters
 
-- `selectionRange` (`monaco.languages.SelectionRange`) — the Monaco selection range to convert
+- `selectionRanges` (`monaco.languages.SelectionRange[]`) — the Monaco selection ranges to convert
 
 #### Returns
 
@@ -1233,9 +1233,9 @@ Convert an LSP diagnostic related information to a Monaco editor related informa
 The diagnostic related information as Monaco editor related information
 (`monaco.editor.IRelatedInformation`).
 
-### `toSelectionRange(selectionRange)`
+### `toSelectionRanges(selectionRange)`
 
-Convert an LSP selection range to a Monaco editor selection range.
+Convert an LSP selection range to Monaco editor selection ranges.
 
 #### Parameters
 
@@ -1243,7 +1243,7 @@ Convert an LSP selection range to a Monaco editor selection range.
 
 #### Returns
 
-The selection range as Monaco editor selection range (`monaco.languages.SelectionRange`).
+The selection range as Monaco editor selection ranges (`monaco.languages.SelectionRange[]`).
 
 ### `toSemanticTokens(semanticTokens)`
 
