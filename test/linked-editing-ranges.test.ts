@@ -1,5 +1,5 @@
-import { runTests } from './utils.js'
 import { fromLinkedEditingRanges, toLinkedEditingRanges } from '../src/index.js'
+import { runTests } from './utils.js'
 
 runTests(fromLinkedEditingRanges, toLinkedEditingRanges)(
   {

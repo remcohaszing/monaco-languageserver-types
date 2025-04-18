@@ -1,7 +1,7 @@
 import { URI } from 'vscode-uri'
 
-import { runTests } from './utils.js'
 import { fromInlayHintLabelPart, toInlayHintLabelPart } from '../src/index.js'
+import { runTests } from './utils.js'
 
 runTests(fromInlayHintLabelPart, toInlayHintLabelPart)(
   {

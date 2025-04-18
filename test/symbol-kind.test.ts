@@ -1,8 +1,8 @@
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js'
 import * as lsp from 'vscode-languageserver-protocol'
 
-import { runTests } from './utils.js'
 import { fromSymbolKind, toSymbolKind } from '../src/index.js'
+import { runTests } from './utils.js'
 
 runTests(fromSymbolKind, toSymbolKind)(
   { lsp: lsp.SymbolKind.File, monaco: monaco.languages.SymbolKind.File },

@@ -1,5 +1,5 @@
-import { runTests } from './utils.js'
 import { fromHover, toHover } from '../src/index.js'
+import { runTests } from './utils.js'
 
 runTests(fromHover, toHover)(
   {

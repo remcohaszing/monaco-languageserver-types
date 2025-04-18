@@ -38,8 +38,8 @@ export { fromSelectionRanges, toSelectionRanges } from './selection-ranges.js'
 export { fromSemanticTokens, toSemanticTokens } from './semantic-tokens.js'
 export { fromSemanticTokensEdit, toSemanticTokensEdit } from './semantic-tokens-edit.js'
 export { fromSemanticTokensEdits, toSemanticTokensEdits } from './semantic-tokens-edits.js'
-export { fromSignatureHelpContext, toSignatureHelpContext } from './signature-help-context.js'
 export { fromSignatureHelp, toSignatureHelp } from './signature-help.js'
+export { fromSignatureHelpContext, toSignatureHelpContext } from './signature-help-context.js'
 export {
   fromSignatureHelpTriggerKind,
   toSignatureHelpTriggerKind

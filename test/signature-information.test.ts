@@ -1,5 +1,5 @@
-import { runTests } from './utils.js'
 import { fromSignatureInformation, toSignatureInformation } from '../src/index.js'
+import { runTests } from './utils.js'
 
 runTests(fromSignatureInformation, toSignatureInformation)(
   {

@@ -1,5 +1,5 @@
-import { runTests } from './utils.js'
 import { fromSemanticTokens, toSemanticTokens } from '../src/index.js'
+import { runTests } from './utils.js'
 
 runTests(fromSemanticTokens, toSemanticTokens)(
   {

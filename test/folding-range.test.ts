@@ -1,5 +1,5 @@
-import { runTests } from './utils.js'
 import { fromFoldingRange, toFoldingRange } from '../src/index.js'
+import { runTests } from './utils.js'
 
 runTests(fromFoldingRange, toFoldingRange)(
   {

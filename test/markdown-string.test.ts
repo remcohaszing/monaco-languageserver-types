@@ -1,5 +1,5 @@
-import { runTests } from './utils.js'
 import { fromMarkdownString, toMarkdownString } from '../src/index.js'
+import { runTests } from './utils.js'
 
 runTests(
   fromMarkdownString,

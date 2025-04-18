@@ -1,5 +1,5 @@
-import { runTests } from './utils.js'
 import { fromParameterInformation, toParameterInformation } from '../src/index.js'
+import { runTests } from './utils.js'
 
 runTests(fromParameterInformation, toParameterInformation)(
   {

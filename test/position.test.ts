@@ -1,5 +1,5 @@
-import { runTests } from './utils.js'
 import { fromPosition, toPosition } from '../src/index.js'
+import { runTests } from './utils.js'
 
 runTests(
   fromPosition,

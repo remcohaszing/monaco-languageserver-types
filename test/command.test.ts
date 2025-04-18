@@ -1,5 +1,5 @@
-import { runTests } from './utils.js'
 import { fromCommand, toCommand } from '../src/index.js'
+import { runTests } from './utils.js'
 
 runTests(
   fromCommand,
