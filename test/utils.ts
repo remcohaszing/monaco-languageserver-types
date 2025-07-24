@@ -1,5 +1,5 @@
+import { inspect } from '@vitest/utils'
 import { expect, test } from 'vitest'
-import { inspect } from 'vitest/utils'
 
 interface TestCase<M, L, MO, LO> {
   /**
