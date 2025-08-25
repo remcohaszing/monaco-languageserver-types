@@ -137,6 +137,7 @@ For example:
 
 ```typescript
 import type * as monaco from 'monaco-editor'
+
 import { fromRange, toRange } from 'monaco-languageserver-types'
 
 const monacoRange: monaco.IRange = {

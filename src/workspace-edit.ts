@@ -1,5 +1,6 @@
 import type * as monaco from 'monaco-types'
 import type * as lsp from 'vscode-languageserver-protocol'
+
 import { URI } from 'vscode-uri'
 
 import { fromTextEdit, toTextEdit } from './text-edit.js'

@@ -1,5 +1,5 @@
 import type * as monaco from 'monaco-types'
-import { type Writable } from 'type-fest'
+import type { Writable } from 'type-fest'
 import type * as lsp from 'vscode-languageserver-protocol'
 
 import { fromSemanticTokensEdit, toSemanticTokensEdit } from './semantic-tokens-edit.js'
