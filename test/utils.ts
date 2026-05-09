@@ -1,5 +1,7 @@
-import { inspect } from '@vitest/utils'
+import { format } from '@vitest/pretty-format'
 import { expect, test } from 'vitest'
+
+format('', {})
 
 interface TestCase<M, L, MO, LO> {
   /**
@@ -43,7 +45,7 @@ export function runTests<M, L, MO = never, LO = never>(
   return (...tests: TestCase<M, L, MO, LO>[]) => {
     for (const values of tests) {
       if (values.only !== 'from') {
-        test(`${to.name}(${inspect(values.lsp, { colors: true })})`, () => {
+        test(`${to.name}(${format(values.lsp, { min: true, printBasicPrototype: false })})`, () => {
           const result = to(values.lsp, values.toOptions!)
           expect(result).toStrictEqual(values.monaco)
         })
@@ -52,7 +54,7 @@ export function runTests<M, L, MO = never, LO = never>(
 
     for (const values of tests) {
       if (values.only !== 'to') {
-        test(`${from.name}(${inspect(values.monaco, { colors: true })})`, () => {
+        test(`${from.name}(${format(values.monaco, { min: true, printBasicPrototype: false })})`, () => {
           const result = from(values.monaco, values.fromOptions!)
           expect(result).toStrictEqual(values.lsp)
         })
