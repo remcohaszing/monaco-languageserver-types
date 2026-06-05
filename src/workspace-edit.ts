@@ -34,7 +34,7 @@ export function fromWorkspaceEdit(
 
     const uri = String(edit.resource)
     if (edit.versionId == null) {
-      changes[uri] = []
+      changes[uri] ||= []
       changes[uri].push(fromTextEdit(edit.textEdit))
       continue
     }

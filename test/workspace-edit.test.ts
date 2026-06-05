@@ -11,6 +11,10 @@ runTests(fromWorkspaceEdit, toWorkspaceEdit)(
           {
             newText: 'new text',
             range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } }
+          },
+          {
+            newText: 'more text',
+            range: { start: { line: 4, character: 5 }, end: { line: 6, character: 7 } }
           }
         ]
       },
@@ -39,6 +43,14 @@ runTests(fromWorkspaceEdit, toWorkspaceEdit)(
           textEdit: {
             text: 'new text',
             range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 }
+          }
+        },
+        {
+          resource: URI.parse('file:///changes.txt'),
+          versionId: undefined,
+          textEdit: {
+            text: 'more text',
+            range: { startLineNumber: 5, startColumn: 6, endLineNumber: 7, endColumn: 8 }
           }
         },
         {
