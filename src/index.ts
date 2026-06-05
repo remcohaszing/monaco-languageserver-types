@@ -22,6 +22,10 @@ export { fromHover, toHover } from './hover.js'
 export { fromInlayHint, toInlayHint } from './inlay-hint.js'
 export { fromInlayHintKind, toInlayHintKind } from './inlay-hint-kind.js'
 export { fromInlayHintLabelPart, toInlayHintLabelPart } from './inlay-hint-label-part.js'
+export {
+  fromInlineCompletionTriggerKind,
+  toInlineCompletionTriggerKind
+} from './inline-completion-trigger-kind.js'
 export { fromLanguageFilter, toLanguageFilter } from './language-filter.js'
 export { fromLink, toLink } from './link.js'
 export { fromLinkedEditingRanges, toLinkedEditingRanges } from './linked-editing-ranges.js'

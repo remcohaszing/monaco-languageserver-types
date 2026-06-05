@@ -37,6 +37,7 @@ types.
   - [`fromInlayHint(inlayHint)`](#frominlayhintinlayhint)
   - [`fromInlayHintKind(inlayHintKind)`](#frominlayhintkindinlayhintkind)
   - [`fromInlayHintLabelPart(inlayHintLabelPart)`](#frominlayhintlabelpartinlayhintlabelpart)
+  - [`fromInlineCompletionTriggerKind(inlineCompletionTriggerKind)`](#frominlinecompletiontriggerkindinlinecompletiontriggerkind)
   - [`fromLanguageFilter(languageFilter)`](#fromlanguagefilterlanguagefilter)
   - [`fromLink(link)`](#fromlinklink)
   - [`fromLinkedEditingRanges(linkedEditingRanges)`](#fromlinkededitingrangeslinkededitingranges)
@@ -91,6 +92,7 @@ types.
   - [`toInlayHint(inlayHint)`](#toinlayhintinlayhint)
   - [`toInlayHintKind(inlayHintKind)`](#toinlayhintkindinlayhintkind)
   - [`toInlayHintLabelPart(inlayHintLabelPart)`](#toinlayhintlabelpartinlayhintlabelpart)
+  - [`toInlineCompletionTriggerKind(inlineCompletionTriggerKind)`](#toinlinecompletiontriggerkindinlinecompletiontriggerkind)
   - [`toLanguageFilter(filter)`](#tolanguagefilterfilter)
   - [`toLink(documentLink)`](#tolinkdocumentlink)
   - [`toLinkedEditingRanges(linkedEditingRanges)`](#tolinkededitingrangeslinkededitingranges)
@@ -522,6 +524,21 @@ Convert a Monaco editor inlay hint label part to an LSP inlay hint label part.
 
 The inlay hint label part as an LSP inlay hint label part
 ([`lsp.InlayHintPart`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.18/specification/#inlayHintPart)).
+
+### `fromInlineCompletionTriggerKind(inlineCompletionTriggerKind)`
+
+Convert a Monaco editor inline completion trigger kind to an LSP inline completion trigger kind.
+
+#### Parameters
+
+- `inlineCompletionTriggerKind`
+  ([`monaco.languages.InlineCompletionTriggerKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.InlineCompletionTriggerKind))
+  — the Monaco inline completion trigger kind to convert
+
+#### Returns
+
+The inlay inline completion trigger as an LSP inline completion trigger kind
+([`lsp.InlineCompletionTriggerKind`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.18/specification/#inlineCompletionTriggerKind)).
 
 ### `fromLanguageFilter(languageFilter)`
 
@@ -1340,6 +1357,21 @@ Convert an LSP inlay hint label part to a Monaco editor inlay hint label part.
 
 The inlay hint label part as Monaco editor inlay hint label part
 ([`monaco.languages.InlayHintLabelPart`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.InlayHintLabelPart)).
+
+### `toInlineCompletionTriggerKind(inlineCompletionTriggerKind)`
+
+Convert an LSP inline completion trigger kind to a Monaco editor inline completion trigger kind.
+
+#### Parameters
+
+- `inlineCompletionTriggerKind`
+  ([`lsp.InlineCompletionTriggerKind`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.18/specification/#inlineCompletionTriggerKind))
+  — the LSP inline completion trigger kind to convert
+
+#### Returns
+
+The inline completion trigger kind as Monaco editor inline completion trigger kind
+([`monaco.languages.InlineCompletionTriggerKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.InlineCompletionTriggerKind)).
 
 ### `toLanguageFilter(filter)`
 
