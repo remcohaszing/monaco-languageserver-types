@@ -19,6 +19,10 @@ export function fromCommand(command: monaco.languages.Command): lsp.Command {
     result.arguments = command.arguments
   }
 
+  if (command.tooltip) {
+    result.tooltip = command.tooltip
+  }
+
   return result
 }
 
@@ -38,6 +42,10 @@ export function toCommand(command: lsp.Command): monaco.languages.Command {
 
   if (command.arguments) {
     result.arguments = command.arguments
+  }
+
+  if (command.tooltip) {
+    result.tooltip = command.tooltip
   }
 
   return result
