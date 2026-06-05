@@ -1,5 +1,16 @@
+import type { Plugin } from '@vitest/pretty-format'
+
 import { format } from '@vitest/pretty-format'
 import { expect, test } from 'vitest'
+import { URI } from 'vscode-uri'
+
+const uriPlugin: Plugin = {
+  test: URI.isUri,
+
+  serialize(val, config, indentation, depth, refs, printer) {
+    return `URI.parse(${printer(val.toString(true), config, indentation, depth, refs)})`
+  }
+}
 
 interface TestCase<M, L, MO, LO> {
   /**
@@ -43,7 +54,7 @@ export function runTests<M, L, MO = never, LO = never>(
   return (...tests: TestCase<M, L, MO, LO>[]) => {
     for (const values of tests) {
       if (values.only !== 'from') {
-        test(`${to.name}(${format(values.lsp, { min: true, printBasicPrototype: false })})`, () => {
+        test(`${to.name}(${format(values.lsp, { min: true, plugins: [uriPlugin], printBasicPrototype: false })})`, () => {
           const result = to(values.lsp, values.toOptions!)
           expect(result).toStrictEqual(values.monaco)
         })
@@ -52,7 +63,7 @@ export function runTests<M, L, MO = never, LO = never>(
 
     for (const values of tests) {
       if (values.only !== 'to') {
-        test(`${from.name}(${format(values.monaco, { min: true, printBasicPrototype: false })})`, () => {
+        test(`${from.name}(${format(values.monaco, { min: true, plugins: [uriPlugin], printBasicPrototype: false })})`, () => {
           const result = from(values.monaco, values.fromOptions!)
           expect(result).toStrictEqual(values.lsp)
         })
