@@ -1,8 +1,6 @@
 import { format } from '@vitest/pretty-format'
 import { expect, test } from 'vitest'
 
-format('', {})
-
 interface TestCase<M, L, MO, LO> {
   /**
    * If specified, only test `to` or `from`.
