@@ -3,11 +3,12 @@ import type * as lsp from 'vscode-languageserver-protocol'
 
 import { URI } from 'vscode-uri'
 
+import { fromRange, toRange } from './range.js'
 import { fromTextEdit, toTextEdit } from './text-edit.js'
 import { fromWorkspaceEditMetadata, toWorkspaceEditMetadata } from './workspace-edit-metadata.js'
 import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from './workspace-file-edit.js'
 
-type TextDocumentEdit = lsp.AnnotatedTextEdit | lsp.TextEdit
+type TextDocumentEdit = lsp.AnnotatedTextEdit | lsp.SnippetTextEdit | lsp.TextEdit
 
 /**
  * Convert a Monaco editor workspace edit to an LSP workspace edit.
@@ -29,11 +30,16 @@ export function fromWorkspaceEdit(
     | lsp.RenameFile
     | lsp.TextDocumentEdit
   )[] = []
-  const textDocumentMap = new Map<string, Map<number, lsp.TextEdit[]>>()
+  const textDocumentMap = new Map<string, Map<number, TextDocumentEdit[]>>()
 
   for (const edit of workspaceEdit.edits) {
     if (!('resource' in edit)) {
       documentChanges.push(fromWorkspaceFileEdit(edit))
+      continue
+    }
+
+    if (!('versionId' in edit)) {
+      // Edit is a CustomEdit. This is no supported in lSP.
       continue
     }
 
@@ -60,7 +66,12 @@ export function fromWorkspaceEdit(
       })
     }
 
-    const textDocumentEdit: TextDocumentEdit = fromTextEdit(edit.textEdit)
+    const textDocumentEdit: TextDocumentEdit = edit.textEdit.insertAsSnippet
+      ? {
+          range: fromRange(edit.textEdit.range),
+          snippet: { kind: 'snippet', value: edit.textEdit.text }
+        }
+      : fromTextEdit(edit.textEdit)
 
     if (edit.metadata) {
       ;(textDocumentEdit as lsp.AnnotatedTextEdit).annotationId = String(changeAnnotationCount)
@@ -106,10 +117,13 @@ function toWorkspaceTextEdit(
   const workspaceTextEdit: monaco.languages.IWorkspaceTextEdit = {
     resource: URI.parse(uri),
     versionId,
-    textEdit: toTextEdit(textEdit)
+    textEdit:
+      'snippet' in textEdit
+        ? { range: toRange(textEdit.range), insertAsSnippet: true, text: textEdit.snippet.value }
+        : toTextEdit(textEdit)
   }
 
-  if ('annotationId' in textEdit) {
+  if ('annotationId' in textEdit && textEdit.annotationId != null) {
     const changeAnnotation = changeAnnotations?.[textEdit.annotationId]
     if (changeAnnotation) {
       workspaceTextEdit.metadata = toWorkspaceEditMetadata(changeAnnotation)

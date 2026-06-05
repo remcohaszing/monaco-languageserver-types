@@ -123,6 +123,62 @@ runTests(fromWorkspaceEdit, toWorkspaceEdit)(
     }
   },
   {
+    lsp: {
+      changeAnnotations: {
+        0: { label: 'Zero', needsConfirmation: false },
+        1: { label: 'One', needsConfirmation: true }
+      },
+      changes: {},
+      documentChanges: [
+        {
+          textDocument: { uri: 'file:///versioned.txt', version: 42 },
+          edits: [
+            {
+              snippet: { kind: 'snippet', value: 'snippet 0' },
+              range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } },
+              annotationId: '0'
+            },
+            {
+              snippet: { kind: 'snippet', value: 'snippet 1' },
+              range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } },
+              annotationId: '1'
+            }
+          ]
+        }
+      ]
+    },
+    monaco: {
+      edits: [
+        {
+          metadata: {
+            label: 'Zero',
+            needsConfirmation: false
+          },
+          resource: URI.parse('file:///versioned.txt'),
+          textEdit: {
+            insertAsSnippet: true,
+            range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 },
+            text: 'snippet 0'
+          },
+          versionId: 42
+        },
+        {
+          metadata: {
+            label: 'One',
+            needsConfirmation: true
+          },
+          resource: URI.parse('file:///versioned.txt'),
+          textEdit: {
+            insertAsSnippet: true,
+            range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 },
+            text: 'snippet 1'
+          },
+          versionId: 42
+        }
+      ]
+    }
+  },
+  {
     only: 'to',
     lsp: {
       changes: {},
@@ -146,6 +202,26 @@ runTests(fromWorkspaceEdit, toWorkspaceEdit)(
           textEdit: {
             text: 'new text',
             range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 }
+          }
+        }
+      ]
+    }
+  },
+  {
+    only: 'from',
+    lsp: {
+      changes: {},
+      documentChanges: []
+    },
+    monaco: {
+      edits: [
+        {
+          resource: URI.parse('test:custom.edit'),
+          redo() {
+            // Do nothing
+          },
+          undo() {
+            // Do nothing
           }
         }
       ]

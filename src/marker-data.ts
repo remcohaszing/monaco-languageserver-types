@@ -56,7 +56,7 @@ export function fromMarkerData(markerData: monaco.editor.IMarkerData): lsp.Diagn
 export function toMarkerData(diagnostic: lsp.Diagnostic): monaco.editor.IMarkerData {
   const markerData: monaco.editor.IMarkerData = {
     ...toRange(diagnostic.range),
-    message: diagnostic.message,
+    message: typeof diagnostic.message === 'string' ? diagnostic.message : diagnostic.message.value,
     severity: diagnostic.severity
       ? toMarkerSeverity(diagnostic.severity)
       : (8 satisfies monaco.MarkerSeverity.Error)

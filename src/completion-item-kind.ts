@@ -54,7 +54,7 @@ export function fromCompletionItemKind(
   if (kind === (17 satisfies monaco.languages.CompletionItemKind.Keyword)) {
     return 14 satisfies typeof lsp.CompletionItemKind.Keyword
   }
-  if (kind === (27 satisfies monaco.languages.CompletionItemKind.Snippet)) {
+  if (kind === (28 satisfies monaco.languages.CompletionItemKind.Snippet)) {
     return 15 satisfies typeof lsp.CompletionItemKind.Snippet
   }
   if (kind === (19 satisfies monaco.languages.CompletionItemKind.Color)) {
@@ -143,7 +143,7 @@ export function toCompletionItemKind(
     return 17 satisfies monaco.languages.CompletionItemKind.Keyword
   }
   if (kind === (15 satisfies typeof lsp.CompletionItemKind.Snippet)) {
-    return 27 satisfies monaco.languages.CompletionItemKind.Snippet
+    return 28 satisfies monaco.languages.CompletionItemKind.Snippet
   }
   if (kind === (16 satisfies typeof lsp.CompletionItemKind.Color)) {
     return 19 satisfies monaco.languages.CompletionItemKind.Color

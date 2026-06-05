@@ -98,9 +98,24 @@ runTests(fromMarkerData, toMarkerData)(
       startColumn: 11,
       endLineNumber: 3,
       endColumn: 21,
-
       severity: monaco.MarkerSeverity.Error,
       source: 'ESLint'
+    }
+  },
+  {
+    only: 'to',
+    lsp: {
+      message: { kind: 'plaintext', value: 'Unused variable "foo"' },
+      range: { start: { line: 0, character: 10 }, end: { line: 2, character: 20 } },
+      severity: lsp.DiagnosticSeverity.Warning
+    },
+    monaco: {
+      message: 'Unused variable "foo"',
+      startLineNumber: 1,
+      startColumn: 11,
+      endLineNumber: 3,
+      endColumn: 21,
+      severity: monaco.MarkerSeverity.Warning
     }
   }
 )
