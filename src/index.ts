@@ -50,6 +50,7 @@ export { fromSymbolKind, toSymbolKind } from './symbol-kind.js'
 export { fromSymbolTag, toSymbolTag } from './symbol-tag.js'
 export { fromTextEdit, toTextEdit } from './text-edit.js'
 export { fromWorkspaceEdit, toWorkspaceEdit } from './workspace-edit.js'
+export { fromWorkspaceEditMetadata, toWorkspaceEditMetadata } from './workspace-edit-metadata.js'
 export { fromWorkspaceFileEdit, toWorkspaceFileEdit } from './workspace-file-edit.js'
 export {
   fromWorkspaceFileEditOptions,

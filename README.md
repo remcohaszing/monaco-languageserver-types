@@ -62,6 +62,7 @@ types.
   - [`fromSymbolTag(symbolTag)`](#fromsymboltagsymboltag)
   - [`fromTextEdit(textEdit)`](#fromtextedittextedit)
   - [`fromWorkspaceEdit(workspaceEdit)`](#fromworkspaceeditworkspaceedit)
+  - [`fromWorkspaceEditMetadata(workspaceEditMetadata)`](#fromworkspaceeditmetadataworkspaceeditmetadata)
   - [`fromWorkspaceFileEdit(workspaceFileEdit)`](#fromworkspacefileeditworkspacefileedit)
   - [`fromWorkspaceFileEditOptions(options)`](#fromworkspacefileeditoptionsoptions)
   - [`toCodeAction(codeAction)`](#tocodeactioncodeaction)
@@ -113,6 +114,7 @@ types.
   - [`toSymbolTag(symbolTag)`](#tosymboltagsymboltag)
   - [`toTextEdit(textEdit)`](#totextedittextedit)
   - [`toWorkspaceEdit(workspaceEdit)`](#toworkspaceeditworkspaceedit)
+  - [`toWorkspaceEditMetadata(changeAnnotation)`](#toworkspaceeditmetadatachangeannotation)
   - [`toWorkspaceFileEdit(workspaceFileEdit)`](#toworkspacefileeditworkspacefileedit)
   - [`toWorkspaceFileEditOptions(options)`](#toworkspacefileeditoptionsoptions)
 - [License](#license)
@@ -891,6 +893,21 @@ Convert a Monaco editor workspace edit to an LSP workspace edit.
 The workspace edit as an LSP workspace edit
 ([`lsp.WorkspaceEdit`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#workspaceEdit)).
 
+### `fromWorkspaceEditMetadata(workspaceEditMetadata)`
+
+Convert a Monaco editor workspace edit metadata to an LSP change annotation.
+
+#### Parameters
+
+- `workspaceEditMetadata`
+  ([`monaco.languages.WorkspaceEditMetadata`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.WorkspaceEditMetadata))
+  — the Monaco workspace edit to convert
+
+#### Returns
+
+The workspace edit metadata as an LSP change annotation
+([`lsp.ChangeAnnotation`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#changeAnnotation)).
+
 ### `fromWorkspaceFileEdit(workspaceFileEdit)`
 
 Convert Monaco editor workspace file edit options to LSP workspace file edit options.
@@ -1661,6 +1678,21 @@ Convert an LSP workspace edit to a Monaco editor workspace edit.
 
 The workspace edit as Monaco editor workspace edit
 ([`monaco.languages.WorkspaceEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.WorkspaceEdit)).
+
+### `toWorkspaceEditMetadata(changeAnnotation)`
+
+Convert an LSP change annotation to a Monaco editor workspace edit metadata.
+
+#### Parameters
+
+- `changeAnnotation`
+  ([`lsp.ChangeAnnotation`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#changeAnnotation))
+  — the LSP change annotation to convert
+
+#### Returns
+
+The change annotation as Monaco editor workspace edit
+([`monaco.languages.WorkspaceEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.WorkspaceEditMetadata)).
 
 ### `toWorkspaceFileEdit(workspaceFileEdit)`
 
