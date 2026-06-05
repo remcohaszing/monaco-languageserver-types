@@ -48,6 +48,7 @@ types.
   - [`fromParameterInformation(parameterInformation)`](#fromparameterinformationparameterinformation)
   - [`fromPosition(position)`](#frompositionposition)
   - [`fromRange(range)`](#fromrangerange)
+  - [`fromRelativePattern(relativePattern)`](#fromrelativepatternrelativepattern)
   - [`fromRelatedInformation(relatedInformation)`](#fromrelatedinformationrelatedinformation)
   - [`fromSelectionRanges(selectionRanges)`](#fromselectionrangesselectionranges)
   - [`fromSemanticTokens(semanticTokens)`](#fromsemantictokenssemantictokens)
@@ -100,6 +101,7 @@ types.
   - [`toParameterInformation(parameterInformation)`](#toparameterinformationparameterinformation)
   - [`toPosition(position)`](#topositionposition)
   - [`toRange(range)`](#torangerange)
+  - [`toRelativePattern(relativePattern)`](#torelativepatternrelativepattern)
   - [`toRelatedInformation(relatedInformation)`](#torelatedinformationrelatedinformation)
   - [`toSelectionRanges(selectionRange)`](#toselectionrangesselectionrange)
   - [`toSemanticTokens(semanticTokens)`](#tosemantictokenssemantictokens)
@@ -683,6 +685,21 @@ Convert a Monaco editor range to an LSP range.
 
 The range as an LSP range
 ([`lsp.Range`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#range)).
+
+### `fromRelativePattern(relativePattern)`
+
+Convert a Monaco editor relative pattern to an LSP relative pattern.
+
+#### Parameters
+
+- `relativePattern`
+  ([`monaco.editor.IRelativePattern`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.editor.IRelativePattern))
+  — the Monaco relative pattern to convert
+
+#### Returns
+
+The relative pattern as an LSP relative pattern.
+([`lsp.RelativePattern`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#telativePattern)).
 
 ### `fromRelatedInformation(relatedInformation)`
 
@@ -1469,6 +1486,21 @@ Convert an LSP range to a Monaco editor range.
 
 The range as Monaco editor range
 ([`monaco.IRange`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.IRange)).
+
+### `toRelativePattern(relativePattern)`
+
+Convert an LSP relative pattern to a Monaco editor relative pattern.
+
+#### Parameters
+
+- `relatedInformation`
+  ([`lsp.RelativePattern`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#relativePattern))
+  — the LSP relative pattern to convert
+
+#### Returns
+
+The relative pattern as Monaco editor relative pattern.
+([`monaco.editor.IRelativePattern`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.editor.IRelativePattern)).
 
 ### `toRelatedInformation(relatedInformation)`
 

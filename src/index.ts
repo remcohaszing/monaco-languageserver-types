@@ -34,6 +34,7 @@ export { fromParameterInformation, toParameterInformation } from './parameter-in
 export { fromPosition, toPosition } from './position.js'
 export { fromRange, toRange } from './range.js'
 export { fromRelatedInformation, toRelatedInformation } from './related-information.js'
+export { fromRelativePattern, toRelativePattern } from './relative-pattern.js'
 export { fromSelectionRanges, toSelectionRanges } from './selection-ranges.js'
 export { fromSemanticTokens, toSemanticTokens } from './semantic-tokens.js'
 export { fromSemanticTokensEdit, toSemanticTokensEdit } from './semantic-tokens-edit.js'
