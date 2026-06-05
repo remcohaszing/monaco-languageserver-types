@@ -27,31 +27,35 @@ export function fromWorkspaceEdit(
   const textDocumentMap = new Map<string, Map<number, lsp.TextEdit[]>>()
 
   for (const edit of workspaceEdit.edits) {
-    if ('resource' in edit) {
-      const uri = String(edit.resource)
-      if (edit.versionId == null) {
-        changes[uri] = []
-        changes[uri].push(fromTextEdit(edit.textEdit))
-      } else {
-        let versionMap = textDocumentMap.get(uri)
-        if (!versionMap) {
-          versionMap = new Map()
-          textDocumentMap.set(uri, versionMap)
-        }
-        let textDocumentEdits = versionMap.get(edit.versionId)
-        if (!textDocumentEdits) {
-          textDocumentEdits = []
-          versionMap.set(edit.versionId, textDocumentEdits)
-          documentChanges.push({
-            textDocument: { uri, version: edit.versionId },
-            edits: textDocumentEdits
-          })
-        }
-        textDocumentEdits.push(fromTextEdit(edit.textEdit))
-      }
-    } else {
+    if (!('resource' in edit)) {
       documentChanges.push(fromWorkspaceFileEdit(edit))
+      continue
     }
+
+    const uri = String(edit.resource)
+    if (edit.versionId == null) {
+      changes[uri] = []
+      changes[uri].push(fromTextEdit(edit.textEdit))
+      continue
+    }
+
+    let versionMap = textDocumentMap.get(uri)
+    if (!versionMap) {
+      versionMap = new Map()
+      textDocumentMap.set(uri, versionMap)
+    }
+
+    let textDocumentEdits = versionMap.get(edit.versionId)
+    if (!textDocumentEdits) {
+      textDocumentEdits = []
+      versionMap.set(edit.versionId, textDocumentEdits)
+      documentChanges.push({
+        textDocument: { uri, version: edit.versionId },
+        edits: textDocumentEdits
+      })
+    }
+
+    textDocumentEdits.push(fromTextEdit(edit.textEdit))
   }
 
   return {
@@ -105,18 +109,19 @@ export function toWorkspaceEdit(workspaceEdit: lsp.WorkspaceEdit): monaco.langua
 
   if (workspaceEdit.documentChanges) {
     for (const documentChange of workspaceEdit.documentChanges) {
-      if ('textDocument' in documentChange) {
-        for (const textEdit of documentChange.edits) {
-          edits.push(
-            toWorkspaceTextEdit(
-              textEdit,
-              documentChange.textDocument.uri,
-              documentChange.textDocument.version ?? undefined
-            )
-          )
-        }
-      } else {
+      if (!('textDocument' in documentChange)) {
         edits.push(toWorkspaceFileEdit(documentChange))
+        continue
+      }
+
+      for (const textEdit of documentChange.edits) {
+        edits.push(
+          toWorkspaceTextEdit(
+            textEdit,
+            documentChange.textDocument.uri,
+            documentChange.textDocument.version ?? undefined
+          )
+        )
       }
     }
   }
