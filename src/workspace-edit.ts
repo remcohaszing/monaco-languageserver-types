@@ -4,7 +4,10 @@ import type * as lsp from 'vscode-languageserver-protocol'
 import { URI } from 'vscode-uri'
 
 import { fromTextEdit, toTextEdit } from './text-edit.js'
+import { fromWorkspaceEditMetadata, toWorkspaceEditMetadata } from './workspace-edit-metadata.js'
 import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from './workspace-file-edit.js'
+
+type TextDocumentEdit = lsp.AnnotatedTextEdit | lsp.TextEdit
 
 /**
  * Convert a Monaco editor workspace edit to an LSP workspace edit.
@@ -17,6 +20,8 @@ import { fromWorkspaceFileEdit, toWorkspaceFileEdit } from './workspace-file-edi
 export function fromWorkspaceEdit(
   workspaceEdit: monaco.languages.WorkspaceEdit
 ): lsp.WorkspaceEdit {
+  let changeAnnotationCount = 0
+  const changeAnnotations: Record<string, lsp.ChangeAnnotation> = {}
   const changes: Record<string, lsp.TextEdit[]> = {}
   const documentChanges: (
     | lsp.CreateFile
@@ -55,13 +60,27 @@ export function fromWorkspaceEdit(
       })
     }
 
-    textDocumentEdits.push(fromTextEdit(edit.textEdit))
+    const textDocumentEdit: TextDocumentEdit = fromTextEdit(edit.textEdit)
+
+    if (edit.metadata) {
+      ;(textDocumentEdit as lsp.AnnotatedTextEdit).annotationId = String(changeAnnotationCount)
+      changeAnnotations[changeAnnotationCount] = fromWorkspaceEditMetadata(edit.metadata)
+      changeAnnotationCount += 1
+    }
+
+    textDocumentEdits.push(textDocumentEdit)
   }
 
-  return {
+  const result: lsp.WorkspaceEdit = {
     changes,
     documentChanges
   }
+
+  if (changeAnnotationCount) {
+    result.changeAnnotations = changeAnnotations
+  }
+
+  return result
 }
 
 /**
@@ -71,21 +90,33 @@ export function fromWorkspaceEdit(
  *   The LSP text edit to convert.
  * @param uri
  *   The uri of the workspace text edit.
+ * @param changeAnnotations
+ *   The change annotations that are present in the workspace edit.
  * @param versionId
  *   The version ID of the workspace text edit.
  * @returns
  *   The text edit and uri as Monaco editor workspace text edit.
  */
 function toWorkspaceTextEdit(
-  textEdit: lsp.TextEdit,
+  textEdit: TextDocumentEdit,
   uri: string,
+  changeAnnotations: lsp.WorkspaceEdit['changeAnnotations'],
   versionId?: number
 ): monaco.languages.IWorkspaceTextEdit {
-  return {
+  const workspaceTextEdit: monaco.languages.IWorkspaceTextEdit = {
     resource: URI.parse(uri),
     versionId,
     textEdit: toTextEdit(textEdit)
   }
+
+  if ('annotationId' in textEdit) {
+    const changeAnnotation = changeAnnotations?.[textEdit.annotationId]
+    if (changeAnnotation) {
+      workspaceTextEdit.metadata = toWorkspaceEditMetadata(changeAnnotation)
+    }
+  }
+
+  return workspaceTextEdit
 }
 
 /**
@@ -102,7 +133,7 @@ export function toWorkspaceEdit(workspaceEdit: lsp.WorkspaceEdit): monaco.langua
   if (workspaceEdit.changes) {
     for (const [uri, textEdits] of Object.entries(workspaceEdit.changes)) {
       for (const textEdit of textEdits) {
-        edits.push(toWorkspaceTextEdit(textEdit, uri))
+        edits.push(toWorkspaceTextEdit(textEdit, uri, workspaceEdit.changeAnnotations))
       }
     }
   }
@@ -119,6 +150,7 @@ export function toWorkspaceEdit(workspaceEdit: lsp.WorkspaceEdit): monaco.langua
           toWorkspaceTextEdit(
             textEdit,
             documentChange.textDocument.uri,
+            workspaceEdit.changeAnnotations,
             documentChange.textDocument.version ?? undefined
           )
         )

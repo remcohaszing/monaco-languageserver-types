@@ -69,6 +69,60 @@ runTests(fromWorkspaceEdit, toWorkspaceEdit)(
     }
   },
   {
+    lsp: {
+      changeAnnotations: {
+        0: { label: 'Zero', needsConfirmation: false },
+        1: { label: 'One', needsConfirmation: true }
+      },
+      changes: {},
+      documentChanges: [
+        {
+          textDocument: { uri: 'file:///versioned.txt', version: 42 },
+          edits: [
+            {
+              newText: 'zero',
+              range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } },
+              annotationId: '0'
+            },
+            {
+              newText: 'one',
+              range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } },
+              annotationId: '1'
+            }
+          ]
+        }
+      ]
+    },
+    monaco: {
+      edits: [
+        {
+          metadata: {
+            label: 'Zero',
+            needsConfirmation: false
+          },
+          resource: URI.parse('file:///versioned.txt'),
+          textEdit: {
+            range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 },
+            text: 'zero'
+          },
+          versionId: 42
+        },
+        {
+          metadata: {
+            label: 'One',
+            needsConfirmation: true
+          },
+          resource: URI.parse('file:///versioned.txt'),
+          textEdit: {
+            range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 },
+            text: 'one'
+          },
+          versionId: 42
+        }
+      ]
+    }
+  },
+  {
     only: 'to',
     lsp: {
       changes: {},
