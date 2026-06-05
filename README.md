@@ -37,6 +37,7 @@ types.
   - [`fromInlayHint(inlayHint)`](#frominlayhintinlayhint)
   - [`fromInlayHintKind(inlayHintKind)`](#frominlayhintkindinlayhintkind)
   - [`fromInlayHintLabelPart(inlayHintLabelPart)`](#frominlayhintlabelpartinlayhintlabelpart)
+  - [`fromLanguageFilter(languageFilter)`](#fromlanguagefilterlanguagefilter)
   - [`fromLink(link)`](#fromlinklink)
   - [`fromLinkedEditingRanges(linkedEditingRanges)`](#fromlinkededitingrangeslinkededitingranges)
   - [`fromLocation(location)`](#fromlocationlocation)
@@ -90,6 +91,7 @@ types.
   - [`toInlayHint(inlayHint)`](#toinlayhintinlayhint)
   - [`toInlayHintKind(inlayHintKind)`](#toinlayhintkindinlayhintkind)
   - [`toInlayHintLabelPart(inlayHintLabelPart)`](#toinlayhintlabelpartinlayhintlabelpart)
+  - [`toLanguageFilter(filter)`](#tolanguagefilterfilter)
   - [`toLink(documentLink)`](#tolinkdocumentlink)
   - [`toLinkedEditingRanges(linkedEditingRanges)`](#tolinkededitingrangeslinkededitingranges)
   - [`toLocation(location)`](#tolocationlocation)
@@ -520,6 +522,23 @@ Convert a Monaco editor inlay hint label part to an LSP inlay hint label part.
 
 The inlay hint label part as an LSP inlay hint label part
 ([`lsp.InlayHintPart`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#inlayHintPart)).
+
+### `fromLanguageFilter(languageFilter)`
+
+Convert a Monaco editor language filter to an LSP document link.
+
+#### Parameters
+
+- `languageFilter`
+  ([`monaco.languages.LanguageFilter`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.LanguageFilter))
+  — the Monaco language filter to convert
+
+#### Returns
+
+The language filter as an LSP notebook document filter
+([`lsp.NotebookDocumentFilter`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#notebookDocumentFilter))
+or text document filter
+([`lsp.TextDocumentFilter`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#textDocumentFilter)).
 
 ### `fromLink(link)`
 
@@ -1321,6 +1340,23 @@ Convert an LSP inlay hint label part to a Monaco editor inlay hint label part.
 
 The inlay hint label part as Monaco editor inlay hint label part
 ([`monaco.languages.InlayHintLabelPart`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.InlayHintLabelPart)).
+
+### `toLanguageFilter(filter)`
+
+Convert an LSP document link to a Monaco editor link.
+
+#### Parameters
+
+- `filter`
+  ([`lsp.NotebookDocumentFilter`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#notebookDocumentFilter))
+  |
+  ([`lsp.TextDocumentFilter`](https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#textDocumentFilter))
+  — the LSP text document filter or notebook filter to convert
+
+#### Returns
+
+The text document filter or notebook filter as Monaco editor language filter
+([`monaco.languages.LanguageFilter`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.LanguageFilter)).
 
 ### `toLink(documentLink)`
 
