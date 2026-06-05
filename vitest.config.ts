@@ -10,6 +10,9 @@ export default defineConfig({
       instances: [{ browser: 'chromium' }],
       provider: playwright(),
       screenshotFailures: false
+    },
+    coverage: {
+      include: ['src']
     }
   }
 })
