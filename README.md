@@ -165,7 +165,7 @@ Convert a Monaco editor code action to an LSP code action.
 #### Parameters
 
 - `codeAction`
-  ([`monaco.languages.CodeAction`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CodeAction))
+  ([`monaco.languages.CodeAction`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CodeAction))
   — the Monaco code action to convert
 
 #### Returns
@@ -180,7 +180,7 @@ Convert a Monaco editor code action context to an LSP code action context.
 #### Parameters
 
 - `codeActionContext`
-  ([`monaco.languages.CodeActionContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CodeActionContext))
+  ([`monaco.languages.CodeActionContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CodeActionContext))
   — the Monaco code action context to convert
 
 #### Returns
@@ -195,7 +195,7 @@ Convert a Monaco editor code action trigger type to an LSP completion item kind.
 #### Parameters
 
 - `type`
-  ([`monaco.languages.CodeActionTriggerType`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CodeActionTriggerType))
+  ([`monaco.languages.CodeActionTriggerType`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CodeActionTriggerType))
   — the Monaco code action trigger type to convert
 
 #### Returns
@@ -210,7 +210,7 @@ Convert a Monaco editor code lens to an LSP code lens.
 #### Parameters
 
 - `codeLens`
-  ([`monaco.languages.CodeLens`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CodeLens))
+  ([`monaco.languages.CodeLens`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CodeLens))
   — the Monaco code lens to convert
 
 #### Returns
@@ -225,7 +225,7 @@ Convert a Monaco editor color to an LSP color.
 #### Parameters
 
 - `color`
-  ([`monaco.languages.IColor`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.IColor))
+  ([`monaco.languages.IColor`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.IColor))
   — the Monaco color to convert
 
 #### Returns
@@ -240,7 +240,7 @@ Convert a Monaco editor color information to an LSP color information.
 #### Parameters
 
 - `colorInformation`
-  ([`monaco.languages.IColorInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.IColorInformation))
+  ([`monaco.languages.IColorInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.IColorInformation))
   — the Monaco color information to convert
 
 #### Returns
@@ -255,7 +255,7 @@ Convert a Monaco editor color presentation to an LSP color presentation.
 #### Parameters
 
 - `colorPresentation`
-  ([`monaco.languages.IColorPresentation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.IColorPresentation))
+  ([`monaco.languages.IColorPresentation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.IColorPresentation))
   — the Monaco color presentation to convert
 
 #### Returns
@@ -270,7 +270,7 @@ Convert a Monaco editor command to an LSP command.
 #### Parameters
 
 - `command`
-  ([`monaco.languages.Command`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.Command))
+  ([`monaco.languages.Command`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.Command))
   — the Monaco command to convert
 
 #### Returns
@@ -285,7 +285,7 @@ Convert a Monaco editor completion context to an LSP completion context.
 #### Parameters
 
 - `completionContext`
-  ([`monaco.languages.CompletionContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionContext))
+  ([`monaco.languages.CompletionContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionContext))
   — the Monaco completion context to convert
 
 #### Returns
@@ -300,7 +300,7 @@ Convert a Monaco editor completion item to an LSP completion item.
 #### Parameters
 
 - `completionItem`
-  ([`monaco.languages.CompletionItem`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionItem))
+  ([`monaco.languages.CompletionItem`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionItem))
   — the Monaco completion item to convert
 
 #### Returns
@@ -315,7 +315,7 @@ Convert a Monaco editor completion item kind to an LSP completion item kind.
 #### Parameters
 
 - `kind`
-  ([`monaco.languages.CompletionItemKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionItemKind))
+  ([`monaco.languages.CompletionItemKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionItemKind))
   — the Monaco completion item kind to convert
 
 #### Returns
@@ -331,7 +331,7 @@ Convert a Monaco editor completion item tag to an LSP completion item tag.
 #### Parameters
 
 - `tag`
-  ([`monaco.languages.CompletionItemTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionItemTag))
+  ([`monaco.languages.CompletionItemTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionItemTag))
   — the Monaco completion item tag to convert
 
 #### Returns
@@ -346,7 +346,7 @@ Convert a Monaco editor completion list to an LSP completion list.
 #### Parameters
 
 - `completionList`
-  ([`monaco.languages.CompletionList`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionList))
+  ([`monaco.languages.CompletionList`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionList))
   — the Monaco completion list to convert
 
 #### Returns
@@ -361,7 +361,7 @@ Convert a Monaco editor completion trigger kind to an LSP completion trigger kin
 #### Parameters
 
 - `kind`
-  ([`monaco.languages.CompletionTriggerKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionTriggerKind))
+  ([`monaco.languages.CompletionTriggerKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionTriggerKind))
   — the Monaco completion trigger kind to convert
 
 #### Returns
@@ -376,7 +376,7 @@ Convert a Monaco editor definition to an LSP definition.
 #### Parameters
 
 - `definition`
-  ([`monaco.languages.Definition`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.Definition))
+  ([`monaco.languages.Definition`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.Definition))
   — the Monaco definition to convert
 
 #### Returns
@@ -391,7 +391,7 @@ Convert a Monaco editor document highlight to an LSP document highlight.
 #### Parameters
 
 - `documentHighlight`
-  ([`monaco.languages.DocumentHighlight`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.DocumentHighlight))
+  ([`monaco.languages.DocumentHighlight`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.DocumentHighlight))
   — the Monaco document highlight to convert
 
 #### Returns
@@ -406,7 +406,7 @@ Convert a Monaco editor document highlight kind to an LSP document highlight kin
 #### Parameters
 
 - `kind`
-  ([`monaco.languages.DocumentHighlightKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.DocumentHighlightKind))
+  ([`monaco.languages.DocumentHighlightKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.DocumentHighlightKind))
   — the Monaco document highlight kind to convert
 
 #### Returns
@@ -421,7 +421,7 @@ Convert a Monaco editor document symbol to an LSP document symbol.
 #### Parameters
 
 - `documentSymbol`
-  ([`monaco.languages.DocumentSymbol`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.DocumentSymbol))
+  ([`monaco.languages.DocumentSymbol`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.DocumentSymbol))
   — the Monaco document symbol to convert
 
 #### Returns
@@ -436,7 +436,7 @@ Convert a Monaco editor folding range to an LSP folding range.
 #### Parameters
 
 - `foldingRange`
-  ([`monaco.languages.FoldingRange`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.FoldingRange))
+  ([`monaco.languages.FoldingRange`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.FoldingRange))
   — the Monaco folding range to convert
 
 #### Returns
@@ -451,7 +451,7 @@ Convert a Monaco editor formatting options to an LSP formatting options.
 #### Parameters
 
 - `formattingOptions`
-  ([`monaco.languages.FormattingOptions`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.FormattingOptions))
+  ([`monaco.languages.FormattingOptions`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.FormattingOptions))
   — the Monaco formatting options to convert
 
 #### Returns
@@ -466,7 +466,7 @@ Convert a Monaco editor hover to an LSP hover.
 #### Parameters
 
 - `hover`
-  ([`monaco.languages.Hover`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.Hover))
+  ([`monaco.languages.Hover`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.Hover))
   — the Monaco hover to convert
 
 #### Returns
@@ -481,7 +481,7 @@ Convert a Monaco editor inlay hint to an LSP inlay hint.
 #### Parameters
 
 - `inlayHint`
-  ([`monaco.languages.InlayHint`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.InlayHint))
+  ([`monaco.languages.InlayHint`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.InlayHint))
   — the Monaco inlay hint to convert
 
 #### Returns
@@ -496,7 +496,7 @@ Convert a Monaco editor inlay hint kind to an LSP inlay hint kind.
 #### Parameters
 
 - `inlayHintKind`
-  ([`monaco.languages.InlayHintKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.InlayHintKind))
+  ([`monaco.languages.InlayHintKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.InlayHintKind))
   — the Monaco inlay hint kind to convert
 
 #### Returns
@@ -511,7 +511,7 @@ Convert a Monaco editor inlay hint label part to an LSP inlay hint label part.
 #### Parameters
 
 - `inlayHintLabelPart`
-  ([`monaco.languages.InlayHintLabelPart`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.InlayHintLabelPart))
+  ([`monaco.languages.InlayHintLabelPart`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.InlayHintLabelPart))
   — the Monaco inlay hint label part to convert
 
 #### Returns
@@ -526,7 +526,7 @@ Convert a Monaco editor link to an LSP document link.
 #### Parameters
 
 - `link`
-  ([`monaco.languages.ILink`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.ILink))
+  ([`monaco.languages.ILink`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.ILink))
   — the Monaco link to convert
 
 #### Returns
@@ -541,7 +541,7 @@ Convert Monaco editor linked editing ranges to LSP linked editing ranges.
 #### Parameters
 
 - `linkedEditingRanges`
-  ([`monaco.languages.LinkedEditingRanges`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.LinkedEditingRanges))
+  ([`monaco.languages.LinkedEditingRanges`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.LinkedEditingRanges))
   — the Monaco linked editing ranges to convert
 
 #### Returns
@@ -556,7 +556,7 @@ Convert a Monaco editor location to an LSP location.
 #### Parameters
 
 - `location`
-  ([`monaco.languages.Location`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.Location))
+  ([`monaco.languages.Location`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.Location))
   — the Monaco location to convert
 
 #### Returns
@@ -571,7 +571,7 @@ Convert a Monaco editor location link to an LSP location link.
 #### Parameters
 
 - `locationLink`
-  ([`monaco.languages.LocationLink`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.LocationLink))
+  ([`monaco.languages.LocationLink`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.LocationLink))
   — the Monaco location link to convert
 
 #### Returns
@@ -586,7 +586,7 @@ Convert a Monaco editor markdown string to an LSP markup content.
 #### Parameters
 
 - `markdownString`
-  ([`monaco.IMarkdownString`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/IMarkdownString))
+  ([`monaco.IMarkdownString`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.IMarkdownString))
   — the Monaco markdown string to convert
 
 #### Returns
@@ -601,7 +601,7 @@ Convert a Monaco editor marker data to an LSP diagnostic.
 #### Parameters
 
 - `markerData`
-  ([`monaco.editor.IMarkerData`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IMarkerData))
+  ([`monaco.editor.IMarkerData`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.editor.IMarkerData))
   — the Monaco marker data to convert
 
 #### Returns
@@ -616,7 +616,7 @@ Convert a Monaco editor marker severity to an LSP diagnostic severity.
 #### Parameters
 
 - `severity`
-  ([`monaco.MarkerSeverity`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/MarkerSeverity))
+  ([`monaco.MarkerSeverity`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.MarkerSeverity))
   — the Monaco marker severity to convert
 
 #### Returns
@@ -631,8 +631,8 @@ Convert a Monaco editor marker tag to an LSP diagnostic tag.
 #### Parameters
 
 - `tag`
-  ([`monaco.MarkerTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/MarkerTag)) —
-  the Monaco marker tag to convert
+  ([`monaco.MarkerTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.MarkerTag))
+  — the Monaco marker tag to convert
 
 #### Returns
 
@@ -646,7 +646,7 @@ Convert a Monaco editor parameter information to an LSP parameter information.
 #### Parameters
 
 - `parameterInformation`
-  ([`monaco.languages.ParameterInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.ParameterInformation))
+  ([`monaco.languages.ParameterInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.ParameterInformation))
   — the Monaco parameter information to convert
 
 #### Returns
@@ -661,8 +661,8 @@ Convert a Monaco editor position to an LSP range.
 #### Parameters
 
 - `position`
-  ([`monaco.IPosition`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/IPosition)) —
-  the Monaco position to convert
+  ([`monaco.IPosition`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.IPosition))
+  — the Monaco position to convert
 
 #### Returns
 
@@ -675,7 +675,8 @@ Convert a Monaco editor range to an LSP range.
 
 #### Parameters
 
-- `range` ([`monaco.IRange`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/IRange))
+- `range`
+  ([`monaco.IRange`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.IRange))
   — the Monaco range to convert
 
 #### Returns
@@ -690,7 +691,7 @@ Convert a Monaco editor related information to an LSP diagnostic related informa
 #### Parameters
 
 - `relatedInformation`
-  ([`monaco.editor.IRelatedInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IRelatedInformation))
+  ([`monaco.editor.IRelatedInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.editor.IRelatedInformation))
   — the Monaco related information to convert
 
 #### Returns
@@ -705,7 +706,7 @@ Convert Monaco editor selection ranges to an LSP selection range.
 #### Parameters
 
 - `selectionRanges`
-  ([`monaco.languages.SelectionRange[]`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SelectionRange[]))
+  ([`monaco.languages.SelectionRange[]`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SelectionRange[]))
   — the Monaco selection ranges to convert
 
 #### Returns
@@ -720,7 +721,7 @@ Convert Monaco editor semantic tokens to LSP semantic tokens.
 #### Parameters
 
 - `semanticTokens`
-  ([`monaco.languages.SemanticTokens`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SemanticTokens))
+  ([`monaco.languages.SemanticTokens`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SemanticTokens))
   — the Monaco semantic tokens to convert
 
 #### Returns
@@ -735,7 +736,7 @@ Convert Monaco editor semantic tokens to LSP semantic tokens.
 #### Parameters
 
 - `semanticTokensEdit`
-  ([`monaco.languages.SemanticTokensEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SemanticTokensEdit))
+  ([`monaco.languages.SemanticTokensEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SemanticTokensEdit))
   — the Monaco semantic tokens to convert
 
 #### Returns
@@ -750,7 +751,7 @@ Convert Monaco editsor semantic tokens edits to an LSP semantic tokens delta.
 #### Parameters
 
 - `semanticTokensEdits`
-  ([`monaco.languages.SemanticTokensEdits`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SemanticTokensEdits))
+  ([`monaco.languages.SemanticTokensEdits`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SemanticTokensEdits))
   — the Monaco semantic tokens edits to convert
 
 #### Returns
@@ -765,7 +766,7 @@ Convert a Monaco editor signature help to an LSP signature help.
 #### Parameters
 
 - `signatureHelp`
-  ([`monaco.languages.SignatureHelp`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SignatureHelp))
+  ([`monaco.languages.SignatureHelp`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SignatureHelp))
   — the Monaco signature help to convert
 
 #### Returns
@@ -780,7 +781,7 @@ Convert a Monaco editor signature help context to an LSP signature help context.
 #### Parameters
 
 - `signatureHelpContext`
-  ([`monaco.languages.SignatureHelpContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SignatureHelpContext))
+  ([`monaco.languages.SignatureHelpContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SignatureHelpContext))
   — the Monaco signature help context to convert
 
 #### Returns
@@ -795,7 +796,7 @@ Convert a Monaco editor signature help trigger kind to an LSP signature help tri
 #### Parameters
 
 - `signatureHelpTriggerKind`
-  ([`monaco.languages.SignatureHelpTriggerKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SignatureHelpTriggerKind))
+  ([`monaco.languages.SignatureHelpTriggerKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SignatureHelpTriggerKind))
   — the Monaco signature help trigger kind to convert
 
 #### Returns
@@ -810,7 +811,7 @@ Convert a Monaco editor signature information to an LSP signature information.
 #### Parameters
 
 - `signatureInformation`
-  ([`monaco.languages.SignatureInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SignatureInformation))
+  ([`monaco.languages.SignatureInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SignatureInformation))
   — the Monaco signature information to convert
 
 #### Returns
@@ -825,7 +826,7 @@ Convert a Monaco editor single edit operation to an LSP text edit.
 #### Parameters
 
 - `singleEditOperation`
-  ([`monaco.editor.ISingleEditOperation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.ISingleEditOperation))
+  ([`monaco.editor.ISingleEditOperation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.editor.ISingleEditOperation))
   — the Monaco single edit operation to convert
 
 #### Returns
@@ -840,7 +841,7 @@ Convert a Monaco editor symbol kind to an LSP symbol kind.
 #### Parameters
 
 - `symbolKind`
-  ([`monaco.languages.SymbolKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SymbolKind))
+  ([`monaco.languages.SymbolKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SymbolKind))
   — the Monaco symbol kind to convert
 
 #### Returns
@@ -855,7 +856,7 @@ Convert a Monaco editor symbol tag to an LSP symbol tag.
 #### Parameters
 
 - `symbolTag`
-  ([`monaco.languages.SymbolTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SymbolTag))
+  ([`monaco.languages.SymbolTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SymbolTag))
   — the Monaco symbol tag to convert
 
 #### Returns
@@ -870,7 +871,7 @@ Convert a Monaco editor text edit to an LSP text edit.
 #### Parameters
 
 - `textEdit`
-  ([`monaco.languages.TextEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.TextEdit))
+  ([`monaco.languages.TextEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.TextEdit))
   — the Monaco text edit to convert
 
 #### Returns
@@ -885,7 +886,7 @@ Convert a Monaco editor workspace edit to an LSP workspace edit.
 #### Parameters
 
 - `workspaceEdit`
-  ([`monaco.languages.WorkspaceEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.WorkspaceEdit))
+  ([`monaco.languages.WorkspaceEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.WorkspaceEdit))
   — the Monaco workspace edit to convert
 
 #### Returns
@@ -900,7 +901,7 @@ Convert a Monaco editor workspace edit metadata to an LSP change annotation.
 #### Parameters
 
 - `workspaceEditMetadata`
-  ([`monaco.languages.WorkspaceEditMetadata`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.WorkspaceEditMetadata))
+  ([`monaco.languages.WorkspaceEditMetadata`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.WorkspaceEditMetadata))
   — the Monaco workspace edit to convert
 
 #### Returns
@@ -915,7 +916,7 @@ Convert Monaco editor workspace file edit options to LSP workspace file edit opt
 #### Parameters
 
 - `workspaceFileEdit`
-  ([`monaco.languages.IWorkspaceFileEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.IWorkspaceFileEdit))
+  ([`monaco.languages.IWorkspaceFileEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.IWorkspaceFileEdit))
   — the Monaco workspace file edit options to convert
 
 #### Returns
@@ -931,7 +932,7 @@ Convert Monaco editor workspace file edit options to LSP workspace file edit opt
 #### Parameters
 
 - `options`
-  ([`monaco.languages.WorkspaceFileEditOptions`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.WorkspaceFileEditOptions))
+  ([`monaco.languages.WorkspaceFileEditOptions`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.WorkspaceFileEditOptions))
   — the Monaco workspace file edit options to convert
 
 #### Returns
@@ -953,7 +954,7 @@ Convert an LSP code action to a Monaco editor code action.
 #### Returns
 
 The code action as Monaco editor code action
-([`monaco.languages.CodeAction`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CodeAction)).
+([`monaco.languages.CodeAction`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CodeAction)).
 
 ### `toCodeActionContext(codeActionContext)`
 
@@ -968,7 +969,7 @@ Convert an LSP code action context to a Monaco editor code action context.
 #### Returns
 
 The code action context as Monaco editor code action context
-([`monaco.languages.CodeActionContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CodeActionContext)).
+([`monaco.languages.CodeActionContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CodeActionContext)).
 
 ### `toCodeActionTriggerType(kind)`
 
@@ -983,7 +984,7 @@ Convert an LSP completion item kind to a Monaco editor code action trigger type.
 #### Returns
 
 The completion item kind as Monaco editor code action trigger type
-([`monaco.languages.CodeActionTriggerType`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CodeActionTriggerType)).
+([`monaco.languages.CodeActionTriggerType`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CodeActionTriggerType)).
 
 ### `toCodeLens(codeLens)`
 
@@ -998,7 +999,7 @@ Convert an LSP code lens to a Monaco editor code lens.
 #### Returns
 
 The code lens as Monaco editor code lens
-([`monaco.languages.CodeLens`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CodeLens)).
+([`monaco.languages.CodeLens`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CodeLens)).
 
 ### `toColor(color)`
 
@@ -1013,7 +1014,7 @@ Convert an LSP color to a Monaco editor color.
 #### Returns
 
 The color as Monaco editor color
-([`monaco.languages.IColor`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.IColor)).
+([`monaco.languages.IColor`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.IColor)).
 
 ### `toColorInformation(colorInformation)`
 
@@ -1028,7 +1029,7 @@ Convert an LSP color information to a Monaco editor color information.
 #### Returns
 
 The color information as Monaco editor color information
-([`monaco.languages.IColorInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.IColorInformation)).
+([`monaco.languages.IColorInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.IColorInformation)).
 
 ### `toColorPresentation(colorPresentation)`
 
@@ -1043,7 +1044,7 @@ Convert an LSP color presentation to a Monaco editor color presentation.
 #### Returns
 
 The color presentation as Monaco editor color presentation
-([`monaco.languages.IColorPresentation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.IColorPresentation)).
+([`monaco.languages.IColorPresentation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.IColorPresentation)).
 
 ### `toCommand(command)`
 
@@ -1058,7 +1059,7 @@ Convert an LSP command to a Monaco editor command.
 #### Returns
 
 The command as Monaco editor command
-([`monaco.languages.Command`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.Command)).
+([`monaco.languages.Command`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.Command)).
 
 ### `toCompletionContext(completionContext)`
 
@@ -1073,7 +1074,7 @@ Convert an LSP completion context to a Monaco editor completion context.
 #### Returns
 
 The completion context as Monaco editor completion context
-([`monaco.languages.CompletionContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionContext)).
+([`monaco.languages.CompletionContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionContext)).
 
 ### `toCompletionItem(completionItem, options)`
 
@@ -1090,7 +1091,7 @@ Convert an LSP completion item to a Monaco editor completion item.
 #### Returns
 
 The completion item as Monaco editor completion item
-([`monaco.languages.CompletionItem`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionItem)).
+([`monaco.languages.CompletionItem`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionItem)).
 
 ### `toCompletionItemKind(kind)`
 
@@ -1105,7 +1106,7 @@ Convert an LSP completion item kind to a Monaco editor completion item kind.
 #### Returns
 
 The completion item kind as Monaco editor completion item kind
-([`monaco.languages.CompletionItemKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionItemKind)).
+([`monaco.languages.CompletionItemKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionItemKind)).
 
 ### `toCompletionItemTag(tag)`
 
@@ -1120,7 +1121,7 @@ Convert an LSP completion item tag to a Monaco editor completion item tag.
 #### Returns
 
 The completion item tag as Monaco editor completion item tag
-([`monaco.languages.CompletionItemTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionItemTag)).
+([`monaco.languages.CompletionItemTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionItemTag)).
 
 ### `toCompletionList(completionList, options)`
 
@@ -1137,7 +1138,7 @@ Convert an LSP completion list to a Monaco editor completion list.
 #### Returns
 
 The completion list as Monaco editor completion list
-([`monaco.languages.CompletionList`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionList)).
+([`monaco.languages.CompletionList`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionList)).
 
 ### `toCompletionTriggerKind(kind)`
 
@@ -1152,7 +1153,7 @@ Convert an LSP completion trigger kind to a Monaco editor completion trigger kin
 #### Returns
 
 The completion trigger kind as Monaco editor completion trigger kind
-([`monaco.languages.CompletionTriggerKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.CompletionTriggerKind)).
+([`monaco.languages.CompletionTriggerKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.CompletionTriggerKind)).
 
 ### `toDefinition(definition)`
 
@@ -1167,7 +1168,7 @@ Convert an LSP definition to a Monaco editor definition.
 #### Returns
 
 The definition as Monaco editor definition
-([`monaco.languages.Definition`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.Definition)).
+([`monaco.languages.Definition`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.Definition)).
 
 ### `toDocumentHighlight(documentHighlight)`
 
@@ -1182,7 +1183,7 @@ Convert an LSP document highlight to a Monaco editor document highlight.
 #### Returns
 
 The document highlight as Monaco editor document highlight
-([`monaco.languages.DocumentHighlight`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.DocumentHighlight)).
+([`monaco.languages.DocumentHighlight`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.DocumentHighlight)).
 
 ### `toDocumentHighlightKind(kind)`
 
@@ -1197,7 +1198,7 @@ Convert an LSP document highlight kind to a Monaco editor document highlight kin
 #### Returns
 
 The document highlight kind as Monaco editor document highlight kind
-([`monaco.languages.DocumentHighlightKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.DocumentHighlightKind)).
+([`monaco.languages.DocumentHighlightKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.DocumentHighlightKind)).
 
 ### `toDocumentSymbol(documentSymbol)`
 
@@ -1212,7 +1213,7 @@ Convert an LSP document symbol to a Monaco editor document symbol.
 #### Returns
 
 The document symbol as Monaco editor document symbol
-([`monaco.languages.DocumentSymbol`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.DocumentSymbol)).
+([`monaco.languages.DocumentSymbol`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.DocumentSymbol)).
 
 ### `toFoldingRange(foldingRange)`
 
@@ -1227,7 +1228,7 @@ Convert an LSP folding range to a Monaco editor folding range.
 #### Returns
 
 The folding range as Monaco editor folding range
-([`monaco.languages.FoldingRange`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.FoldingRange)).
+([`monaco.languages.FoldingRange`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.FoldingRange)).
 
 ### `toFormattingOptions(formattingOptions)`
 
@@ -1242,7 +1243,7 @@ Convert an LSP formatting options to a Monaco editor formatting options.
 #### Returns
 
 The formatting options as Monaco editor formatting options
-([`monaco.languages.FormattingOptions`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.FormattingOptions)).
+([`monaco.languages.FormattingOptions`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.FormattingOptions)).
 
 ### `toHover(hover)`
 
@@ -1257,7 +1258,7 @@ Convert an LSP hover to a Monaco editor hover.
 #### Returns
 
 The hover as Monaco editor hover
-([`monaco.languages.Hover`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.Hover)).
+([`monaco.languages.Hover`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.Hover)).
 
 ### `toInlayHint(inlayHint)`
 
@@ -1272,7 +1273,7 @@ Convert an LSP inlay hint to a Monaco editor inlay hint.
 #### Returns
 
 The inlay hint as Monaco editor inlay hint
-([`monaco.languages.InlayHint`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.InlayHint)).
+([`monaco.languages.InlayHint`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.InlayHint)).
 
 ### `toInlayHintKind(inlayHintKind)`
 
@@ -1287,7 +1288,7 @@ Convert an LSP inlay hint kind to a Monaco editor inlay hint kind.
 #### Returns
 
 The inlay hint kind as Monaco editor inlay hint kind
-([`monaco.languages.InlayHintKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.InlayHintKind)).
+([`monaco.languages.InlayHintKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.InlayHintKind)).
 
 ### `toInlayHintLabelPart(inlayHintLabelPart)`
 
@@ -1302,7 +1303,7 @@ Convert an LSP inlay hint label part to a Monaco editor inlay hint label part.
 #### Returns
 
 The inlay hint label part as Monaco editor inlay hint label part
-([`monaco.languages.InlayHintLabelPart`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.InlayHintLabelPart)).
+([`monaco.languages.InlayHintLabelPart`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.InlayHintLabelPart)).
 
 ### `toLink(documentLink)`
 
@@ -1317,7 +1318,7 @@ Convert an LSP document link to a Monaco editor link.
 #### Returns
 
 The document link as Monaco editor link
-([`monaco.languages.ILink`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.ILink)).
+([`monaco.languages.ILink`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.ILink)).
 
 ### `toLinkedEditingRanges(linkedEditingRanges)`
 
@@ -1332,7 +1333,7 @@ Convert LSP linked editing ranges to Monaco editor linked editing ranges.
 #### Returns
 
 The linked editing ranges Monaco editor linked editing ranges
-([`monaco.languages.LinkedEditingRanges`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.LinkedEditingRanges)).
+([`monaco.languages.LinkedEditingRanges`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.LinkedEditingRanges)).
 
 ### `toLocation(location)`
 
@@ -1347,7 +1348,7 @@ Convert an LSP location to a Monaco editor location.
 #### Returns
 
 The location as Monaco editor location
-([`monaco.languages.Location`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.Location)).
+([`monaco.languages.Location`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.Location)).
 
 ### `toLocationLink(locationLink)`
 
@@ -1362,7 +1363,7 @@ Convert an LSP location link to a Monaco editor location link.
 #### Returns
 
 The location link as Monaco editor location link
-([`monaco.languages.LocationLink`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.LocationLink)).
+([`monaco.languages.LocationLink`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.LocationLink)).
 
 ### `toMarkdownString(markupContent)`
 
@@ -1377,7 +1378,7 @@ Convert an LSP markup content to a Monaco editor markdown string.
 #### Returns
 
 The markup content as a Monaco editor markdown string
-([`monaco.IMarkdownString`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/IMarkdownString)).
+([`monaco.IMarkdownString`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.IMarkdownString)).
 
 ### `toMarkerData(diagnostic)`
 
@@ -1392,7 +1393,7 @@ Convert an LSP diagnostic to a Monaco editor marker data.
 #### Returns
 
 The diagnostic as Monaco editor marker data
-([`monaco.editor.IMarkerData`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IMarkerData)).
+([`monaco.editor.IMarkerData`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.editor.IMarkerData)).
 
 ### `toMarkerSeverity(severity)`
 
@@ -1407,7 +1408,7 @@ Convert an LSP diagnostic severity to a Monaco editor marker severity.
 #### Returns
 
 The diagnostic severity as Monaco editor marker severity
-([`monaco.MarkerSeverity`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/MarkerSeverity)).
+([`monaco.MarkerSeverity`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.MarkerSeverity)).
 
 ### `toMarkerTag(tag)`
 
@@ -1422,7 +1423,7 @@ Convert an LSP diagnostic tag to a Monaco editor marker tag.
 #### Returns
 
 The diagnostic tag as Monaco editor marker tag
-([`monaco.MarkerTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/MarkerTag)).
+([`monaco.MarkerTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.MarkerTag)).
 
 ### `toParameterInformation(parameterInformation)`
 
@@ -1437,7 +1438,7 @@ Convert an LSP parameter information to a Monaco editor parameter information.
 #### Returns
 
 The parameter information as Monaco editor parameter information
-([`monaco.languages.ParameterInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.ParameterInformation)).
+([`monaco.languages.ParameterInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.ParameterInformation)).
 
 ### `toPosition(position)`
 
@@ -1452,7 +1453,7 @@ Convert an LSP position to a Monaco editor position.
 #### Returns
 
 The position as Monaco editor position
-([`monaco.IPosition`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/IPosition)).
+([`monaco.IPosition`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.IPosition)).
 
 ### `toRange(range)`
 
@@ -1467,7 +1468,7 @@ Convert an LSP range to a Monaco editor range.
 #### Returns
 
 The range as Monaco editor range
-([`monaco.IRange`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/IRange)).
+([`monaco.IRange`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.IRange)).
 
 ### `toRelatedInformation(relatedInformation)`
 
@@ -1482,7 +1483,7 @@ Convert an LSP diagnostic related information to a Monaco editor related informa
 #### Returns
 
 The diagnostic related information as Monaco editor related information
-([`monaco.editor.IRelatedInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.IRelatedInformation)).
+([`monaco.editor.IRelatedInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.editor.IRelatedInformation)).
 
 ### `toSelectionRanges(selectionRange)`
 
@@ -1497,7 +1498,7 @@ Convert an LSP selection range to Monaco editor selection ranges.
 #### Returns
 
 The selection range as Monaco editor selection ranges
-([`monaco.languages.SelectionRange[]`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SelectionRange[])).
+([`monaco.languages.SelectionRange[]`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SelectionRange[])).
 
 ### `toSemanticTokens(semanticTokens)`
 
@@ -1512,7 +1513,7 @@ Convert LSP semantic tokens to Monaco editor semantic tokens.
 #### Returns
 
 The semantic tokens as Monaco editor semantic tokens
-([`monaco.languages.SemanticTokens`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SemanticTokens)).
+([`monaco.languages.SemanticTokens`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SemanticTokens)).
 
 ### `toSemanticTokensEdit(semanticTokensEdit)`
 
@@ -1527,7 +1528,7 @@ Convert LSP semantic tokens to Monaco editor semantic tokens.
 #### Returns
 
 The semantic tokens as Monaco editor semantic tokens
-([`monaco.languages.SemanticTokensEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SemanticTokensEdit)).
+([`monaco.languages.SemanticTokensEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SemanticTokensEdit)).
 
 ### `toSemanticTokensEdits(semanticTokensDelta)`
 
@@ -1542,7 +1543,7 @@ Convert an LSP semantic tokens delta to Monaco editsor semantic tokens edits.
 #### Returns
 
 The semantic tokens delta as Monaco editsor semantic tokens edits
-([`monaco.languages.SemanticTokensEdits`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SemanticTokensEdits)).
+([`monaco.languages.SemanticTokensEdits`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SemanticTokensEdits)).
 
 ### `toSignatureHelp(signatureHelp)`
 
@@ -1557,7 +1558,7 @@ Convert an LSP signature help to a Monaco editor signature help.
 #### Returns
 
 The signature help as Monaco editor signature help
-([`monaco.languages.SignatureHelp`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SignatureHelp)).
+([`monaco.languages.SignatureHelp`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SignatureHelp)).
 
 ### `toSignatureHelpContext(signatureHelpContext)`
 
@@ -1572,7 +1573,7 @@ Convert an LSP signature help context to a Monaco editor signature help context.
 #### Returns
 
 The signature help context as Monaco editor signature help context
-([`monaco.languages.SignatureHelpContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SignatureHelpContext)).
+([`monaco.languages.SignatureHelpContext`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SignatureHelpContext)).
 
 ### `toSignatureHelpTriggerKind(signatureHelpTriggerKind)`
 
@@ -1587,7 +1588,7 @@ Convert an LSP signature help trigger kind to a Monaco editor signature help tri
 #### Returns
 
 The signature help trigger kind as Monaco editor signature help trigger kind
-([`monaco.languages.SignatureHelpTriggerKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SignatureHelpTriggerKind)).
+([`monaco.languages.SignatureHelpTriggerKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SignatureHelpTriggerKind)).
 
 ### `toSignatureInformation(signatureInformation)`
 
@@ -1602,7 +1603,7 @@ Convert an LSP signature information to a Monaco editor signature information.
 #### Returns
 
 The signature information as Monaco editor signature information
-([`monaco.languages.SignatureInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SignatureInformation)).
+([`monaco.languages.SignatureInformation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SignatureInformation)).
 
 ### `toSingleEditOperation(textEdit)`
 
@@ -1617,7 +1618,7 @@ Convert an LSP text edit to a Monaco editor single edit operation.
 #### Returns
 
 The text edit as Monaco editor single edit operation
-([`monaco.editor.ISingleEditOperation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor.ISingleEditOperation)).
+([`monaco.editor.ISingleEditOperation`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.editor.ISingleEditOperation)).
 
 ### `toSymbolKind(symbolKind)`
 
@@ -1632,7 +1633,7 @@ Convert an LSP symbol kind to a Monaco editor symbol kind.
 #### Returns
 
 The symbol kind as Monaco editor symbol kind
-([`monaco.languages.SymbolKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SymbolKind)).
+([`monaco.languages.SymbolKind`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SymbolKind)).
 
 ### `toSymbolTag(symbolTag)`
 
@@ -1647,7 +1648,7 @@ Convert an LSP symbol tag to a Monaco editor symbol tag.
 #### Returns
 
 The symbol tag as Monaco editor symbol tag
-([`monaco.languages.SymbolTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.SymbolTag)).
+([`monaco.languages.SymbolTag`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.SymbolTag)).
 
 ### `toTextEdit(textEdit)`
 
@@ -1662,7 +1663,7 @@ Convert an LSP text edit to a Monaco editor text edit.
 #### Returns
 
 The text edit as Monaco editor text edit
-([`monaco.languages.TextEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.TextEdit)).
+([`monaco.languages.TextEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.TextEdit)).
 
 ### `toWorkspaceEdit(workspaceEdit)`
 
@@ -1677,7 +1678,7 @@ Convert an LSP workspace edit to a Monaco editor workspace edit.
 #### Returns
 
 The workspace edit as Monaco editor workspace edit
-([`monaco.languages.WorkspaceEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.WorkspaceEdit)).
+([`monaco.languages.WorkspaceEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.WorkspaceEdit)).
 
 ### `toWorkspaceEditMetadata(changeAnnotation)`
 
@@ -1692,7 +1693,7 @@ Convert an LSP change annotation to a Monaco editor workspace edit metadata.
 #### Returns
 
 The change annotation as Monaco editor workspace edit
-([`monaco.languages.WorkspaceEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.WorkspaceEditMetadata)).
+([`monaco.languages.WorkspaceEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.WorkspaceEditMetadata)).
 
 ### `toWorkspaceFileEdit(workspaceFileEdit)`
 
@@ -1707,7 +1708,7 @@ Convert an LSP workspace file edit to a Monaco editor workspace file edit.
 #### Returns
 
 The workspace file edit options Monaco editor workspace file edit options
-([`monaco.languages.IWorkspaceFileEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.IWorkspaceFileEdit)).
+([`monaco.languages.IWorkspaceFileEdit`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.IWorkspaceFileEdit)).
 
 ### `toWorkspaceFileEditOptions(options)`
 
@@ -1722,7 +1723,7 @@ Convert LSP workspace file edit options to Monaco editor workspace file edit opt
 #### Returns
 
 The workspace file edit options Monaco editor workspace file edit options
-([`monaco.languages.WorkspaceFileEditOptions`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/languages.WorkspaceFileEditOptions)).
+([`monaco.languages.WorkspaceFileEditOptions`](https://microsoft.github.io/monaco-editor/docs.html#interfaces/editor_editor_api.languages.WorkspaceFileEditOptions)).
 
 ## License
 
