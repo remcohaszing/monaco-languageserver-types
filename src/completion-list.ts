@@ -44,7 +44,11 @@ export function toCompletionList(
   return {
     incomplete: Boolean(completionList.isIncomplete),
     suggestions: completionList.items.map((item) =>
-      toCompletionItem(item, { range: options.range, itemDefaults: completionList.itemDefaults })
+      toCompletionItem(item, {
+        range: options.range,
+        applyKind: completionList.applyKind,
+        itemDefaults: completionList.itemDefaults
+      })
     )
   }
 }

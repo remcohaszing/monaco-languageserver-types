@@ -356,5 +356,82 @@ runTests(fromCompletionItem, toCompletionItem)(
       label: 'Insert "text"',
       range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 }
     }
+  },
+  {
+    only: 'to',
+    toOptions: {
+      range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 },
+      itemDefaults: {
+        commitCharacters: ['.']
+      }
+    },
+    lsp: {
+      commitCharacters: ['/'],
+      kind: lsp.CompletionItemKind.Class,
+      label: 'Insert "text"',
+      textEdit: {
+        newText: 'text',
+        range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } }
+      }
+    },
+    monaco: {
+      commitCharacters: ['/'],
+      insertText: 'text',
+      kind: monaco.languages.CompletionItemKind.Class,
+      label: 'Insert "text"',
+      range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 }
+    }
+  },
+  {
+    only: 'to',
+    toOptions: {
+      range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 },
+      itemDefaults: {
+        commitCharacters: ['.']
+      }
+    },
+    lsp: {
+      kind: lsp.CompletionItemKind.Class,
+      label: 'Insert "text"',
+      textEdit: {
+        newText: 'text',
+        range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } }
+      }
+    },
+    monaco: {
+      commitCharacters: ['.'],
+      insertText: 'text',
+      kind: monaco.languages.CompletionItemKind.Class,
+      label: 'Insert "text"',
+      range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 }
+    }
+  },
+  {
+    only: 'to',
+    toOptions: {
+      applyKind: {
+        commitCharacters: lsp.ApplyKind.Merge
+      },
+      range: { startLineNumber: 999, startColumn: 999, endLineNumber: 999, endColumn: 999 },
+      itemDefaults: {
+        commitCharacters: ['.']
+      }
+    },
+    lsp: {
+      commitCharacters: ['/'],
+      kind: lsp.CompletionItemKind.Class,
+      label: 'Insert "text"',
+      textEdit: {
+        newText: 'text',
+        range: { start: { line: 0, character: 1 }, end: { line: 2, character: 3 } }
+      }
+    },
+    monaco: {
+      commitCharacters: ['/', '.'],
+      insertText: 'text',
+      kind: monaco.languages.CompletionItemKind.Class,
+      label: 'Insert "text"',
+      range: { startLineNumber: 1, startColumn: 2, endLineNumber: 3, endColumn: 4 }
+    }
   }
 )

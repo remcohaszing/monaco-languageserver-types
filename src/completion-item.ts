@@ -109,9 +109,14 @@ export function fromCompletionItem(
 
 interface ToCompletionItemOptions {
   /**
+   * Specifies how to apply certain fields
+   */
+  applyKind?: lsp.CompletionItemApplyKinds | undefined
+
+  /**
    * The item defaults of a completion list.
    */
-  itemDefaults?: lsp.CompletionList['itemDefaults'] | undefined
+  itemDefaults?: lsp.CompletionItemDefaults | undefined
 
   /**
    * A fallback range to use in case the completion item doesn’t provide one.
@@ -158,58 +163,77 @@ export function toCompletionItem(
   completionItem: lsp.CompletionItem,
   options: ToCompletionItemOptions
 ): monaco.languages.CompletionItem {
-  const itemDefaults = options.itemDefaults ?? {}
-  const textEdit = completionItem.textEdit ?? itemDefaults.editRange
-  const commitCharacters = completionItem.commitCharacters ?? itemDefaults.commitCharacters
-  const insertTextFormat = completionItem.insertTextFormat ?? itemDefaults.insertTextFormat
-  const insertTextMode = completionItem.insertTextMode ?? itemDefaults.insertTextMode
-
-  let text = completionItem.insertText
+  const { applyKind, itemDefaults } = options
+  let {
+    additionalTextEdits,
+    command,
+    commitCharacters,
+    detail,
+    documentation,
+    filterText,
+    insertText,
+    insertTextFormat = itemDefaults?.insertTextFormat,
+    insertTextMode = itemDefaults?.insertTextMode,
+    kind,
+    label,
+    preselect,
+    sortText,
+    tags,
+    textEdit = itemDefaults?.editRange
+  } = completionItem
   let range: monaco.languages.CompletionItem['range']
 
   if (textEdit) {
     range = toCompletionItemRange(textEdit)
     if ('newText' in textEdit) {
-      text = textEdit.newText
+      insertText = textEdit.newText
     }
   } else {
     range = { ...options.range }
   }
 
   const result: monaco.languages.CompletionItem = {
-    insertText: text ?? completionItem.label,
+    insertText: insertText ?? label,
     kind:
-      completionItem.kind == null
+      kind == null
         ? (18 satisfies monaco.languages.CompletionItemKind.Text)
-        : toCompletionItemKind(completionItem.kind),
-    label: completionItem.label,
+        : toCompletionItemKind(kind),
+    label,
     range
   }
 
-  if (completionItem.additionalTextEdits) {
-    result.additionalTextEdits = completionItem.additionalTextEdits.map(toSingleEditOperation)
+  if (additionalTextEdits) {
+    result.additionalTextEdits = additionalTextEdits.map(toSingleEditOperation)
   }
 
-  if (completionItem.command) {
-    result.command = toCommand(completionItem.command)
+  if (command) {
+    result.command = toCommand(command)
+  }
+
+  if (itemDefaults?.commitCharacters) {
+    if (!commitCharacters) {
+      commitCharacters = itemDefaults.commitCharacters
+    } else if (applyKind?.commitCharacters === (2 satisfies typeof lsp.ApplyKind.Merge)) {
+      commitCharacters = commitCharacters.concat(itemDefaults.commitCharacters)
+    }
   }
 
   if (commitCharacters) {
     result.commitCharacters = commitCharacters
   }
 
-  if (completionItem.detail != null) {
-    result.detail = completionItem.detail
+  if (detail != null) {
+    result.detail = detail
   }
 
-  if (typeof completionItem.documentation === 'string') {
-    result.documentation = completionItem.documentation
-  } else if (completionItem.documentation) {
-    result.documentation = toMarkdownString(completionItem.documentation)
+  if (typeof documentation === 'string') {
+    result.documentation = documentation
+  } else if (documentation) {
+    result.documentation = toMarkdownString(documentation)
   }
 
-  if (completionItem.filterText != null) {
-    result.filterText = completionItem.filterText
+  if (filterText != null) {
+    result.filterText = filterText
   }
 
   if (insertTextFormat === 2) {
@@ -220,16 +244,16 @@ export function toCompletionItem(
       1 satisfies monaco.languages.CompletionItemInsertTextRule.KeepWhitespace
   }
 
-  if (completionItem.preselect != null) {
-    result.preselect = completionItem.preselect
+  if (preselect != null) {
+    result.preselect = preselect
   }
 
-  if (completionItem.sortText != null) {
-    result.sortText = completionItem.sortText
+  if (sortText != null) {
+    result.sortText = sortText
   }
 
-  if (completionItem.tags) {
-    result.tags = completionItem.tags.map(toCompletionItemTag)
+  if (tags) {
+    result.tags = tags.map(toCompletionItemTag)
   }
 
   return result
